@@ -3,6 +3,7 @@
 require 'fileutils'
 require 'redcarpet'
 require 'erb'
+require 'filewatcher'
 
 build_path = File.join(__dir__, 'docs')
 
@@ -26,30 +27,69 @@ def markdown
                                         autolink: true)
 end
 
-task default: [:build, :server]
+Doc = Struct.new(:filename) do
+  def path
+    "/posts/#{basename}.html"
+  end
+
+  def title
+    basename
+  end
+
+  def render(binding)
+    @layout ||= ERB.new(File.read(filename))
+    @layout.result(binding)
+  end
+
+  def basename
+    File.basename(filename, '.md')
+  end
+
+  def post?
+    filename.include?('/posts/')
+  end
+end
+
+def docs
+  @docs ||= begin
+    Dir[File.join(__dir__, '**', '*.md')].sort.map do |path|
+      Doc.new(path)
+    end
+  end
+end
+
+task default: %i[build server]
 
 task :build do
   FileUtils.rm_rf(build_path)
 
-  Dir[File.join(__dir__, '**', '*.md')].sort.each do |path|
+  docs.each do |doc|
+    path = doc.filename
     print "processing #{path} ... "
-    post_path = File.join(
+    doc_path = File.join(
       build_path,
       File.dirname(path).gsub(__dir__, ''),
-      File.basename(path, '.md') + '.html'
+      doc.basename + '.html'
     )
-    FileUtils.mkdir_p(File.dirname(post_path))
-    File.write(post_path, layout.result(
-                            erb_binding do
-                              markdown.render(File.read(path))
-                            end
-                          ))
-    puts "wrote file #{post_path}"
-    system("tidy -mq #{post_path}")
+    FileUtils.mkdir_p(File.dirname(doc_path))
+    File.write(doc_path, layout.result(
+                           erb_binding do
+                             markdown.render(
+                               doc.render(erb_binding)
+                             )
+                           end
+                         ))
+    puts "wrote file #{doc_path}"
+    system("tidy -mq #{doc_path}")
   end
   File.write(File.join(build_path, 'CNAME'), 'jtarchie.com')
 end
 
 task :server do
-  system("ruby -run -ehttpd #{build_path} -p8000")
+  io = IO.popen("ruby -run -ehttpd #{build_path} -p8000")
+  Filewatcher.new(['**/*.md', 'Rakefile', '*.html']).watch do
+    system('bundle exec rake build')
+  end
+  Process.kill('INT', io.pid)
+  io.close
 end

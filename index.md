@@ -1,7 +1,15 @@
 * Computing Polyglot
 * Technologist
 * Mentoring
-* Product focused
+* Product focused engineer
+
+# Posts
+
+<% docs.each do |doc| %>
+<% if doc.post? %>
+* [<%= doc.title%>](<%= doc.path %>)
+<% end %>
+<% end %>
 
 # Resume
 
