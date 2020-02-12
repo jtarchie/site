@@ -29,15 +29,18 @@ end
 
 Doc = Struct.new(:filename) do
   def path
-    "/posts/#{basename}.html"
+    File.join(
+      File.dirname(filename).gsub(__dir__, ''),
+      basename + '.html'
+    )
   end
 
   def title
-    basename
+    @title ||= contents.scan(/^# (.*)$/).flatten.first
   end
 
   def render(binding)
-    @layout ||= ERB.new(File.read(filename))
+    @layout ||= ERB.new(contents)
     @layout.result(binding)
   end
 
@@ -47,6 +50,12 @@ Doc = Struct.new(:filename) do
 
   def post?
     filename.include?('/posts/')
+  end
+
+  private
+
+  def contents
+    @contents ||= File.read(filename)
   end
 end
 
@@ -68,8 +77,7 @@ task :build do
     print "processing #{path} ... "
     doc_path = File.join(
       build_path,
-      File.dirname(path).gsub(__dir__, ''),
-      doc.basename + '.html'
+      doc.path
     )
     FileUtils.mkdir_p(File.dirname(doc_path))
     File.write(doc_path, layout.result(
