@@ -61,7 +61,7 @@ end
 
 def docs
   @docs ||= begin
-    Dir[File.join(__dir__, '**', '*.md')].sort.map do |path|
+    Dir[File.join(__dir__, '**', '*.md')].sort.reverse.map do |path|
       Doc.new(path)
     end
   end
