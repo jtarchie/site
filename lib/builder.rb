@@ -22,10 +22,15 @@ module Blog
         )
         FileUtils.mkdir_p(File.dirname(doc_path))
         File.write(doc_path, layout.result(
-                               erb_binding do
-                                 markdown.render(
-                                   doc.render(erb_binding)
-                                 )
+                               erb_binding do |type, default|
+                                 case type
+                                 when :title
+                                   doc.title || default
+                                 else
+                                   markdown.render(
+                                     doc.render(erb_binding)
+                                   )
+                                 end
                                end
                              ))
         puts "wrote file #{doc_path}"
@@ -79,6 +84,10 @@ module Blog
           filename: path
         )
       end
+    end
+
+    def posts
+      @posts ||= docs.select(&:post?)
     end
   end
 end

@@ -32,7 +32,7 @@ RSpec.describe 'building the site' do
       <!doctype html>
         <html lang="en">
           <head>
-            <title>test</title>
+            <title><%= yield(:title, 'default title') %></title>
           </head>
           <body>
             <%= yield %>
@@ -48,9 +48,35 @@ RSpec.describe 'building the site' do
     expect(read_file('index.pdf')).to include 'PDF'
   end
 
-  it 'supports named emojis' do
-    create_doc('index.md', ':cat:')
+  it 'supports markdown files' do
+    create_doc('index.md', <<~MARKDOWN)
+      ## Hello world
+      * Item 1
+      * Item 2
+      * :cat:
+    MARKDOWN
+
     build!
-    expect(read_file('index.html')).to include '🐱'
+    contents = read_file('index.html')
+
+    expect(contents).to include '<title>default title</title>'
+    expect(contents).to include '<h2 id="hello-world">Hello world</h2>'
+    expect(contents).to include '<li>Item 1</li>'
+    expect(contents).to include '<li>Item 2</li>'
+    expect(contents).to include '🐱'
+  end
+
+  it 'supports posts' do
+    create_doc('posts/20200101.md', '# Some post')
+    create_doc('index.md', <<~ERB)
+      <% posts.each do |doc| %>
+        * [<%= doc.title%>](<%= doc.path %>)
+      <% end %>
+    ERB
+    build!
+
+    expect(read_file('index.html')).to include '<li><a href="/posts/20200101.html">Some post</a></li>'
+    expect(read_file('posts/20200101.html')).to include '<title>Some post</title>'
+    expect(read_file('posts/20200101.html')).to include '<h1 id="some-post">Some post</h1>'
   end
 end

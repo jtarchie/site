@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
-        <title>jtarchie.com</title>
+        <title><%= yield(:title, 'jtarchie.com') %></title>
         <style>
             .content {
                 padding: 10px;
@@ -25,7 +25,7 @@
         </div>
     </nav>
     <main class="content">
-        <%= yield %>
+        <%= yield(:content) %>
     </main>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     </body>
