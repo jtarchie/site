@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="generator" content=
-"HTML Tidy for HTML5 for Apple macOS version 5.6.0">
+"HTML Tidy for HTML5 for Apple macOS version 5.8.0">
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content=
@@ -11,11 +11,11 @@
 <title>jtarchie.com</title>
 
 <style>
-            .content > section {
-                padding: 60px 0 0;
-                margin: 0 auto;
-                width: 90%%;
+            .content {
+                padding: 10px;
                 max-width: 960px;
+                width: 100%;
+                margin: 100px auto 500px;
             }
 </style>
 </head>
@@ -23,7 +23,6 @@
 <nav class="demo"><a href="/" class="brand"><span>JT
 Archie</span></a></nav>
 <main class="content">
-<section class="visual flex one">
 <h1 id="ensure-jit-execution-of-luajit">Ensure JIT execution of
 <code class="prettyprint">luajit</code></h1>
 <p>I've always been impressed with the <a href=
@@ -113,15 +112,12 @@ cmp ebx, +0x64  # if i &lt;= 100
 jle -&gt;LOOP      #   goto LOOP
 jmp -&gt;EXIT
 </code></pre>
-<p>The loop can literally not get tighter here. Unless we remove
-the loop entirely. LuaJIT can perform loop unrolling, which means
-the loop flattens, so that <code class="prettyprint">sum = sum +
-1</code> is repeated 100 times. I have not been able to get LuaJIT
-to perofmr this optimization.</p>
 <p>Here we've managed to take standard lua code and using he
 <code class="prettyprint">ffi</code> functionality optimize it. The
 JIT is using the type information for more optimized assembly.</p>
-</section>
+<p>The loop cannot get any tighter, unless we remove the loop
+entirely. I have not been able to get LuaJIT to perform this
+optimization.</p>
 </main>
 <script src=
 "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>

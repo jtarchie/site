@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'filewatcher'
+gem 'gemoji'
 gem 'rake'
 gem 'redcarpet'
 gem 'rubocop'

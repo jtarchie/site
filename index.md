@@ -1,7 +1,9 @@
-* Computing Polyglot
-* Technologist
-* Mentoring
-* Product focused engineer
+# About
+
+Hi :wave:! I'm JT.
+
+I'm a friend, programmer, mentor, and over-lander.
+I've been an ultra runner :running:, salsa dancer :dancer:, and beer reviewer :beer:.
 
 # Posts
 

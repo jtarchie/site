@@ -4,6 +4,7 @@ require 'fileutils'
 require 'redcarpet'
 require 'erb'
 require 'filewatcher'
+require 'gemoji'
 
 build_path = File.join(__dir__, 'docs')
 
@@ -40,7 +41,16 @@ Doc = Struct.new(:filename) do
   end
 
   def render(binding)
-    @layout ||= ERB.new(contents)
+    @layout ||= begin
+      with_emojis = contents.gsub(/:(\w+):/) do |_|
+        name = Regexp.last_match[1]
+        emoji = Emoji.find_by_alias(name)
+        raise "Cannot find emoji for '#{name}'" unless emoji
+
+        emoji.raw
+      end
+      ERB.new(with_emojis)
+    end
     @layout.result(binding)
   end
 
@@ -93,7 +103,7 @@ end
 
 task :server do
   io = IO.popen("ruby -run -ehttpd #{build_path} -p8000")
-  Filewatcher.new(['**/*.md', 'Rakefile', '*.html']).watch do
+  Filewatcher.new(['**/*.md', 'Rakefile', '*.html', '_layout.html.erb']).watch do
     system('bundle exec rake build')
   end
   Process.kill('INT', io.pid)

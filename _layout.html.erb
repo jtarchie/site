@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="https://unpkg.com/picnic">
         <title>jtarchie.com</title>
         <style>
-            .content > section {
-                padding: 60px 0 0;
-                margin: 0 auto;
-                width: 90%%;
+            .content {
+                padding: 10px;
                 max-width: 960px;
+                width: 100%;
+                margin: 100px auto 500px;
             }
         </style>
     </head>
@@ -22,9 +22,7 @@
         </a>
     </nav>
     <main class="content">
-        <section class="visual flex one">
-            <%= yield %>
-        </section>
+        <%= yield %>
     </main>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     </body>
