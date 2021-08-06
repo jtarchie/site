@@ -10,6 +10,7 @@ module Blog
     def execute!
       which!('tidy')
       which!('wkhtmltopdf')
+      which!('git')
 
       FileUtils.rm_rf(build_dir)
 
@@ -36,7 +37,7 @@ module Blog
         puts "wrote file #{doc_path}"
         run!("tidy -mq #{doc_path}")
         next unless doc.requires_pdf?
-
+        
         pdf_path = File.join(
           build_dir,
           doc.path(ext: 'pdf')

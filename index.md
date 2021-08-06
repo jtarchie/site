@@ -5,6 +5,10 @@ Hi :wave:! I'm JT.
 I'm a friend, programmer, mentor, and over-lander.
 I've been an ultra runner :running:, salsa dancer :dancer:, and beer reviewer :beer:.
 
+As a programmer, 
+I've learned to tinker, reverse engineer, team building, and product design.
+I want to capture what I've learned.
+
 # Posts
 
 <% posts.each do |doc| %>
