@@ -10,7 +10,8 @@ task default: %i[build server]
 task :build do
   builder = Blog::Builder.new(
     source_dir: __dir__,
-    build_dir: build_path
+    build_dir: build_path,
+    domain: 'jtarchie.com'
   )
   builder.execute!
 end

@@ -6,13 +6,14 @@ require 'redcarpet'
 require 'erb'
 
 module Blog
-  Builder = Struct.new(:source_dir, :build_dir, keyword_init: true) do
+  Builder = Struct.new(:source_dir, :build_dir, :domain, keyword_init: true) do
     def execute!
       which!('tidy')
       which!('wkhtmltopdf')
       which!('minify')
 
       FileUtils.rm_rf(build_dir)
+      FileUtils.mkdir_p(build_dir)
 
       docs.each do |doc|
         path = doc.filename
@@ -46,7 +47,7 @@ module Blog
 
         run!("wkhtmltopdf #{doc_path} #{pdf_path}")
       end
-      File.write(File.join(build_dir, 'CNAME'), 'jtarchie.com')
+      File.write(File.join(build_dir, 'CNAME'), domain)
     end
 
     private

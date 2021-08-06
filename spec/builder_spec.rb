@@ -22,7 +22,8 @@ RSpec.describe 'building the site' do
   def build!
     builder = Blog::Builder.new(
       source_dir: source_dir,
-      build_dir: build_dir
+      build_dir: build_dir,
+      domain: 'example.com'
     )
     builder.execute!
   end
@@ -89,5 +90,10 @@ RSpec.describe 'building the site' do
 
     expect(read_file('posts/2020-01-01.html')).to include '<title>Some post</title>'
     expect(read_file('posts/2020-01-01.html')).to include '<h1 id="some-post">Some post</h1>'
+  end
+
+  it 'generates a CNAME artifact' do
+    build!
+    expect(read_file('CNAME')).to eq 'example.com'
   end
 end
