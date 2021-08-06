@@ -15,6 +15,15 @@ I want to capture what I've learned.
 * [<%= doc.title%>](<%= doc.path %>)
 <% end %>
 
-# Resume
+# Work
+
+I love working with people to build better teams and products.
+
+If you're interested in working with me,
+let's <a href="https://calendly.com/jtarchie">talk</a>.
+
+## Resume
+
+This is my resume provided in different formats.
 
 [HTML](resume/index.html) / [PDF](resume/index.pdf)
