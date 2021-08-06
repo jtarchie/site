@@ -61,22 +61,33 @@ RSpec.describe 'building the site' do
 
     expect(contents).to include '<title>default title</title>'
     expect(contents).to include '<h2 id="hello-world">Hello world</h2>'
-    expect(contents).to include '<li>Item 1</li>'
-    expect(contents).to include '<li>Item 2</li>'
+    expect(contents).to include '<li>Item 1'
+    expect(contents).to include '<li>Item 2'
     expect(contents).to include '🐱'
   end
 
   it 'supports posts' do
-    create_doc('posts/20200101.md', '# Some post')
+    create_doc('posts/2020-01-01.md', '# Some post')
+    create_doc('posts/index.md', <<~ERB)
+      # Posts
+      <%- posts.each do |doc| %>
+      * [<%= doc.title%>](<%= doc.path %>)
+      <%- end %>
+    ERB
     create_doc('index.md', <<~ERB)
-      <% posts.each do |doc| %>
-        * [<%= doc.title%>](<%= doc.path %>)
-      <% end %>
+      <%- posts.each do |doc| %>
+      * [<%= doc.title%>](<%= doc.path %>)
+      <%- end %>
     ERB
     build!
 
-    expect(read_file('index.html')).to include '<li><a href="/posts/20200101.html">Some post</a></li>'
-    expect(read_file('posts/20200101.html')).to include '<title>Some post</title>'
-    expect(read_file('posts/20200101.html')).to include '<h1 id="some-post">Some post</h1>'
+    expect(read_file('index.html')).to include '<a href="/posts/2020-01-01.html">Some post'
+    expect(read_file('index.html')).to_not include '<a href="/posts/index.html">Posts'
+
+    expect(read_file('posts/index.html')).to include '<a href="/posts/2020-01-01.html">Some post'
+    expect(read_file('posts/index.html')).to_not include '<a href="/posts/index.html">Posts'
+
+    expect(read_file('posts/2020-01-01.html')).to include '<title>Some post</title>'
+    expect(read_file('posts/2020-01-01.html')).to include '<h1 id="some-post">Some post</h1>'
   end
 end

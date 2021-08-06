@@ -9,11 +9,15 @@ As a programmer,
 I've learned to tinker, reverse engineer, team building, and product design.
 I want to capture what I've learned.
 
-# Posts
+# Blog
 
-<% posts.each do |doc| %>
-* [<%= doc.title%>](<%= doc.path %>)
+These are the latest posts from blog.
+
+<% posts.take(3).each do |doc| %>
+* [<%= doc.title %>](<%= doc.path %>)
 <% end %>
+
+Read the [rest of the entries](/posts).
 
 # Work
 

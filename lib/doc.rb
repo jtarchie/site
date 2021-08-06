@@ -25,7 +25,7 @@ module Blog
 
           emoji.raw
         end
-        ERB.new(with_emojis)
+        ERB.new(with_emojis, nil, '-')
       end
       @layout.result(binding)
     end
@@ -37,7 +37,7 @@ module Blog
     end
 
     def post?
-      filename.include?('/posts/')
+      filename.include?('/posts/') && filename =~ /\d{4}-\d{2}-\d{2}/
     end
 
     def requires_pdf?

@@ -10,7 +10,7 @@ module Blog
     def execute!
       which!('tidy')
       which!('wkhtmltopdf')
-      which!('git')
+      which!('minify')
 
       FileUtils.rm_rf(build_dir)
 
@@ -35,9 +35,10 @@ module Blog
                                end
                              ))
         puts "wrote file #{doc_path}"
-        run!("tidy -mq #{doc_path}")
+        run!("tidy -cmq --omit --utf8 --ashtml --drop-proprietary-attributes yes --output-bom no --wrap 0 #{doc_path}")
+        run!("minify --html-keep-quotes -o #{doc_path} #{doc_path}")
         next unless doc.requires_pdf?
-        
+
         pdf_path = File.join(
           build_dir,
           doc.path(ext: 'pdf')
