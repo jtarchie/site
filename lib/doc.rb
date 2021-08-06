@@ -5,10 +5,10 @@ require 'erb'
 
 module Blog
   Doc = Struct.new(:source_dir, :filename, keyword_init: true) do
-    def path
+    def path(ext: 'html')
       File.join(
         File.dirname(filename).gsub(source_dir, ''),
-        "#{basename}.html"
+        "#{basename}.#{ext}"
       )
     end
 
@@ -31,11 +31,17 @@ module Blog
     end
 
     def basename
+      return File.basename(filename, '.pdf.md') if requires_pdf?
+
       File.basename(filename, '.md')
     end
 
     def post?
       filename.include?('/posts/')
+    end
+
+    def requires_pdf?
+      filename.include?('.pdf')
     end
 
     private

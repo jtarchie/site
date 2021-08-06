@@ -41,7 +41,11 @@ RSpec.describe 'building the site' do
     HTML
   end
 
-  it 'supports converting the resume to PDF' do
+  it 'supports converting markdown files to PDF' do
+    create_doc('index.pdf.md', ':cat:')
+    build!
+    expect(read_file('index.html')).to include '🐱'
+    expect(read_file('index.pdf')).to include 'PDF'
   end
 
   it 'supports named emojis' do

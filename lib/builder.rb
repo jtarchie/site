@@ -30,9 +30,16 @@ module Blog
                              ))
         puts "wrote file #{doc_path}"
         run!("tidy -mq #{doc_path}")
+        next unless doc.requires_pdf?
+
+        pdf_path = File.join(
+          build_dir,
+          doc.path(ext: 'pdf')
+        )
+
+        run!("wkhtmltopdf #{doc_path} #{pdf_path}")
       end
       File.write(File.join(build_dir, 'CNAME'), 'jtarchie.com')
-      run!('wkhtmltopdf docs/resume/index.html docs/resume/resume.pdf')
     end
 
     private
