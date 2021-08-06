@@ -7,10 +7,8 @@ I've been an ultra runner :running:, salsa dancer :dancer:, and beer reviewer :b
 
 # Posts
 
-<% docs.each do |doc| %>
-<% if doc.post? %>
+<% posts.each do |doc| %>
 * [<%= doc.title%>](<%= doc.path %>)
-<% end %>
 <% end %>
 
 # Resume
