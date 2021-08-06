@@ -19,8 +19,14 @@ I want to capture what I've learned.
 
 I love working with people to build better teams and products.
 
+## Contact
+
 If you're interested in working with me,
 let's <a href="https://calendly.com/jtarchie">talk</a>.
+We can discuss everything from a
+full-time job,
+consulting,
+or just catch up.
 
 ## Resume
 
