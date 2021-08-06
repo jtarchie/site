@@ -15,4 +15,4 @@ I've been an ultra runner :running:, salsa dancer :dancer:, and beer reviewer :b
 
 # Resume
 
-[HTML](https://resume.jtarchie.com) / [PDF](https://resume.jtarchie.com/resume.pdf)
+[HTML](resume.html) / [PDF](resume.pdf)

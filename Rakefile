@@ -28,6 +28,14 @@ def markdown
                                         autolink: true)
 end
 
+def execute(command)
+  raise "cannot run command '#{command}'" unless system(command)
+end
+
+def which(command)
+  raise "command '#{which} does not exist, please install" unless system("which #{command}")
+end
+
 Doc = Struct.new(:filename) do
   def path
     File.join(
@@ -78,6 +86,9 @@ end
 task default: %i[build server]
 
 task :build do
+  which('tidy')
+  which('wkhtmltopdf')
+
   FileUtils.rm_rf(build_path)
 
   docs.each do |doc|
@@ -96,15 +107,16 @@ task :build do
                            end
                          ))
     puts "wrote file #{doc_path}"
-    system("tidy -mq #{doc_path}")
+    execute("tidy -mq #{doc_path}")
   end
   File.write(File.join(build_path, 'CNAME'), 'jtarchie.com')
+  execute('wkhtmltopdf docs/resume.html docs/resume.pdf')
 end
 
 task :server do
   io = IO.popen("ruby -run -ehttpd #{build_path} -p8000")
   Filewatcher.new(['**/*.md', 'Rakefile', '*.html', '_layout.html.erb']).watch do
-    system('bundle exec rake build')
+    Rake::Task['build']
   end
   Process.kill('INT', io.pid)
   io.close
