@@ -31,7 +31,7 @@ Doc = Struct.new(:filename) do
   def path
     File.join(
       File.dirname(filename).gsub(__dir__, ''),
-      basename + '.html'
+      "#{basename}.html"
     )
   end
 
@@ -60,10 +60,8 @@ Doc = Struct.new(:filename) do
 end
 
 def docs
-  @docs ||= begin
-    Dir[File.join(__dir__, '**', '*.md')].sort.reverse.map do |path|
-      Doc.new(path)
-    end
+  @docs ||= Dir[File.join(__dir__, '**', '*.md')].sort.reverse.map do |path|
+    Doc.new(path)
   end
 end
 
