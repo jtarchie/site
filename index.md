@@ -11,20 +11,24 @@ I want to capture what I've learned.
 
 # Blog
 
+Sometimes I write things.
 These are the latest posts from blog.
 
 <% posts.take(3).each do |doc| %>
 * [<%= doc.title %>](<%= doc.path %>)
 <% end %>
 
-Read the [rest of the entries](/posts).
+Read the [all the entries](/posts).
 
 # Work
 
 I love working with people to build better teams and products.
 
+
 ## Contact
 
+I always appreciate face-to-face speaking,
+but video chat is comfortable compromise.
 If you're interested in working with me,
 let's <a href="https://calendly.com/jtarchie">talk</a>.
 We can discuss everything from a
