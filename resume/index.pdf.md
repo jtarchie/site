@@ -22,7 +22,7 @@ Denver, CO
 
 Work in progress.
 
-## Shopify - *Senior Staff Developer* - __3/2021-7/2021
+## Shopify - *Senior Staff Developer* - __3/2021-7/2021__
 
 Technical leader on the core backend handling the GraphQL API at scale.
 Working with several large teams to help build practices for delivery of scheduled features.
