@@ -18,10 +18,14 @@ Denver, CO
 
 # Professional Experience
 
-## Shopify - *Senior Staff Developer* - __3/2021-Current__
+## Move, Inc - *Senior Staff Engineer* - __9/2021-Present__
+
+Work in progress.
+
+## Shopify - *Senior Staff Developer* - __3/2021-7/2021
 
 Technical leader on the core backend handling the GraphQL API at scale.
-Working with several large teams to help build practices for delivery of schedule features.
+Working with several large teams to help build practices for delivery of scheduled features.
 
 ## VMware - *Senior Member of Technical Staff* - __1/2020-1/2021__
 
