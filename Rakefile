@@ -17,7 +17,7 @@ task :build do
 end
 
 def check_links
-  raise 'there was a 404 error in the site' unless system('muffet -x http://localhost:8000')
+  raise 'there was a 404 error in the site' unless system('muffet --skip-tls-verification http://localhost:8000')
 end
 
 task :server do
