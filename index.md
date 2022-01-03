@@ -30,7 +30,7 @@ I love working with people to build better teams and products.
 I always appreciate face-to-face speaking,
 but video chat is comfortable compromise.
 If you're interested in working with me,
-let's <a href="mailto:hello2021@jtarchie.com">talk</a>.
+let's <a href="mailto:hello2022@jtarchie.com">talk</a>.
 We can discuss everything from a
 full-time job,
 consulting,
