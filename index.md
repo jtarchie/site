@@ -7,7 +7,7 @@ I've been an ultra runner :running:, salsa dancer :dancer:, and beer reviewer :b
 
 As a programmer, 
 I've learned to tinker, reverse engineer, team building, and product design.
-I want to capture what I've learned.
+I want to capture what I've learned, so it can be shared.
 
 # Blog
 
@@ -23,7 +23,7 @@ Read the [all the entries](/posts).
 # Work
 
 I love working with people to build better teams and products.
-
+The next goal is to have a bespoke software shop.
 
 ## Contact
 
