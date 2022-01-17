@@ -13,13 +13,13 @@ on:
 
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: brew install
+    - name: apt-get install
       run: |
-        brew uninstall go@1.15
-        brew install --force tdewolff/tap/minify tidy-html5 wkhtmltopdf
+        sudo apt-get update
+        sudo apt-get install minify tidy wkhtmltopdf
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0 # Not needed with a .ruby-version file
