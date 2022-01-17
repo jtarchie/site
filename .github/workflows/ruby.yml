@@ -26,6 +26,7 @@ jobs:
         repo: tdewolff/minify
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0 # Not needed with a .ruby-version file
