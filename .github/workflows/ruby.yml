@@ -20,10 +20,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install tidy wkhtmltopdf
-    - name: Install go-task
+    - name: Install minify
       uses: jaxxstorm/action-install-gh-release@release/v1-alpha
       with: # Grab the latest version
         repo: tdewolff/minify
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0 # Not needed with a .ruby-version file
