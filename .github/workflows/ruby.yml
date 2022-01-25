@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: denoland/setup-deno@v1
     - name: apt-get install
       run: |
         sudo apt-get update
@@ -31,6 +32,8 @@ jobs:
       with:
         ruby-version: 3.0 # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: format markdown
+      run: deno fmt .
     - name: Run tests
       run: bundle exec rspec
     - name: Build docs
