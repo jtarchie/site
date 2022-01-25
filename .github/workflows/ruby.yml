@@ -46,6 +46,6 @@ jobs:
     - name: commit
       run: |
         # Stage the file, commit and push
-        git add -A docs/
+        git add -A
         git commit -m "generated docs from github action"
         git push origin master
