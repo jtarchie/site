@@ -1,8 +1,8 @@
 # JT Archie
 
-Denver, CO\
-[jtarchie@gmail.com](mailto:jtarchie@gmail.com)\
-[https://github.com/jtarchie](https://github.com/jtarchie)
+- Denver, CO
+- [jtarchie@gmail.com](mailto:jtarchie@gmail.com)\
+- [https://github.com/jtarchie](https://github.com/jtarchie)
 
 # Summary
 
