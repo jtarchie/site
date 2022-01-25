@@ -11,16 +11,17 @@ Denver, CO
 
 ## What I am looking for
 
-* Leadership role to help and mentor product, design, and engineering together,
-  while being able to be Individual Contributor.
-* Engage in hiring practices to ensure both company and employee have happiness.
 * Build a better product for the customer.
+* Leadership role to help and mentor product, design, and engineering together,
+  while reaming an Individual Contributor.
+* Engage in hiring practices to ensure both company and employee have happiness.
 
 # Professional Experience
 
 ## Move, Inc - *Senior Staff Engineer* - __9/2021-Present__
 
-Work in progress.
+Working with a brand new team, which is responsible for unifying the user identity system.
+The challenge is working across many different products for enablement.
 
 ## Shopify - *Senior Staff Developer* - __3/2021-7/2021__
 
