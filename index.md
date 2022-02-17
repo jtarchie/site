@@ -13,7 +13,7 @@ product design. I want to capture what I've learned, so it can be shared.
 Sometimes I write things. These are the latest posts from blog.
 
 <%- posts.take(3).each do |doc| %>
-- [<%= doc.title %>](<%= doc.path %>)
+- [<%= doc.title %>](<%= doc.path %>) on <%= doc.basename %>
 <%- end %>
 
 Read the [all the entries](/posts).
