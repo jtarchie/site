@@ -36,7 +36,7 @@ module Blog
                                end
                              ))
         puts "wrote file #{doc_path}"
-        run!("tidy -cmq --omit --utf8 --ashtml --drop-proprietary-attributes yes --output-bom no --wrap 0 #{doc_path}")
+        run!("tidy -cmq --omit --utf8 --ashtml yes --output-bom no --wrap 0 #{doc_path}")
         run!("minify --html-keep-quotes -o #{doc_path} #{doc_path}")
         next unless doc.requires_pdf?
 

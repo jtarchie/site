@@ -20,7 +20,11 @@ jobs:
     - name: apt-get install
       run: |
         sudo apt-get update
-        sudo apt-get install tidy wkhtmltopdf
+        sudo apt-get install wkhtmltopdf
+    - name: Install html-tidy
+      uses: jaxxstorm/action-install-gh-release@release/v1-alpha
+      with: # Grab a specific tag
+        repo: htacg/tidy-html5
     - name: Install minify
       uses: jaxxstorm/action-install-gh-release@release/v1-alpha
       with: # Grab the latest version
