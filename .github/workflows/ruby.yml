@@ -25,6 +25,9 @@ jobs:
       uses: jaxxstorm/action-install-gh-release@release/v1-alpha
       with: # Grab a specific tag
         repo: htacg/tidy-html5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - name: Install minify
       uses: jaxxstorm/action-install-gh-release@release/v1-alpha
       with: # Grab the latest version
