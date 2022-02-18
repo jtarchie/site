@@ -2,7 +2,7 @@
 
 require_relative 'doc'
 require 'fileutils'
-require 'redcarpet'
+require 'kramdown'
 require 'erb'
 
 module Blog
@@ -29,7 +29,7 @@ module Blog
                                  when :title
                                    doc.title || default
                                  else
-                                   markdown.render(
+                                   markdown_render(
                                      doc.render(erb_binding)
                                    )
                                  end
@@ -60,16 +60,13 @@ module Blog
       @layout ||= ERB.new(File.read(File.join(source_dir, '_layout.html.erb')))
     end
 
-    def markdown
-      @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(
-                                              prettify: true,
-                                              with_toc_data: true
-                                            ),
-                                            fenced_code_blocks: true,
-                                            space_after_headers: true,
-                                            strikethrough: true,
-                                            tables: true,
-                                            autolink: true)
+    def markdown_render(text)
+      Kramdown::Document.new(
+        text,
+        input: 'GFM',
+        gfm_emojis: true,
+        hard_wrap: false
+      ).to_html
     end
 
     def run!(command)
