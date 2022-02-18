@@ -5,7 +5,12 @@ require_relative 'lib/builder'
 
 build_path = File.join(__dir__, 'docs')
 
-task default: %i[build server]
+task default: %i[fmt build server]
+
+task :fmt do
+  sh('rubocop -a')
+  sh('deno fmt .')
+end
 
 task :build do
   builder = Blog::Builder.new(
