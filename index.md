@@ -31,6 +31,9 @@ to have a bespoke software shop.
 
 ## Projects
 
+- [followthesnow.today](https://followthesnow.today) list all the ski resorts in
+  the United States with their expected snowfall. As a Colorado resident, I
+  wanted a quick way to review where I should go skiing for the week.
 - [`some-router`](https://github.com/jtarchie/some-router) is built to handle
   javascript routing based on a path for applications. It is agnostic to
   framework and runtime to be used in the frontend or backend. It was developed
