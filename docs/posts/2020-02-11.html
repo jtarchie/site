@@ -2,7 +2,7 @@
 <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span> <span class="k">do</span>
         <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">i</span>
 <span class="k">end</span>
-</code></pre></div><p>It generates efficient assembly. We can print out the assembly using <code>luajit -jdump</code>. This outputs a lot, but our interest lies in the <code>LOOP</code> scope.<pre><code class="language-assembly">-&gt;LOOP:
+</code></pre></div><p>It generates efficient assembly. The assembly using <code>luajit -jdump</code>. This outputs a lot, but our interest lies in the <code>LOOP</code> scope.<pre><code class="language-assembly">-&gt;LOOP:
 xorps xmm6, xmm6
 cvtsi2sd xmm6, ebp
 addsd xmm7, xmm6           # sum = sum + i
@@ -10,7 +10,7 @@ add ebp, +0x01             # i = i + 1
 cmp ebp, +0x64             # if i &lt;= 100
 jle -&gt;LOOP                 #   goto LOOP
 jmp -&gt;EXIT
-</code></pre><p>The numbers assigned to <code>sum</code> and `i’ are used as typed information. These types don’t change during the execution of the script, and this allows the JIT to make efficient assembly instructions.<p>LuaJIT (like Lua) assumes all numbers are floating-point, though. The instruction <code>cvtsi2sd</code> converts integers to floating-point. Though this may be fast, it is an extraneous instruction.<p>I wanted to see if LuaJIT could just do integer-specific instructions. This could probably be done if we could provide hints to the JIT. Lua doesn’t have a static type system, though.<div class="language-lua highlighter-rouge highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">ffi</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"ffi"</span><span class="p">)</span>
+</code></pre><p>The numbers assigned to <code>sum</code> and <code>i</code> are used as typed information. These types don’t change during the execution of the script, and this allows the JIT to make efficient assembly instructions.<p>LuaJIT (like Lua) assumes all numbers are floating-point, though. The instruction <code>cvtsi2sd</code> converts integers to floating-point. Though this may be fast, it is an extraneous instruction.<p>I wanted to see if LuaJIT could just do integer-specific instructions by providing hints to the JIT. Lua doesn’t have a static type system, though.<div class="language-lua highlighter-rouge highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">ffi</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"ffi"</span><span class="p">)</span>
 <span class="n">ffi</span><span class="p">.</span><span class="n">cdef</span> <span class="s">[[
     typedef struct { int v; } int_t;
 ]]</span>
