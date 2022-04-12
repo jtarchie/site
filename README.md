@@ -15,5 +15,6 @@ git push
 The deployment of the pages is done via Github Actions.
 
 ## Blog post ideas
+
 - YAML is not the answer or why your configuration language is not that simple
 - Don't automate what you cannot do manually

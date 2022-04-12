@@ -16,7 +16,7 @@ module Blog
       FileUtils.mkdir_p(build_dir)
 
       docs.each do |doc|
-        path = doc.filename
+        path     = doc.filename
         print "processing #{path} ... "
         doc_path = File.join(
           build_dir,

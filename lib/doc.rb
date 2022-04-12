@@ -19,7 +19,7 @@ module Blog
     def render(binding)
       @layout ||= begin
         with_emojis = contents.gsub(/:(\w+):/) do |_|
-          name = Regexp.last_match[1]
+          name  = Regexp.last_match[1]
           emoji = Emoji.find_by_alias(name)
           raise "Cannot find emoji for '#{name}'" unless emoji
 
