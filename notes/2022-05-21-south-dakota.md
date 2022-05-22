@@ -22,6 +22,7 @@ These are notes and research for the South Dakota overlanding trip.
 - [onxmaps](https://www.onxmaps.com/offroad/trails/us/south-dakota)
 - 63
   [mile trail](https://www.onxmaps.com/offroad/trails/15f6a1b3-2b12-4c0d-8a9e-f6d9442165ed)
+- [Jeep trails](https://www.jeeptheusa.com/black-hills-jeep-trails.html)
 
 ## Camping
 
