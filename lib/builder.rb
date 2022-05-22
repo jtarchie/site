@@ -77,17 +77,26 @@ module Blog
       raise "command '#{which} does not exist, please install" unless system("which #{command}")
     end
 
-    def docs
+    def docs(filter: nil)
       @docs ||= Dir[File.join(source_dir, '**', '*.md')].grep_v(/vendor/).sort.reverse.map do |path|
         Doc.new(
           source_dir: source_dir,
           filename: path
         )
       end
+      if filter
+        return @docs.select do |doc|
+          filter.call(doc.filename)
+        end
+      end
+
+      @docs
     end
 
     def posts
-      @posts ||= docs.select(&:post?)
+      @posts ||= docs(filter: lambda do |filename|
+        filename.include?('/posts/') && filename =~ /\d{4}-\d{2}-\d{2}/
+      end)
     end
   end
 end

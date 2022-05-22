@@ -36,10 +36,6 @@ module Blog
       File.basename(filename, '.md')
     end
 
-    def post?
-      filename.include?('/posts/') && filename =~ /\d{4}-\d{2}-\d{2}/
-    end
-
     def requires_pdf?
       filename.include?('.pdf')
     end
