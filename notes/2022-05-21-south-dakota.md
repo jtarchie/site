@@ -4,22 +4,24 @@ These are notes and research for the South Dakota overlanding trip.
 
 ## Schedule
 
-* Thursday leave Denver for Black Hills [map](https://goo.gl/maps/wrz8MqpkATSnAZGn8)
-* Friday
+- Thursday leave Denver for Black Hills
+  [map](https://goo.gl/maps/wrz8MqpkATSnAZGn8)
+- Friday
   - see sites
   - go off roading
   - find camp spot
-* Saturday
+- Saturday
   - see sites
   - Fishing!
   - find camp spot
-* Sunday
+- Sunday
   - see sites
 
 ## Off Roading
 
 - [onxmaps](https://www.onxmaps.com/offroad/trails/us/south-dakota)
-- 63 [mile trail](https://www.onxmaps.com/offroad/trails/15f6a1b3-2b12-4c0d-8a9e-f6d9442165ed)
+- 63
+  [mile trail](https://www.onxmaps.com/offroad/trails/15f6a1b3-2b12-4c0d-8a9e-f6d9442165ed)
 
 ## Camping
 
