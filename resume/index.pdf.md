@@ -40,12 +40,12 @@ and automation testing efforts.
 ### Senior Staff Engineer, Move, Inc. Sept 2021 - Present
 
 - Collaborate with a Greenfield team in managing the user journey across the
-  Realtor suite of sites and building a GraphQL API.
+  Realtor suite of sites and building a GraphQL API using NestJS on NodeJS.
 - Involved in team discussions about projects by developing and implementing
   quarterly goals, prioritization of features, documentation, setting standards,
   and mentoring.
 - Work on multiple enhancements for various applications with different
-  technologies such as Neptune Graph database, and Typescript. Prepare and
+  technologies such as AWS Neptune Graph database, and Typescript. Prepare and
   execute test plans for development and acceptance testing.
 - Perform program maintenance, modifications, and enhancements to new/existing
   systems through programming, testing, documenting, and training users.
@@ -71,7 +71,7 @@ and automation testing efforts.
   applications.
 - Established coding standards and enforced them through automated tools.
   Modified existing software and tweaking the system settings to improve
-  application performance.
+  application performance
 - Focused on cloud technologies to support critical business solutions and
   working closely with Operations and Server Administration.
 
@@ -87,7 +87,7 @@ and automation testing efforts.
   deliver quality software. Mentored junior engineers in over four projects
   while encouraging them to be effective as team members.
 - Responsible for building out and improving the reliability and performance of
-  cloud applications and cloud infrastructure. Worked with all areas of
+  cloud applications and cloud infrastructure using Golang. Worked with all areas of
   Development teams to ensure the build and deployment process serves better
   quality for the business.
 
