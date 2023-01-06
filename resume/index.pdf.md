@@ -20,8 +20,7 @@ design through subjective assessment and comprehensive analysis. Proven
 expertise in ensuring software reliability by leading team in quality assurance
 and automation testing efforts.
 
-- **Expertise** in Ruby, Go, Concourse CI for CI/CD, PostgreSQL, Cloud Foundry,
-  AWS, GCP, TDD, and Bosh
+- **Expertise** in Go, CI/CD, Ruby, TDD, PostgreSQL, AWS, GCP
 
 ### Competent Skills
 
