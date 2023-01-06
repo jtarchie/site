@@ -25,7 +25,7 @@ module Blog
 
           emoji.raw
         end
-        ERB.new(with_emojis, nil, '-')
+        ERB.new(with_emojis, trim_mode: '-')
       end
       @layout.result(binding)
     end

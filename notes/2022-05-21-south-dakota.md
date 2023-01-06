@@ -20,17 +20,18 @@ These are notes and research for the South Dakota overlanding trip.
 ## Inventory
 
 ### Have
-* Coleman 2 burner stove
-* Fire clickers
-* Miscellaneous bowls, plates, silverware, etc
-* Table
-* 7 gallon water container
+
+- Coleman 2 burner stove
+- Fire clickers
+- Miscellaneous bowls, plates, silverware, etc
+- Table
+- 7 gallon water container
 
 ### Need to get
 
-* sink basin
-* new camping chairs
-* more gas for stove
+- sink basin
+- new camping chairs
+- more gas for stove
 
 ## Off Roading
 

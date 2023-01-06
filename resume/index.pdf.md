@@ -87,9 +87,9 @@ and automation testing efforts.
   deliver quality software. Mentored junior engineers in over four projects
   while encouraging them to be effective as team members.
 - Responsible for building out and improving the reliability and performance of
-  cloud applications and cloud infrastructure using Golang. Worked with all areas of
-  Development teams to ensure the build and deployment process serves better
-  quality for the business.
+  cloud applications and cloud infrastructure using Golang. Worked with all
+  areas of Development teams to ensure the build and deployment process serves
+  better quality for the business.
 
 ### Software Engineer, Pivotal Labs. May 2010 - Feb 2014
 
