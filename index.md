@@ -4,8 +4,10 @@
 
 Hi :wave:! I'm JT.
 
-I'm a friend, programmer, mentor, and over-lander. I've been an [ultra runner](https://ultrasignup.com/m_results_participant.aspx?fname=Jt&lname=Archie)
-:running:, [salsa dancer](https://www.youtube.com/watch?v=gT1qaj2PMrw) :dancer:, and [beer reviewer](https://www.youtube.com/yetanotherbeershow) :beer:.
+I'm a friend, programmer, mentor, and over-lander. I've been an
+[ultra runner](https://ultrasignup.com/m_results_participant.aspx?fname=Jt&lname=Archie)
+:running:, [salsa dancer](https://www.youtube.com/watch?v=gT1qaj2PMrw) :dancer:,
+and [beer reviewer](https://www.youtube.com/yetanotherbeershow) :beer:.
 
 As a programmer, I've learned to tinker, reverse engineer, team building, and
 product design. I want to capture what I've learned, so it can be shared.
