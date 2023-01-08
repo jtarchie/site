@@ -4,8 +4,8 @@
 
 Hi :wave:! I'm JT.
 
-I'm a friend, programmer, mentor, and over-lander. I've been an ultra runner
-:running:, salsa dancer :dancer:, and beer reviewer :beer:.
+I'm a friend, programmer, mentor, and over-lander. I've been an [ultra runner](https://ultrasignup.com/m_results_participant.aspx?fname=Jt&lname=Archie)
+:running:, [salsa dancer](https://www.youtube.com/watch?v=gT1qaj2PMrw) :dancer:, and [beer reviewer](https://www.youtube.com/yetanotherbeershow) :beer:.
 
 As a programmer, I've learned to tinker, reverse engineer, team building, and
 product design. I want to capture what I've learned, so it can be shared.
@@ -33,7 +33,7 @@ to have a bespoke software shop.
 
 - [followthesnow.today](https://followthesnow.today) list all the ski resorts in
   the United States with their expected snowfall. As a Colorado resident, I
-  wanted a quick way to review where I should go skiing for the week.
+  wanted a quick way to review where I should go skiing for the day/week.
 - [`some-router`](https://github.com/jtarchie/some-router) is built to handle
   javascript routing based on a path for applications. It is agnostic to
   framework and runtime to be used in the frontend or backend. It was developed
