@@ -44,7 +44,7 @@ to have a bespoke software shop.
 
 I always appreciate face-to-face speaking, but video chat is a comfortable
 compromise. If you're interested in working with me, let's
-[email](mailto:hello2022@jtarchie.com) or
+[email](mailto:hello2023@jtarchie.com) or
 [talk](https://calendly.com/jtarchie/15min). We can discuss everything from a
 full-time job, consulting, or just catch up.
 
