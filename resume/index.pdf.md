@@ -19,7 +19,7 @@ quality assurance and automation testing.
 
 ## Professional Experience
 
-### Coach/Consulting, [Saber](https://saber.consulting/). December 2022 - Present
+### Coach, [Saber Consulting](https://saber.consulting/). December 2022 - Present
 
 - Coaching decisions in software engineering and technical product management
   fields, emphasizing communication and collaboration, and measuring
