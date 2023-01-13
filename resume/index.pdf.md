@@ -19,6 +19,12 @@ quality assurance and automation testing.
 
 ## Professional Experience
 
+### Coach/Consulting, [Saber](https://saber.consulting/). December 2022 - Present
+
+- Coaching decisions in software engineering and technical product management
+  fields, emphasizing communication and collaboration, and measuring
+  availability by the hour.
+
 ### Senior Staff Engineer, Move, Inc. Sept 2021 - Present
 
 - Manage a greenfield team (4+) to guide the user journey across the Realtor
