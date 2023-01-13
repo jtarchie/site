@@ -6,109 +6,73 @@
 
 ## Profile Summary
 
-Lead Software Engineer
+As a Lead Software Engineer, I enjoy mentoring and growing engineers to become
+active and strong contributors to a team. I have 16+ years of experience in
+developing responsive software applications, with expertise in Software
+Configuration Management, DevOps/Build and configuration management, and
+developing CI/CD pipelines. I am adept at quickly learning new technology,
+identifying product design issues, ensuring software reliability, and providing
+quality assurance and automation testing.
 
-Dedicated and innovative Lead Software Engineer with 16+ years of experience
-developing responsive software applications. Possesses hands-on experience in
-the SDLC including requirements gathering, application design, development,
-configuration, testing, and support of next generation applications. Expertise
-in areas of Software Configuration Management, DevOps/Build and configuration
-management, and developing CI/CD pipelines. Equipped with a strong attention to
-detail, time management skills, and ability to learn new technology quickly and
-function as an excellent team player. Adept at identifying issues with product
-design through subjective assessment and comprehensive analysis. Proven
-expertise in ensuring software reliability by leading team in quality assurance
-and automation testing efforts.
-
-- **Expertise** in Go, CI/CD, Ruby, TDD, PostgreSQL, AWS, GCP
-
-### Competent Skills
-
-- Software Development
-- Project Management
-- Requirement Gathering
-- Agile Methodologies
-- Client Relationship Management
-- Technical Support
-- Cross-functional Collaboration
-- User Training and Support
-- Team Leadership & Mentoring
+- **Expertise** in Go (6y), CI/CD, Ruby on Rails (10y), Javascript (7y),
+  Typescript (2y), Test Driven Development (TDD), PostgreSQL, AWS, GCP
 
 ## Professional Experience
 
 ### Senior Staff Engineer, Move, Inc. Sept 2021 - Present
 
-- Collaborate with a Greenfield team in managing the user journey across the
-  Realtor suite of sites and building a GraphQL API using NestJS on NodeJS.
-- Involved in team discussions about projects by developing and implementing
-  quarterly goals, prioritization of features, documentation, setting standards,
-  and mentoring.
-- Work on multiple enhancements for various applications with different
-  technologies such as AWS Neptune Graph database, and Typescript. Prepare and
-  execute test plans for development and acceptance testing.
-- Perform program maintenance, modifications, and enhancements to new/existing
-  systems through programming, testing, documenting, and training users.
+- Manage a greenfield team (4+) to guide the user journey across the Realtor
+  suite of sites, leveraging NestJS, GraphQL, AWS Neptune Graph, and Typescript.
+- Completed initiatives to retire legacy applications and acquire 3rd party
+  vendor replacements.
+- Participate in team talks about projects by devising, executing, and
+  documenting quarterly goals, prioritizing features, setting standards, and
+  coordinating with Realtor sites.
+- Mentor individuals by pairing and providing weekly one-on-ones to offer
+  technical direction and career advice.
 
 ### Senior Staff Developer, Shopify. Mar 2021 - Jul 2021
 
-- Served as the Technical lead on the core backend team responsible for the
-  design and development of the GraphQL API (with Ruby on Rails) at scale.
-- Collaborated with several large cross-functional teams in building practices
-  for the delivery of scheduled features. Solved and enhanced bottlenecks in the
-  software stack by devising scalable distributed solution.
-- Heavily involved from developing the design documents, mock-ups, functional
-  specifications and final implementation. Supervised, directed and mentored
-  more Junior Developers.
-- Played an active role in all phases of System Development Life Cycle (SDLC).
-  Developed test-cases and test-scenarios and perform end-to-end & regression
-  testing on the enhancements made.
+- Served as Technical Lead on the core backend team, designing and developing
+  the GraphQL API in Ruby on Rails.
 
 ### Senior Member of Technical Staff, VMWare. Jan 2020 - Jan 2021
 
-- Worked as a senior member of the technical staff for VMWare when the company
-  purchased Pivotal. Continued working on Cloud Foundry, a SaaS for hosting
-  applications.
-- Established coding standards and enforced them through automated tools.
-  Modified existing software and tweaking the system settings to improve
-  application performance
-- Focused on cloud technologies to support critical business solutions and
-  working closely with Operations and Server Administration.
+- Purchased by VMWare, I resumed the role of Tech Lead for my previous employer,
+  Pivotal.
+- Established CI/CD to automate security updates, generate release notes, and
+  facilitate same-day release, guaranteeing timely security for our application.
+- Maintained feature development, product management, and community of the Open
+  Source Cloud Foundry platform management tool
+  [`om`](https://github.com/pivotal-cf/om) in Golang.
 
-### Staff Software Engineer, Pivotal Cloud Foundry. Dec 2014 - Jan 2020
+### Staff Engineer, Pivotal Cloud Foundry. Dec 2014 - Jan 2020
 
-- Worked with a team of engineers on developing Cloud Foundry, a SaaS for
-  hosting applications that flexes polyglot muscles for effectiveness in
-  contributing to many projects.
+- Contributed to several teams and components for Cloud Foundry Platform,
+  requiring Golang and flexibility in Ruby, Python, Java, and Bash.
 - Utilized concourse.ci to build pipelines for automation tooling in projects.
   Designed and developed the pull request resource for concourse to support
   better testing workflows for our open source projects.
-- Applied Pivotal’s best practices (pairing and TDD) in helping teams grow and
-  deliver quality software. Mentored junior engineers in over four projects
-  while encouraging them to be effective as team members.
-- Responsible for building out and improving the reliability and performance of
-  cloud applications and cloud infrastructure using Golang. Worked with all
-  areas of Development teams to ensure the build and deployment process serves
-  better quality for the business.
+- Applied Pivotal's practices for pairing and test driven development (TDD) in
+  helping teams grow and deliver quality and stable software. Mentored junior
+  engineers in over four projects while encouraging them to be effective as team
+  members.
+- Spearheaded multiple initiatives to sunset products by advising clients on
+  alternative options and facilitating their migration.
 
 ### Software Engineer, Pivotal Labs. May 2010 - Feb 2014
 
-- Worked on 9+ projects ranging from rescue missions, small start-up ventures,
-  and large enterprise clients. Designed and implemented new features for
-  software products after studying functional requirements documents and
-  reviewing with stakeholders.
-- Advocated in maintaining Pivotal Labs’ strong culture of pair programming,
+- Completed 9+ projects ranging from rescue missions, small start-up ventures,
+  and large enterprise clients as a consultant, adapting quickly to changing
+  technology stacks, different business domains, and ambiguous product
+  requirements.
+- Actively promoted Pivotal Labs’ strong culture of pair programming,
   test-driven development, and agile development practices to all projects.
-- Participated in product design reviews to provide input on functional
-  requirements, product designs, schedules or potential problems. Reviewed
-  software documentation to ensure technical accuracy, compliance or
-  completeness.
 
 ### Software Engineer, Context Optional. Aug 2008 - Jan 2010
 
-- Utilized Ruby on Rails to build social media applications for social
+- Utilized Ruby on Rails and MySQL to build social media applications for social
   networking sites using the Facebook and OpenSocial platforms.
-- Provided the best components of the Ruby-on-Rails to deliver high-quality
-  solutions to customers at maximum speed.
 - Worked on large-scale applications with millions of users while effectively
   adding new features to those products. Effectively resolved software issues
   with adherence to the architecture and accepted coding standards.
@@ -128,15 +92,5 @@ and automation testing efforts.
 
 - Built mobile applications for SMS marketing campaigns that involved the use of
   WAP, SMS protocol, and PHP.
-- Involved in all the phases of Software Development Life Cycle (SDLC) like
-  gathering the requirements, analysis, design, development, unit testing and
-  deployment.
 - Collaborated with a small team of engineers to provide development and testing
   for rapid deployment.
-
-## Education
-
-### University of Miami
-
-- Master of Science in Electrical and Computer Engineering (M.S.E.C.E.) 2006
-- Bachelor of Science in Computer Engineering degree program (B.S.Cp.E.) 2005
