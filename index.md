@@ -31,6 +31,8 @@ Read the [all the entries](/posts).
 I love working with people to build better teams and products. The next goal is
 to have a bespoke software shop.
 
+Learn about [How I Work](how-i-work)
+
 ## Projects
 
 - [followthesnow.today](https://followthesnow.today) list all the ski resorts in
