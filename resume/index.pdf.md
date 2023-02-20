@@ -27,15 +27,10 @@ quality assurance and automation testing.
 
 ### Senior Staff Engineer, Move, Inc. Sept 2021 - Present
 
-- Manage a greenfield team (4+) to guide the user journey across the Realtor
-  suite of sites, leveraging NestJS, GraphQL, AWS Neptune Graph, and Typescript.
-- Completed initiatives to retire legacy applications and acquire 3rd party
-  vendor replacements.
-- Participate in team talks about projects by devising, executing, and
-  documenting quarterly goals, prioritizing features, setting standards, and
-  coordinating with Realtor sites.
-- Mentor individuals by pairing and providing weekly one-on-ones to offer
-  technical direction and career advice.
+- Led and managed a team of engineers to develop and implement user journey improvements across the Realtor suite of sites. Leveraged NestJS, GraphQL, AWS Neptune Graph, and Typescript to achieve project goals.
+- Successfully completed initiatives to retire legacy applications and replace them with third-party vendor solutions.
+- Collaborated with cross-functional teams to devise and execute quarterly project goals, prioritize features, establish technical standards, and ensure coordination across Realtor sites.
+- Mentored and provided technical direction to individual team members through regular pairing and weekly one-on-one sessions. Provided career advice and guidance to support team members' professional growth.
 
 ### Senior Staff Developer, Shopify. Mar 2021 - Jul 2021
 
@@ -44,36 +39,21 @@ quality assurance and automation testing.
 
 ### Senior Member of Technical Staff, VMWare. Jan 2020 - Jan 2021
 
-- Purchased by VMWare, I resumed the role of Tech Lead for my previous employer,
-  Pivotal.
-- Established CI/CD to automate security updates, generate release notes, and
-  facilitate same-day release, guaranteeing timely security for our application.
-- Maintained feature development, product management, and community of the Open
-  Source Cloud Foundry platform management tool
-  [`om`](https://github.com/pivotal-cf/om) in Golang.
+- Resumed the role of Tech Lead for my previous employer, Pivotal, after its acquisition by VMware.
+- Implemented Golang for feature development, product management, and community maintenance of the Open Source Cloud Foundry platform management tool [`om`](https://github.com/pivotal-cf/om). Maintained and improved the tool by actively collaborating with contributors and users.
+- Established CI/CD processes to automate security updates, generate release notes, and facilitate same-day release, ensuring timely security for our application. Implemented Golang-based solutions to improve the efficiency and reliability of the processes.
 
 ### Staff Engineer, Pivotal Cloud Foundry. Dec 2014 - Jan 2020
 
-- Contributed to several teams and components for Cloud Foundry Platform,
-  requiring Golang and flexibility in Ruby, Python, Java, and Bash.
-- Utilized concourse.ci to build pipelines for automation tooling in projects.
-  Designed and developed the pull request resource for concourse to support
-  better testing workflows for our open source projects.
-- Applied Pivotal's practices for pairing and test driven development (TDD) in
-  helping teams grow and deliver quality and stable software. Mentored junior
-  engineers in over four projects while encouraging them to be effective as team
-  members.
-- Spearheaded multiple initiatives to sunset products by advising clients on
-  alternative options and facilitating their migration.
+- Contributed to several teams and components for Cloud Foundry Platform, requiring Golang and flexibility in Ruby, Python, Java, and Bash. Collaborated with cross-functional teams to deliver high-quality software.
+- Utilized concourse.ci to build pipelines for automation tooling in projects. Designed and developed the pull request resource for concourse to support better testing workflows for our open source projects, ensuring a faster and more efficient software delivery process.
+- Applied Pivotal's practices for pairing and test-driven development (TDD) to mentor junior engineers in over many projects, encouraging them to be effective team members and deliver quality and stable software. Helped teams grow and succeed by providing technical guidance and support.
+- Spearheaded multiple initiatives to sunset products by advising clients on alternative options and facilitating their migration. Collaborated with clients to understand their needs and goals, and helped them to transition to new products smoothly and successfully.
 
 ### Software Engineer, Pivotal Labs. May 2010 - Feb 2014
 
-- Completed 9+ projects ranging from rescue missions, small start-up ventures,
-  and large enterprise clients as a consultant, adapting quickly to changing
-  technology stacks, different business domains, and ambiguous product
-  requirements.
-- Actively promoted Pivotal Labs’ strong culture of pair programming,
-  test-driven development, and agile development practices to all projects.
+- Completed 9+ projects ranging from rescue missions, small start-up ventures, and large enterprise clients as a consultant, adapting quickly to changing technology stacks, different business domains, and ambiguous product requirements. Excelled in rapidly learning new technologies and understanding various and applying them for successful product growth.
+- Actively promoted Pivotal Labs' strong culture of pair programming, test-driven development, and agile development practices to all projects. Advocated for agile methodologies and fostered a collaborative environment to support team success.
 
 ### Software Engineer, Context Optional. Aug 2008 - Jan 2010
 
