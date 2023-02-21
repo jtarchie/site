@@ -14,7 +14,7 @@ end
 
 task :build do
   builder = Blog::Builder.new(
-    source_dir: __dir__,
+    source_dir: File.join(__dir__, 'written'),
     build_dir: build_path,
     domain: 'jtarchie.com'
   )

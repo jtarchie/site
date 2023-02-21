@@ -78,7 +78,7 @@ module Blog
     end
 
     def docs(filter: nil)
-      @docs ||= Dir[File.join(source_dir, '**', '*.md')].grep_v(/vendor/).sort.reverse.map do |path|
+      @docs ||= Dir[File.join(source_dir, '**', '*.md')].sort.reverse.map do |path|
         Doc.new(
           source_dir: source_dir,
           filename: path
