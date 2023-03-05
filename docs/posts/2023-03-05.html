@@ -24,7 +24,7 @@
   <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">32Mi"</span>
   <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500m"</span>
 <span class="c1"># ... some lines far away ...</span>
-<span class="err"> </span><span class="na">limits</span><span class="pi">:</span>
+<span class="na">limits</span><span class="pi">:</span>
   <span class="na">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*limits</span>
   <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">64Mi"</span>
 </code></pre></div><li>Can we use <code>resources</code> to all <code>containers</code> that are configured for this cluster? Not just this file.<li>Can we use the configuration as base and anything it is semantically updated we get versioned updates?<li><p>Can we use conditionals for parts of the configuration?<p>Yes and no. There is tooling that has been created to do this, such as <code>helm</code> charts. It is industry standard and clunky.</ul><p>As a result, the pattern of needing to come up with these templates using YAML just keeps happening. We need to accept alternatives such as HCL, Lua, or JavaScript/Typescript, which have the required features to help us.<p>To demonstrate how Typescript can be used to rewrite the previous configuration, let’s take a look at the following code:<div class="language-typescript highlighter-rouge highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pod</span> <span class="o">=</span> <span class="p">{</span>
