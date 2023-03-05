@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0"><meta charset="utf-8"><meta name="description" content="The personal website of JT Archie. Includes a blog, work ethic, and projects they have worked on."><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.6/css/pico.classless.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pygments-rouge-css@0.1.0/github.css" integrity="sha256-+YP5+2/U/W/Ftf4q+/r0dlCXvZeQaY84PqgCyHsvyLg=" crossorigin="anonymous"><title>Programming Language over Data language</title><style>@media print{nav{display:none}}</style><nav><ul><li><a href="/"><span>JT Archie</span></a></ul><ul><li><a href="/posts" class="pseudo button">Blog</a><li><a href="https://github.com/jtarchie/site" target="_blank" class="pseudo button">Github</a></ul></nav><main class="content"><h1 id="programming-language-over-data-language">Programming Language over Data language</h1><p>When it comes to configuration languages, the end goal is usually to use a language provides human readable data structures. The most modern language for this purpose is YAML, from a syntax point of view. It’s easy to work with in terms of data type structure and readability. However, when it comes to templating, those features are not enough. Usually, composition, inheritance, type information, and validation of data structures.<p>After choosing YAML, most people have to come up with their own tooling and patterns to create templates. The original motivation for using templates is to facilitate shared configuration. This is not just a matter of a single Boolean value for scaling the number of instances or a simple true/false statement for enabling/disabling something. It often requires structures with multiple levels and shapes.<p>To illustrate the complexity of configuration, let’s look at an example from Kubernetes.<div class="language-yaml highlighter-rouge highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">mypod</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">mycontainer</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">myimage</span>
+    <span class="na">resources</span><span class="pi">:</span>
+      <span class="na">limits</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">64Mi"</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500m"</span>
+      <span class="na">requests</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">32Mi"</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">250m"</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">anothercontainer</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">ubuntu</span>
+    <span class="na">resources</span><span class="pi">:</span>
+      <span class="na">limits</span><span class="pi">:</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">32Mi"</span>
+</code></pre></div><p>We can see that the <code>containers</code> can be an list, with each entry having <code>resources</code>, with multiple nobs and dials. There are user experience issues with the above:<ul><li>Are the values for <code>resources</code> required or optional?</ul><p>Via the <code>kubectl</code> CLI, we can ask the server for verification the values are correct.<ul><li>Can we set the same value for <code>memory</code> in all properties?<li><p>Can we set all the <code>containers</code> to the same properties, but just change one for <code>mycontainer</code>?<p>With YAML anchors, and :<p>We can use them for a value:<div class="language-yaml highlighter-rouge highlight"><pre class="highlight"><code><span class="na">memory</span><span class="pi">:</span> <span class="nl">&amp;memory</span> <span class="s2">"</span><span class="s">32Mi"</span>
+<span class="na">another_memory</span><span class="pi">:</span> <span class="nv">*memory</span>
+</code></pre></div><p>Ability to override the value :<div class="language-yaml highlighter-rouge highlight"><pre class="highlight"><code><span class="na">limits</span><span class="pi">:</span> <span class="nl">&amp;limits</span>
+  <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">32Mi"</span>
+  <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500m"</span>
+<span class="c1"># ... some lines far away ...</span>
+<span class="err"> </span><span class="na">limits</span><span class="pi">:</span>
+  <span class="na">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*limits</span>
+  <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">64Mi"</span>
+</code></pre></div><li>Can we use <code>resources</code> to all <code>containers</code> that are configured for this cluster? Not just this file.<li>Can we use the configuration as base and anything it is semantically updated we get versioned updates?<li><p>Can we use conditionals for parts of the configuration?<p>Yes and no. There is tooling that has been created to do this, such as <code>helm</code> charts. It is industry standard and clunky.</ul><p>As a result, the pattern of needing to come up with these templates using YAML just keeps happening. We need to accept alternatives such as HCL, Lua, or JavaScript/Typescript, which have the required features to help us.<p>To demonstrate how Typescript can be used to rewrite the previous configuration, let’s take a look at the following code:<div class="language-typescript highlighter-rouge highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pod</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">apiVersion</span><span class="p">:</span> <span class="dl">"</span><span class="s2">v1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">kind</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Pod</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">metadata</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mypod</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">spec</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">containers</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mycontainer</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">image</span><span class="p">:</span> <span class="dl">"</span><span class="s2">myimage</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">resources</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">limits</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">memory</span><span class="p">:</span> <span class="dl">"</span><span class="s2">64Mi</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">cpu</span><span class="p">:</span> <span class="dl">"</span><span class="s2">500m</span><span class="dl">"</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="na">requests</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">memory</span><span class="p">:</span> <span class="dl">"</span><span class="s2">32Mi</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">cpu</span><span class="p">:</span> <span class="dl">"</span><span class="s2">250m</span><span class="dl">"</span><span class="p">,</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">anothercontainer</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">image</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ubuntu</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">resources</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">limits</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">memory</span><span class="p">:</span> <span class="dl">"</span><span class="s2">32Mi</span><span class="dl">"</span><span class="p">,</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div><p>In this TypeScript code, we have defined a type for <code>Pod</code> and C`ontainer to ensure that the values provided are optional, required, and typed correctly. By doing so, we get the benefits of type safety and can catch errors early in the development process.<div class="language-typescript highlighter-rouge highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Pod</span> <span class="p">{</span>
+  <span class="nl">apiVersion</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">kind</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">metadata</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">spec</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">containers</span><span class="p">:</span> <span class="nx">Container</span><span class="p">[];</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Container</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">image</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">resources</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">limits</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">memory</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+      <span class="nl">cpu</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nl">requests</span><span class="p">?:</span> <span class="p">{</span>
+      <span class="na">memory</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+      <span class="nl">cpu</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div><p>Additionally, we could use <code>npm</code> to inherit a versioned definition of the <code>Pod</code> and <code>Container</code> types and override what we need to. This allows us to reuse common configuration patterns across projects and maintain versioning control. There could be a type for <code>Pod</code> that is always configured correctly for the <code>apiVersion</code>.<p>I’m not arguing for the exclusive use of Javascript/Typescript. Just that it provides the functionality of YAML for configuration and more. The actual configuration did not change much, but its built functionality did.<p>In summary, YAML may lack the required features for complex configurations, leading to the use of templates that can add complexity. TypeScript offers explicit typing, versioning control, and the ability to reuse common configuration patterns, making it a strong contender for configuration languages. By choosing the right language and implementing best practices, you can ensure your configuration is well-structured, maintainable, and scalable for your application’s success.<p>Please chose a programming language over a data configuration language. We’ll/You’ll thank yourself.</main>
