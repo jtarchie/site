@@ -16,4 +16,5 @@ The deployment of the pages is done via Github Actions.
 
 ## Blog post ideas
 
-- Don't automate what you cannot do manually
+- Only automate what you can do manually
+- Innovation isn't lost
