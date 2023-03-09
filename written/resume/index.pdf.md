@@ -27,9 +27,13 @@ quality assurance and automation testing.
 
 ### Senior Staff Engineer, Move, Inc. Sept 2021 - Present
 
-- Led and managed a team of engineers to develop and implement user journey
+- Led and managed a team of 8 engineers to develop and implement user journey
   improvements across the Realtor suite of sites. Leveraged NestJS, GraphQL, AWS
   Neptune Graph, and Typescript to achieve project goals.
+- Led the successful scaling of a critical application to handle over 150,000
+  requests per minute, implementing advanced load balancing strategies and
+  optimizing costs and performance. Reduced infrastructure expenses by 10% and
+  reduce failure rate by 45%.
 - Successfully completed initiatives to retire legacy applications and replace
   them with third-party vendor solutions.
 - Collaborated with cross-functional teams to devise and execute quarterly
@@ -43,6 +47,8 @@ quality assurance and automation testing.
 
 - Served as Technical Lead on the core backend team, designing and developing
   the GraphQL API in Ruby on Rails.
+- Reduced the render time of developer documentation to render 20 times faster
+  and ensuring a seamless user experience.
 
 ### Senior Member of Technical Staff, VMWare. Jan 2020 - Jan 2021
 
@@ -51,7 +57,7 @@ quality assurance and automation testing.
 - Implemented Golang for feature development, product management, and community
   maintenance of the Open Source Cloud Foundry platform management tool
   [`om`](https://github.com/pivotal-cf/om). Maintained and improved the tool by
-  actively collaborating with contributors and users.
+  actively collaborating with contributors and enterprise users.
 - Established CI/CD processes to automate security updates, generate release
   notes, and facilitate same-day release, ensuring timely security for our
   application. Implemented Golang-based solutions to improve the efficiency and
