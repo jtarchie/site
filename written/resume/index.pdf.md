@@ -1,7 +1,7 @@
 # JT Archie
 
 - Denver, CO
-- [Email](mailto:jtarchie@gmail.com)
+- [jtarchie@gmail.com](mailto:jtarchie@gmail.com)
 - [Github](https://github.com/jtarchie)
 
 ## Profile Summary
