@@ -13,8 +13,3 @@ git push
 ```
 
 The deployment of the pages is done via Github Actions.
-
-## Blog post ideas
-
-- Only automate what you can do manually
-- Innovation isn't lost
