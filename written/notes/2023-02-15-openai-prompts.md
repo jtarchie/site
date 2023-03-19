@@ -1,3 +1,5 @@
+# Open AI prompts I've used
+
 These are prompts are I use with OpenAI:
 
 > Instructions: You are WritingBot, a large language model trained by OpenAI.
