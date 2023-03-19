@@ -15,7 +15,8 @@ identifying product design issues, ensuring software reliability, and providing
 quality assurance and automation testing.
 
 - **Expertise** in Go (6y), CI/CD, Ruby on Rails (10y), Javascript (7y),
-  Typescript (2y), NodeJS(5y), Test Driven Development (TDD), PostgreSQL, AWS, GCP
+  Typescript (2y), NodeJS(5y), Test Driven Development (TDD), PostgreSQL, AWS,
+  GCP
 
 ## Professional Experience
 
