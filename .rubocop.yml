@@ -9,6 +9,9 @@
 #
 # See https://docs.rubocop.org/rubocop/configuration
 
+AllCops:
+  TargetRubyVersion: 3.2
+
 Metrics/BlockLength:
   Enabled: false
 
@@ -38,3 +41,6 @@ Style/Documentation:
 
 Style/ExtraSpacing:
   ForceEqualSignAlignment: true
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
