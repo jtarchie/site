@@ -48,6 +48,7 @@ module Blog
         run!("wkhtmltopdf #{doc_path} #{pdf_path}")
       end
       File.write(File.join(build_dir, 'CNAME'), domain)
+      File.write(File.join(build_dir, 'robots.txt'), '')
     end
 
     private
