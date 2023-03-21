@@ -15,7 +15,8 @@ module Blog
 
       FileUtils.rm_rf(build_dir)
       FileUtils.mkdir_p(build_dir)
-      FileUtils.copy_entry(File.join(source_dir, 'public'), build_dir)
+      public_dir = File.join(source_dir, 'public')
+      FileUtils.copy_entry(File.join(source_dir, 'public'), build_dir) if Dir.exist?(public_dir)
 
       docs.each do |doc|
         path          = doc.filename
