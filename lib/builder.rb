@@ -24,7 +24,6 @@ module Blog
           doc.path
         )
         templates_for = [Tilt::ErubiTemplate, Tilt::KramdownTemplate]
-        puts templates_for
         rendered      = templates_for.reduce(doc.contents) do |contents, template|
           template.new({
                          input: 'GFM',
