@@ -33,10 +33,10 @@ RSpec.describe 'building the site' do
       <!doctype html>
         <html lang="en">
           <head>
-            <title><%= yield(:title, 'default title') %></title>
+            <title><%= title || "default title" %></title>
           </head>
           <body>
-            <%= yield %>
+            <%= content %>
           </body>
         </html>
     HTML
@@ -69,18 +69,21 @@ RSpec.describe 'building the site' do
 
   it 'supports posts' do
     create_doc('posts/2020-01-01.md', '# Some post')
-    create_doc('posts/index.md', <<~ERB)
+    create_doc('posts/index.erb.md', <<~ERB)
       # Posts
       <%- posts.each do |doc| %>
       * [<%= doc.title%>](<%= doc.path %>)
       <%- end %>
     ERB
-    create_doc('index.md', <<~ERB)
+    create_doc('index.erb.md', <<~ERB)
       <%- posts.each do |doc| %>
       * [<%= doc.title%>](<%= doc.path %>)
       <%- end %>
     ERB
     build!
+
+    files = Dir[File.join(build_dir, '**', '*.html')].sort
+    expect(files.map { |file| File.basename(file) }).to eq ['index.html', '2020-01-01.html', 'index.html']
 
     expect(read_file('index.html')).to include '<a href="/posts/2020-01-01.html">Some post'
     expect(read_file('index.html')).to_not include '<a href="/posts/index.html">Posts'
