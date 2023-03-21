@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'erubi'
 gem 'filewatcher'
 gem 'gemoji'
 gem 'kramdown'
@@ -11,4 +12,3 @@ gem 'rouge'
 gem 'rspec'
 gem 'rubocop'
 gem 'tilt'
-gem 'erubi'
