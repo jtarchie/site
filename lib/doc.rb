@@ -17,12 +17,14 @@ module Blog
     end
 
     def contents
-      @contents ||= File.read(filename).gsub(/:(\w+):/) do |_|
+      @contents ||= File.read(filename).gsub(/:(\w+):/) do |original|
         name  = Regexp.last_match[1]
         emoji = Emoji.find_by_alias(name)
-        raise "Cannot find emoji for '#{name}'" unless emoji
-
-        emoji.raw
+        if emoji
+          emoji.raw
+        else
+          original
+        end
       end
     end
 
