@@ -1,3 +1,5 @@
+# Cover Letter
+
 Dear Hiring Managers:
 
 <!-- intro -->

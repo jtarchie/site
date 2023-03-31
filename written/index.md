@@ -18,9 +18,9 @@ Sometimes I write things. These are the latest posts from blog.
 
 <!-- deno-fmt-ignore-start -->
 
-<%- posts.take(3).each do |doc| %>
-- [<%= doc.title %>](<%= doc.path %>) on <%= doc.basename %>
-<%- end %>
+{{range $doc := iterDocs "posts/" 3}}
+- [{{$doc.Title}}]({{$doc.Path}}) on {{$doc.Basename}}
+{{end}}
 
 <!-- deno-fmt-ignore-end -->
 
@@ -59,4 +59,4 @@ $250USD per hour, billed to the hour above, will be required.
 
 My resume is provided in different formats.
 
-[HTML](resume/index.html) / [PDF](resume/index.pdf)
+[HTML](resume/index.html) / [PDF](resume/resume.pdf)

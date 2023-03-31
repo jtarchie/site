@@ -23,30 +23,22 @@ RSpec.describe 'building the site' do
     builder = Blog::Builder.new(
       source_dir: source_dir,
       build_dir: build_dir,
-      domain: 'example.com'
     )
     builder.execute!
   end
 
   before do
-    create_doc('_layout.html.erb', <<~HTML)
+    create_doc('layout.html', <<~HTML)
       <!doctype html>
         <html lang="en">
           <head>
-            <title><%= title || "default title" %></title>
+            <title>{{or .Title "default title"}}</title>
           </head>
           <body>
-            <%= content %>
+            {{.Page}}
           </body>
         </html>
     HTML
-  end
-
-  it 'supports converting markdown files to PDF' do
-    create_doc('index.pdf.md', ':cat:')
-    build!
-    expect(read_file('index.html')).to include '🐱'
-    expect(read_file('index.pdf')).to include 'PDF'
   end
 
   it 'supports markdown files' do
@@ -64,21 +56,26 @@ RSpec.describe 'building the site' do
     expect(contents).to include '<h2 id="hello-world">Hello world</h2>'
     expect(contents).to include '<li>Item 1'
     expect(contents).to include '<li>Item 2'
-    expect(contents).to include '🐱'
+    expect(contents).to include '&#x1f431;'
   end
 
   it 'supports posts' do
-    create_doc('posts/2020-01-01.md', '# Some post')
-    create_doc('posts/index.erb.md', <<~ERB)
+    create_doc('posts/2020-01-01.md',<<~MARKDOWN)
+      ---
+      title: Some post
+      ---
+      # Some post
+    MARKDOWN
+    create_doc('posts/index.md', <<~ERB)
       # Posts
-      <%- posts.each do |doc| %>
-      * [<%= doc.title%>](<%= doc.path %>)
-      <%- end %>
+      {{range $doc := iterDocs "posts/" 5}}
+      * [{{$doc.Title}}]({{$doc.Path}})
+      {{end}}
     ERB
-    create_doc('index.erb.md', <<~ERB)
-      <%- posts.each do |doc| %>
-      * [<%= doc.title%>](<%= doc.path %>)
-      <%- end %>
+    create_doc('index.md', <<~ERB)
+      {{range $doc := iterDocs "posts/" 5}}
+      * [{{$doc.Title}}]({{$doc.Path}})
+      {{end}}
     ERB
     build!
 
@@ -93,10 +90,5 @@ RSpec.describe 'building the site' do
 
     expect(read_file('posts/2020-01-01.html')).to include '<title>Some post</title>'
     expect(read_file('posts/2020-01-01.html')).to include '<h1 id="some-post">Some post</h1>'
-  end
-
-  it 'generates a CNAME artifact' do
-    build!
-    expect(read_file('CNAME')).to eq 'example.com'
   end
 end

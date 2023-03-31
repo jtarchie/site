@@ -20,22 +20,3 @@ task :build do
   )
   builder.execute!
 end
-
-def check_links
-  raise 'there was a 404 error in the site' unless system('muffet --skip-tls-verification http://localhost:8000')
-end
-
-task :server do
-  io = IO.popen("ruby -run -ehttpd #{build_path} -p8000")
-  sleep 2
-
-  check_links
-
-  Filewatcher.new(['**/*.md', 'Rakefile', '*.html', '_layout.html.erb']).watch do
-    Rake::Task['build']
-    check_links
-  end
-ensure
-  Process.kill('INT', io.pid)
-  io.close
-end

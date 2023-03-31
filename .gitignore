@@ -63,3 +63,4 @@ build-iPhoneSimulator/
 .DS_Store
 .vscode
 Brewfile.lock.json
+docs/
