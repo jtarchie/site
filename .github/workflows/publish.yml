@@ -22,7 +22,7 @@ jobs:
 
       - name: Build
         run: |
-          builder --source-path ./pages/ --build-path ./docs/
+          builder --source-path ./written/ --build-path ./docs/
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
