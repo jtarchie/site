@@ -58,3 +58,10 @@ As an exercise, I wanted to build my own document. It will be changing document.
     engineer to engineer. Different disciplines can approach each other to
     collaborate. I've worked with product managers and designers in live
     collaboration
+
+- Feedback:
+  - constructive and actionable
+- Life balance:
+  - set boundaries
+- Conflict Resolution:
+  - positive and respectful
