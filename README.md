@@ -7,6 +7,7 @@ This is the website of jtarchie.com
 ```bash
 brew bundle
 # make changes in posts
+task
 git add -A
 git commit -m 'helpful message'
 git push
