@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
 brew 'deno'
-brew 'task'
+brew 'go-task'
