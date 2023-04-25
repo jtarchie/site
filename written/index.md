@@ -19,7 +19,7 @@ Sometimes I write things. These are the latest posts from blog.
 <!-- deno-fmt-ignore-start -->
 
 {{range $doc := iterDocs "posts/" 3}}
-- [{{$doc.Title}}]({{$doc.Path}}) on {{$doc.Basename}}
+- [{{$doc.Title}}]({{$doc.SlugPath}}) on {{$doc.Basename}}
 {{end}}
 
 <!-- deno-fmt-ignore-end -->
