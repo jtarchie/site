@@ -43,6 +43,9 @@ Learn about [How I Work](/how-i-work.html)
   framework and runtime to be used in the frontend or backend. It was developed
   trying to find a [Sinatra](http://sinatrarb.com/)-like router for a Cloudflare
   Worker application.
+- [Hack Snacks](https://www.youtube.com/channel/UCitQxsD8AAj9jyj1qACJyKw) is an
+  experiment in making short form content for Youtube. It consist of tips and
+  tricks for programming languages and frameworks.
 
 ### Contact
 
