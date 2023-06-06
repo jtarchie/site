@@ -1,7 +1,7 @@
 version: '3'
 
 tasks:
-  format: deno fmt ./
   default:
     cmds:
-    - task: format
+    - deno fmt ./
+    - builder --source-path ./written --build-path docs/
