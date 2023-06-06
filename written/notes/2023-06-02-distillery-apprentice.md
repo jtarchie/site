@@ -43,3 +43,9 @@ Source:
 - [x] Taluna - connect@talnua.com
 
 - [x] Bear Creek - info@bearcreekdistillery.com
+
+## Research
+
+- https://www.rockymountainbarrelcompany.com
+- http://www.feistyspirits.com/tasting-room/
+- https://distiller.com/articles/barrel-picks-guide-tasting-buying-bourbon-barrel
