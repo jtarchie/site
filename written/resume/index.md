@@ -2,7 +2,7 @@
 
 JT Archie
 
-- [LinkedIn](https://www.linkedin.com/in/jtarchie/) -
+- [LinkedIn](https://www.linkedin.com/in/jtarchie/)
 - [Github](https://github.com/jtarchie)
 - [Tech Blog](https://jtarchie.com/posts)
 
