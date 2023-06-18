@@ -1,7 +1,10 @@
 # Resume
 
-JT Archie [LinkedIn](https://www.linkedin.com/in/jtarchie/) -
-[Github](https://github.com/jtarchie)
+JT Archie
+
+- [LinkedIn](https://www.linkedin.com/in/jtarchie/) -
+- [Github](https://github.com/jtarchie)
+- [Tech Blog](https://jtarchie.com/posts)
 
 Lead Software Engineer
 
@@ -9,38 +12,20 @@ jtarchie@gmail.com Denver, CO
 
 ## Profile Summary
 
-- Lead Software Engineer with over 16 years of experience piloting engineering
-  teams in multiple industries, including music platforms, cloud computing,
-  software configuration management, and social media applications.
-- Subject Matter Expert in Software Configuration Management, DevOps/Build and
-  configuration management, and developing CI/CD pipelines.
-- Talented programmer, with a solid command of JavaScript/TypeScript, Go, Ruby
-  on Rails, and Nest.js. Proficient in databases such as PostgreSQL and MySQL,
-  cloud and DevOps services like AWS and GCP, and methodologies such as Test
-  Driven Development (TDD) for building high-quality software.
-- Adept learner with the ability to quickly acquire and master new skills, and
-  enthusiastic problem-solver confident in proposing original and ingenious
-  solutions.
-- Engaged collaborator with strong interpersonal skills, able to influence and
-  align multiple teams with conflicting priorities to drive progress under
-  aggressive time constraints.
-- Ability to effectively navigate ambiguity, complexity and change when stakes
-  and pressure are high, and lead without authority to overcome obstacles and
-  ensure delivery.
-- Trusted advisor to the leadership team, delivering efficient recommendations
-  to align technology investments with business strategy, driving growth and
-  innovation.
-- Respected leader with mentorship experience, and who greatly cares about
-  recruiting & nurturing talent, while developing a culture of excellence.
+With 16+ years of experience as a Lead Software Engineer, I've led successful
+product teams across diverse domains. As a technology generalist, I excel in
+problem-solving and effective communication. I have a proven track record in
+building teams and mentoring members, leveraging pair programming as a key
+mentoring approach.
 
 ## Technical Skills
 
-- Languages: JavaScript/TypeScript, Node.js, Go, Ruby, GraphQL, HTML, CSS
-- Frameworks & Libraries: Ruby On Rails, Nest.js
-- Databases: PostgreSQL, MySQL
-- Dev Tools: Git, GitHub
-- Cloud & DevOps: CI/CD, AWS, GCP
-- Concepts & Methodologies: Extreme Programming, Test Driven Development (TDD)
+- Languages: Go (7 years), Ruby (12 years), Javascript (10 years), Typescript (3
+  years)
+- Frameworks & Libraries: Ruby On Rails (12 years), Nest.js (3 years)
+- Databases: PostgreSQL (10 years), SQLite (8 years) MySQL (5 years)
+- Cloud & DevOps: CI/CD, AWS (10 years), GCP (8 years)
+- Concepts & Methodologies: Pair Programming, Test Driven Development (TDD)
 
 ## Professional Experience
 
@@ -49,7 +34,7 @@ jtarchie@gmail.com Denver, CO
 
   - Provided expert advice to multiple businesses, formulating strategies for
     software engineering and technical product management.
-  - Conducted meetings with customers to understand and analyze their business
+  - Conducted meetings with clients to understand and analyze their business
     goals and align recommendations to their overarching strategy. Conveyed
     challenges and opportunities in a clear and concise way, adapting the
     message to each client’s specific technical literacy.
