@@ -1,6 +1,4 @@
-# Resume
-
-JT Archie
+# JT Archie
 
 - [LinkedIn](https://www.linkedin.com/in/jtarchie/)
 - [Github](https://github.com/jtarchie)
@@ -8,15 +6,15 @@ JT Archie
 
 Lead Software Engineer
 
-jtarchie@gmail.com Denver, CO
+- jtarchie@gmail.com
+- Denver, CO
 
 ## Profile Summary
 
-With 16+ years of experience as a Lead Software Engineer, I've led successful
-product teams across diverse domains. As a technology generalist, I excel in
-problem-solving and effective communication. I have a proven track record in
-building teams and mentoring members, leveraging pair programming as a key
-mentoring approach.
+I'm a full-stack engineer and tech lead with experience in hiring, building, and
+mentoring product teams. I also emphasize a mindset of creating a product to
+understand and solve a customer's problem. I've successfully made applications
+for different business domains from audiences of one to millions.
 
 ## Technical Skills
 
@@ -32,76 +30,68 @@ mentoring approach.
 - [Saber Consulting](https://saber.consulting/) Coach Denver, CO Dec. 2022 -
   Present
 
-  - Provided expert advice to multiple businesses, formulating strategies for
-    software engineering and technical product management.
-  - Conducted meetings with clients to understand and analyze their business
-    goals and align recommendations to their overarching strategy. Conveyed
-    challenges and opportunities in a clear and concise way, adapting the
-    message to each client’s specific technical literacy.
+  - Provided expert advice to help clients convert their legacy CAD models to
+    Jupyter Notebooks to ensure the ability to use new tooling and share
+    documents.
+  - Conducted one-on-one with clients to provide insight on improving their
+    technical knowledge to level up their careers.
 
 - [Move, Inc.](https://www.move.com) Senior Staff Engineer Denver, CO Sep.
   2021 - Apr. 2023
 
-  - Directed and supervised a group of 8 engineers in the creation and execution
-    of user journey enhancements throughout the Realtor suite of websites,
-    employing advanced NestJS, GraphQL, AWS Neptune Graph, and Typescript
-    technologies to deliver outstanding results.
+  - Supervised a group of 8+ engineers in the creation and execution of user
+    journey enhancements throughout the Realtor suite of websites, employing
+    advanced NestJS, GraphQL, AWS Neptune Graph, and Typescript technologies to
+    enhance multi-site user experience.
   - Coordinated with stakeholders such as Front-End Development and Mobile (iOS
-    & Android) teams, as well as the Director of Engineering for Personalization
+    & Android) teams and the Director of Engineering for Personalization
     Enablement to develop and implement quarterly project objectives, prioritize
     functionalities, set technical standards, and guarantee seamless integration
     across Realtor websites.
-  - Thoroughly assessed and defined technical requirements, to design a system
-    architecture optimized for speed and scalability, with clarity on time, cost
-    and impact.
-  - Led the successful scaling of a critical application to handle over 150,000
-    requests per minute, implementing advanced load balancing strategies and
-    successfully reducing infrastructure expenses by 10% while diminishing
-    failure rate by 45%.
+  - Pioneering a practical testing framework, I ensured the optimal utilization
+    of AWS Lambda at Edge, enabling faster developer feedback loops by allowing
+    local emulation.
+  - Successfully leading the scaling of a critical application, I implemented
+    advanced load balancing strategies, resulting in its capability to handle
+    over 150,000 requests per minute. This initiative reduced infrastructure
+    expenses by 10% and significantly decreased the failure rate by 45%.
   - Identified and achieved the strategic termination of outdated applications
-    and coordinated with internal teams, saving the company $600k a year on
+    and coordinated with internal teams, saving the company $600k annually on
     infrastructure costs.
-  - Facilitated technical meetings to discuss new features, decompose user
-    stories into actionable tasks, and provide accurate estimations, ensuring
-    the successful delivery of the project within the defined timeline.
-  - Imparted valuable technical knowledge and direction to individual team
-    members through consistent collaboration and weekly one-on-one sessions.
-    Offered invaluable career advice and mentorship, fostering the professional
-    development of team members.
-  - Constantly pursued opportunities for learning and self-development, by
-    utilizing LinkedIN learning and studying with management books, and staying
-    abreast of emerging technologies and best practices in the web and cloud
-    development fields, as well as leadership methodologies.
+  - Comprehensively assessing and defining technical requirements, I
+    strategically analyzed the legacy user login experience application with a
+    build versus buy decision. Leveraging metrics such as cost and time to
+    release, I effectively presented the information in a consumable manner to
+    leadership, enabling informed decision-making to purchase externally.
+  - Proactively mentoring team members with one-on-one sessions, I facilitated
+    their career progression, resulting in four individuals attaining
+    well-deserved promotions within a year of our collaboration.
 
 - [Shopify](https://www.shopify.com/) Senior Staff Developer Denver, CO Mar.
   2021 - Jul. 2021
 
-  - Participated in the technical effort of a renown music platform company, by
-    spearheading the core backend team as Technical Lead, meticulously crafting
-    and perfecting the GraphQL API utilizing Ruby on Rails, ultimately
-    revolutionizing the system architecture.
+  - Participated in the technical effort by spearheading the core backend team
+    as Technical Lead, meticulously crafting and perfecting the GraphQL API
+    utilizing Ruby on Rails.
   - Dramatically decreased the rendering duration of developer documentation by
-    a factor of 20, implementing innovative optimization techniques to guarantee
-    a fluid and intuitive user experience.
+    a factor of 20, implementing innovative caching techniques to guarantee a
+    fluid and intuitive user experience.
 
 - [VMWare](https://www.vmware.com/) Senior Member of Technical Staff Denver, CO
   Jan. 2020 - Jan. 2021
 
-  - Rejoined Pivotal as Tech Lead following its acquisition by VMware,
-    significantly impacting the company's technological direction and taking
-    decisive actions to fulfill responsibilities.
-  - Integrated Golang for feature development, product management, and community
-    maintenance of the Open Source Cloud Foundry platform management tool om,
-    shortening the team’s deployment and product releases from 25 hours to 15
-    minutes - the fastest within the company.
+  - Rejoined Pivotal as Tech Lead following its acquisition by VMware (purchased
+    Pivotal), significantly impacting the company's technological direction and
+    taking decisive actions to fulfill responsibilities.
   - Formulated CI/CD processes to automate security updates, produce release
     notes, and facilitate same-day release, ensuring rapid application security
-    measures and speeding-up platform installation by 50%.
+    measures and speeding-up platform distribution from 3 days to 15 minutes.
   - Engaged with the leadership team to provide expertise on latest best
-    practices & technologies and advise on potential process improvement.
-  - Presented to stakeholders, leveraging storytelling and adapting messages to
-    specific audiences, to ensure understanding and alignment with various
-    stakeholders.
+    practices & technologies and recommendations on potential process
+    improvement.
+  - Presented to stakeholders with product and design, leveraging storytelling
+    and adapting messages to specific audiences for understanding and alignment
+    with various stakeholders.
 
 - [Pivotal Cloud Foundry](https://tanzu.vmware.com/application-service) Staff
   Engineer Denver, CO Dec. 2014 - Jan. 2020
@@ -114,12 +104,14 @@ mentoring approach.
     suitable alternatives and managing their migration, which contributed to
     seamless transitions. Cooperated with clients to comprehend their objectives
     and requirements, and guided them in successfully adopting new products.
-  - Employed concourse.ci for constructing pipelines essential for automation
-    tooling in numerous projects, resulting in streamlined operations and
-    stabilized processes and releases. Conceived and executed the pull request
-    resource for concourse, thereby enhancing testing workflows for open source
-    projects and expediting the software delivery process , leading to an
-    increase in user satisfaction.
+  - Employed CI/CD for constructing pipelines essential for automation tooling
+    in numerous projects, resulting in streamlined operations and stabilized
+    processes and releases.
+  - Revitalized a team in their software release cycle by implementing a
+    comprehensive set of measures, including the establishment of robust testing
+    environments, automation of release cycles, and enforcement of code best
+    practices. As a result, the team transitioned from consistently delivering
+    last to achieving first place in the platform release cycle.
   - Incorporated Pivotal's methodologies for pairing and test-driven development
     (TDD) to instruct junior engineers across a multitude of projects, fostering
     their growth as proficient team members and promoting the production of
@@ -130,11 +122,10 @@ mentoring approach.
 - [Pivotal Labs](https://www.pivotaltracker.com/consultancies/pivotallabs)
   Software Engineer New York, NY May 2010 - Feb. 2014
 
-  - Completed 9+ projects ranging from rescue missions, small start-up ventures,
-    and large enterprise clients as a consultant, adapting quickly to changing
-    technology stacks, different business domains, and ambiguous product
-    requirements. Excelled in rapidly learning new technologies and
-    understanding various and applying them for successful product growth.
+  - Adapting to 9+ projects as a consultant, swiftly changing technology stacks,
+    diverse business domains, and ambiguous product requirements. Rapidly
+    acquiring and applying new technologies, I contributed to successful product
+    growth.
   - Actively promoted Pivotal Labs’ strong culture of pair programming,
     test-driven development, and agile development practices to all projects.
     Advocated for agile methodologies and fostered a collaborative environment
@@ -158,3 +149,9 @@ mentoring approach.
   - Developed sophisticated SMS marketing applications employing WAP, SMS
     protocol, and PHP in collaboration with an agile team of engineers for
     expedited deployment and testing.
+
+## Education
+
+### University of Miami
+
+Bachelor and Master of Science in Computer Engineering, 2001-2006
