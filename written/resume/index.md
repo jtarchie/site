@@ -1,4 +1,4 @@
-# JT Archie
+# JT Archie Resume
 
 - [LinkedIn](https://www.linkedin.com/in/jtarchie/)
 - [Github](https://github.com/jtarchie)
