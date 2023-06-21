@@ -1,32 +1,31 @@
 # Cover Letter
 
-Dear Hiring Managers:
+Dear Hiring Manager, I am writing to express my strong interest in the
+<insert position title> position at <company name>. With my background as a
+product-focused software engineer, I can contribute significantly to your team
+and help drive the growth and success of your product.
 
-<!-- intro -->
+I have gained valuable experience working with various technologies and business
+domains throughout my career. I have learned that effective problem-solving and
+communication skills are just as crucial, if not more so, than technical
+expertise. This realization has allowed me to excel in delivering software
+solutions within corporate environments.
 
-I bring over 15+ years of experience as a software engineer to the table,
-including work as a consultant, which has given me exposure to various business
-domains. My experience with enterprise customers has taught me the importance of
-having a process in place to streamline and align teams towards sustainable
-deliverables.
+My core passions are continuous integration and continuous delivery (CI/CD). I
+have embraced the philosophy of "automating yourself from a job." By
+implementing robust CI/CD pipelines and automation practices, I have
+consistently improved efficiency and quality in software development.
+Furthermore, I have had the privilege of establishing new teams, participating
+in the hiring process, and mentoring junior engineers. The positive feedback I
+have received affirms my commitment to fostering growth and sharing knowledge.
 
-Mid-way through my career, I made a deliberate shift from full-stack web
-programming to backend distributed cloud systems. I have applied the same
-product development methodologies across different business domains, which has
-allowed me to feel comfortable rotating between different technology stacks.
+I thrive on challenges and take great pride in building products that have a
+tangible impact on users' lives. My experience and skill set will add value to
+your team. I am excited about collaborating with like-minded individuals equally
+passionate about creating meaningful and user-centric solutions.
 
-I am proud of my ability to rescue products, mentor new engineers, and create
-balanced teams. I have a proven track record of delivering software in a
-corporate environment, and I am passionate about CI/CD, as my personal motto is,
-"Automate yourself out of a job."
+Thank you for considering my application. I am eager to discuss my
+qualifications further and explore how I can contribute to the success of
+<company name>. I look forward to the possibility of joining your team.
 
-I am eager for my next challenge and enjoy building products that people find
-useful. I believe my experience and toolset will add value to any team, and I am
-looking forward to working with like-minded individuals.
-
-Thank you for considering my application. I look forward to the opportunity to
-discuss my qualifications in further detail.
-
-Kind Regards,
-
-JT Archie
+Kind Regards, JT Archie
