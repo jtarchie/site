@@ -1,3 +1,8 @@
+---
+title: Resume of JT Archie
+description: This is the resume of JT Archie. Including skills, experience, and education.
+---
+
 # JT Archie
 
 - jtarchie@gmail.com
