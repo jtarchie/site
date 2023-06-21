@@ -12,9 +12,9 @@ description: This is the resume of JT Archie. Including skills, experience, and 
 - [Tech Blog](https://jtarchie.com/posts)
 
 I'm a full-stack engineer and tech lead with experience in hiring, building, and
-mentoring product teams. I also emphasize a mindset of creating a product to
-understand and solve a customer's problem. I've successfully made applications
-for different business domains from audiences of one to millions.
+mentoring product teams, enabling the successful delivery of applications
+serving single users to millions. I've learned that problem-solving,
+communication, and collaboration can be as important as technology.
 
 ## Technical Skills
 
