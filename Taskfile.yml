@@ -4,4 +4,4 @@ tasks:
   default:
     cmds:
     - deno fmt ./
-    - builder --source-path ./written --build-path docs/
+    - builder --source-path ./written --build-path docs/ --serve
