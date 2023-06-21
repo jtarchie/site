@@ -37,6 +37,8 @@ communication, and collaboration can be as important as technology.
 
 ### [Move, Inc.](https://www.move.com) Senior Staff Engineer Denver, CO Sep. 2021 - Apr. 2023
 
+- _Technologies_: Ruby on Rails, Typescript, NextJS, NestJS, Neptune, GraphQL,
+  React, MongoDB, ECS
 - Supervised a group of 8+ engineers in the creation and execution of user
   journey enhancements throughout the Realtor suite of websites, employing
   advanced NestJS, GraphQL, AWS Neptune Graph, and Typescript technologies to
@@ -67,6 +69,7 @@ communication, and collaboration can be as important as technology.
 
 ### [Shopify](https://www.shopify.com/) Senior Staff Developer Denver, CO Mar. 2021 - Jul. 2021
 
+- _Technologies_: Ruby on Rails, Kubernetes
 - Participated in the technical effort by spearheading the core backend team as
   Technical Lead, meticulously crafting and perfecting the GraphQL API utilizing
   Ruby on Rails.
@@ -76,6 +79,7 @@ communication, and collaboration can be as important as technology.
 
 ### [VMWare](https://www.vmware.com/) Senior Member of Technical Staff Denver, CO Jan. 2020 - Jan. 2021
 
+- _Technologies_: Go, Kubernetes, Cloud Foundry, AWS, GCP, Azure
 - Rejoined Pivotal as Tech Lead following its acquisition by VMware (purchased
   Pivotal), significantly impacting the company's technological direction and
   taking decisive actions to fulfill responsibilities.
@@ -90,6 +94,7 @@ communication, and collaboration can be as important as technology.
 
 ### [Pivotal Cloud Foundry](https://tanzu.vmware.com/application-service) Staff Engineer Denver, CO Dec. 2014 - Jan. 2020
 
+- _Technologies_: Go, Cloud Foundry, AWS, GCP, OpenStack, Azure
 - Assisted various groups and components within the Cloud Foundry Platform,
   employing expertise in Golang and demonstrating adaptability with Ruby,
   Python, Java, and Bash, while working closely with cross-functional teams to
@@ -115,6 +120,7 @@ communication, and collaboration can be as important as technology.
 
 ### [Pivotal Labs](https://www.pivotaltracker.com/consultancies/pivotallabs) Software Engineer New York, NY May 2010 - Feb. 2014
 
+- _Technologies_: Ruby on Rails, Javascript, CI/CD
 - Adapting to 9+ projects as a consultant, swiftly changing technology stacks,
   diverse business domains, and ambiguous product requirements. Rapidly
   acquiring and applying new technologies, I contributed to successful product
@@ -126,6 +132,7 @@ communication, and collaboration can be as important as technology.
 
 ### Context Optional Software Engineer SF, CA Aug. 2008 - Jan. 2010
 
+- _Technologies_: Ruby On Rails
 - Developed robust social media applications using Ruby on Rails and MySQL,
   catering to millions of users across Facebook and OpenSocial platforms, while
   diligently addressing software issues and adhering to architectural
@@ -133,6 +140,7 @@ communication, and collaboration can be as important as technology.
 
 ### Chumby Industries Software Engineer San Diego, CA Feb. 2007 - Aug. 2008
 
+- _Technologies_: Ruby On Rails
 - Integrated Ruby on Rails, MySQL, HTML5, CSS, JavaScript, and Bootstrap to
   construct a multifaceted network of websites encompassing community,
   e-commerce, and marketing applications.
