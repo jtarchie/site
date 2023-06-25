@@ -145,7 +145,7 @@ communication, and collaboration can be as important as technology.
   construct a multifaceted network of websites encompassing community,
   e-commerce, and marketing applications.
 
-### Soapbox Mobile Software Engineer San Diego, CA Feb. 2007 - Aug. 2008
+### Soapbox Mobile Software Engineer San Diego, CA Jan. 2006 - Jan. 2007
 
 - Developed sophisticated SMS marketing applications employing WAP, SMS
   protocol, and PHP in collaboration with an agile team of engineers for
