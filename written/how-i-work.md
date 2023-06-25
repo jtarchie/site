@@ -59,9 +59,14 @@ As an exercise, I wanted to build my own document. It will be changing document.
     collaborate. I've worked with product managers and designers in live
     collaboration
 
-- Feedback:
-  - constructive and actionable
-- Life balance:
-  - set boundaries
+- Feedback: Discuss how to receive and give feedback in the workplace.
+  - When providing feedback, I appreciate an approach communicating the intended
+    goal and offering actionable suggestions. If you find it challenging to
+    approach me directly, please feel free to share your feedback with my
+    manager
+
+- Life balance: Introduce the boundaries to ensure work is a means to live.
+  - There will be no work-related applications on my smartphone.
+  - My work hours will be defined so that I am accessible for communication.
 - Conflict Resolution:
   - positive and respectful
