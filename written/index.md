@@ -24,7 +24,7 @@ Sometimes I write things. These are the latest posts from blog.
 
 <!-- deno-fmt-ignore-end -->
 
-Read the [all the entries](/posts).
+Read [all the entries](/posts).
 
 ## Work
 
