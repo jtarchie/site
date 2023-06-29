@@ -8,6 +8,9 @@ are prioritized: must-haves, negotiable, and bonus features.
 - An opportunity to shape and evolve the workplace culture is essential. Eager
   to overcome the barriers of "status quo" thinking and drive change that
   enhances organizational efficiency and work-life quality.
+- Have an effective manager that has duties with active peer feedback, career
+  progression, understanding of my day to day, and consistent one-on-ones. This
+  will ensure that the relationship will be beneficial both ways.
 - Accessibility and openness of communication with team members and colleagues
   across the organization. Expecting the opportunity to engage in one-on-one
   meetings, ensuring that scheduling such meetings will typically take place
