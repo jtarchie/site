@@ -39,3 +39,9 @@ are prioritized: must-haves, negotiable, and bonus features.
   - Transparency in team structures, roles, and projects is necessary. Clear
     information about team memberships, individual responsibilities, and
     collaborative interactions should be readily available.
+  - Understanding the entirety of the company and cultivating meaningful
+    relationships holds significant value. However, it is equally crucial to
+    sustain these connections over time. Constantly having to reestablish
+    relationships every quarter due to reaching
+    [Dunbar's number](https://en.wikipedia.org/wiki/Dunbar%27s_number) can be an
+    arduous task.
