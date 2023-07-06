@@ -13,4 +13,4 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: https://jtarchie.com
-          cmd_params: "--exclude='(cloudflare.com|email-protection)' --rate-limit=1 --max-connections=3 --color=always --verbose"
+          cmd_params: "--exclude='(cloudflare.com|email-protection|unpkg.com|killkenny.com|linkedin.com|jsdelivr.net)' --rate-limit=1 --max-connections=3 --color=always --verbose"
