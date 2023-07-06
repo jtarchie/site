@@ -12,5 +12,5 @@ jobs:
       - name: Check
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
-          url: https://www.jtarchie.com
+          url: https://jtarchie.com
           cmd_params: "--rate-limit=1 --max-connections=3 --color=always --verbose"
