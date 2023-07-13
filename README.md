@@ -27,4 +27,5 @@ git commit -m 'helpful message'
 git push
 ```
 
-The deployment of the pages is done via Github Actions.
+The deployment of the pages is done via Github Actions, using Cloudflare Pages
+for the static site hosting.
