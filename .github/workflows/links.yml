@@ -13,4 +13,4 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: https://jtarchie.com
-          cmd_params: '--exclude="email-protection" --include="(jtarchie.com|github.com)" --rate-limit=1 --max-connections=3 --color=always --verbose https://jtarchie.com'
+          cmd_params: '--exclude="email-protection" --include="(jtarchie.com|github.com)" --rate-limit=1 --max-connections=3 --color=always --verbose'
