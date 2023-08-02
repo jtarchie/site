@@ -20,13 +20,14 @@ of accomplishment and immediate impact on the environment and people's
 experience in the park.
 
 Becoming a park ranger is more complex than jumping into the role; it typically
-requires working up from an entry-level position. I have listened to a podcast
-by two former park rangers who emphasized the importance of starting from the
-bottom and working one's way up. Opportunities for park ranger positions are not
-consistently advertised, and searching for openings is challenging. To increase
-my chances, I plan to build relationships with current state and federal park
-rangers, learn about their experiences, and arrange a ride-along to get a
-firsthand understanding of the job.
+requires working up from an entry-level position. I have listened to a
+[podcast by two former park rangers](https://podcasts.apple.com/us/podcast/park-leaders-show/id862910933)
+who emphasized the importance of starting from the bottom and working one's way
+up. Opportunities for park ranger positions are not consistently advertised, and
+searching for openings is challenging. To increase my chances, I plan to build
+relationships with current state and federal park rangers, learn about their
+experiences, and arrange a ride-along to get a firsthand understanding of the
+job.
 
 During a conversation with a recently appointed park ranger, I gained valuable
 insights into the law enforcement aspect of their job. The ranger mentioned that
