@@ -1,12 +1,18 @@
 # Interview Questions
 
+- Have you ever had to navigate a situation where you disagreed with a colleague
+  or team member on a technical decision or project direction? How did you
+  handle the conflict, and what was the outcome?
+
+  N/A
+
+- Technology evolves rapidly. How do you stay up-to-date with industry trends
+  and new technologies, and how have you applied this knowledge to improve your
+  work or team's processes?
+
+  N/A
+
 - What is the most technically challenging?
-
-- Reflect on a mistake or failure in your career. What did you learn from it,
-  and how did you use that experience to improve your skills and decision-making
-  in subsequent projects?
-
-  Cleaned-up Transcript:
 
   During interviews, I'm often asked about the most technically challenging
   problem I've tackled. Instead of viewing these challenges as singular large
@@ -15,7 +21,7 @@
   measuring, evaluating, and iterating – a methodology I believe I've
   internalized from agile practices.
 
-  For instance, while working at Realtor.com, I observed numerous 500 errors
+  For instance, while working at Reelectric.com, I observed numerous 500 errors
   in an inherited application. These errors adversely affected users, often
   preventing them from logging in or completing specific actions. Built on AWS,
   I was confident that the platform provided metrics to understand the issue
@@ -49,6 +55,10 @@
   monthly savings of around $10,000. This challenge was not just about fixing an
   error, but also about understanding the system holistically and finding
   cost-saving efficiencies in the process.
+
+- Reflect on a mistake or failure in your career. What did you learn from it,
+  and how did you use that experience to improve your skills and decision-making
+  in subsequent projects?
 
   One of the most challenging aspects of my career has been effective
   communication. A common stereotype associated with individuals like myself is
