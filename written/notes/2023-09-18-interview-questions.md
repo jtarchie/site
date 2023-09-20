@@ -1,16 +1,79 @@
 # Interview Questions
 
+## Introduction
+
+- Software Engineering 17+ years
+- Generalist
+- Different domains, approach is technology isn't the challenging part, its
+  translating the business domain to solveable problems, that use technology
+
+## Behavioral Questions
+
+- You took someone's engineering vision and brought it to life?
 - Have you ever had to navigate a situation where you disagreed with a colleague
   or team member on a technical decision or project direction? How did you
   handle the conflict, and what was the outcome?
 
-  N/A
+  Thank you for the question. I recall a project where my team and I built an
+  ETL tool for a client with two decades of unstructured data. Our goal was to
+  structure this data for clarity and consistency. Using Rails and Active Admin,
+  we quickly set up a relational database solution that worked smoothly. It
+  allowed the client's data specialist to efficiently categorize records, like
+  distinguishing between wedding gowns and bridesmaid dresses.
 
+  However, a challenge arose when one of their lead engineers recommended
+  transitioning to MongoDB, believing it would handle the data load better.
+  However, we needed metrics suggesting this was necessary. We advised against
+  this switch, understanding the strengths of relational databases for our data
+  structuring.
+
+  Regrettably, the decision was made to switch. Over the next three weeks, we
+  restructured the backend for MongoDB. This led to complications as we lost
+  many previous functionalities with the Rails tools. Even the end user found
+  the new system more tedious, and some of the database queries timed out due to
+  the nature of MongoDB's document-based structure.
+
+  To resolve the issues, the client brought in consultants from Atlas, a company
+  specializing in MongoDB. These consultants confirmed that while our
+  implementation of MongoDB was correct, there needed to be a better tool for
+  our objectives.
+
+  This experience taught me a valuable lesson: sometimes, even when you provide
+  a clear rationale against a decision, it may still be overridden for various
+  reasons. The key is adapting, persevering, and prioritizing the product's
+  functionality over personal or collective preferences. Ultimately, we must
+  engineer for the product's best outcome.
 - Technology evolves rapidly. How do you stay up-to-date with industry trends
   and new technologies, and how have you applied this knowledge to improve your
   work or team's processes?
 
-  N/A
+  Staying updated with the ever-evolving technology landscape is imperative. To
+  do so, I've often approached learning new technologies with a unique method:
+  reverse engineering. Let me share an example to illustrate.
+
+  I have always been drawn to understanding the core of technologies. So, when I
+  wanted to learn Lua, instead of starting with conventional tutorials, I took a
+  project I was familiar with, underscore.js. I aimed to reimplement its
+  functions in Lua. I began by examining a function in underscore.js, looked at
+  its test cases, and then tried translating them to Lua and implementing the
+  function. While this approach doesn't necessarily explain the rationale behind
+  the original developer's choices, it lets me grasp the "shape" or the core
+  structure of the technology. This deep dive helps me discern if issues arise
+  due to genuine bugs or misuse on my part.
+
+  Diving into the code, breaking it apart, and trying to piece it together in a
+  different environment provides profound insights. While I focus predominantly
+  on code, the same principle applies across various domains, databases, or AI
+  tools. Tutorials might offer a glimpse of a tool's potential, but to truly
+  understand its depth, breaking it apart and exploring its foundations is the
+  way to go.
+
+  Moreover, I always encourage my team to adopt a similar hands-on approach.
+  When a teammate grapples with a technological challenge, I often suggest
+  pairing up. But instead of directing, I prompt them with questions, allowing
+  them to navigate and understand the tool themselves. It's a method of guiding
+  without imposing, allowing them to develop an intuitive understanding, which
+  I've found far more effective than spoon-feeding solutions.
 
 - What is the most technically challenging?
 
@@ -21,8 +84,8 @@
   measuring, evaluating, and iterating – a methodology I believe I've
   internalized from agile practices.
 
-  For instance, while working at Reelectric.com, I observed numerous 500 errors
-  in an inherited application. These errors adversely affected users, often
+  For instance, while working at Realtor.com, I observed numerous 500 errors in
+  an inherited application. These errors adversely affected users, often
   preventing them from logging in or completing specific actions. Built on AWS,
   I was confident that the platform provided metrics to understand the issue
   better.
