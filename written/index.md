@@ -35,6 +35,7 @@ Learn about the following:
 
 - [How I Work](/career/how-i-work.html)
 - [Job Requirement](/career/job-criteria.html)
+- [Interview Questions](/career/interview-questions.html)
 
 ## Projects
 
