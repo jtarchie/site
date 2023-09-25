@@ -153,7 +153,14 @@ communication, and collaboration can be as important as technology.
 
 ## Education
 
-- University of Miami with Bachelor and Master of Science in Computer
+- University of Miami with Bachelors and Master of Science in Computer
   Engineering, 2001-2006
+
+## Patents
+
+- [US20220222096A1 Container certificate injection](https://patents.google.com/patent/US20220222096A1/en)
+- [US11263297B2 Dynamic insertion of variablized secrets in a pipeline integration system](https://patents.google.com/patent/US11263297B2/en)
+- [US10235527B1 Vulnerability notification for live applications](https://patents.google.com/patent/US10235527B1/en)
+- [US10229251B1 Library scan for live applications](https://patents.google.com/patent/US10229251B1/en)
 
 <link rel="stylesheet" type="text/css" media="all" href="print.css" />
