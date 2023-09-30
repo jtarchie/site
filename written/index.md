@@ -28,14 +28,19 @@ Read [all the entries](/posts).
 
 ## Work
 
-I love working with people to build better teams and products. The next goal is
+I love working with people to build better teams and products. One day I'd love
 to have a bespoke software shop.
 
 Learn about the following:
 
-- [How I Work](/career/how-i-work.html)
-- [Job Requirement](/career/job-criteria.html)
-- [Interview Questions](/career/interview-questions.html)
+- [How I Work](/career/how-i-work.html) - This documents (continues to be
+  updated) about how I been effective at working. The is a great exercise to
+  reflect on your career and work.
+- [Job Requirement](/career/job-criteria.html) - If I was looking for the
+  perfect job description, what would it contain for me?
+- [Interview Questions](/career/interview-questions.html) - While interviewing,
+  I've found common questions come up. This catalogs my answers for reference
+  for me and the interviewer.
 
 ## Projects
 
