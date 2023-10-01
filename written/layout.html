@@ -7,29 +7,26 @@
     <meta name="description"
         content="{{if .Doc.Description}}{{.Doc.Description}}{{else}}The personal website of JT Archie. Includes a blog, work ethic, and projects they have worked on.{{end}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2.0.0-alpha1/css/pico.classless.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2.0.0-alpha1/css/pico.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pygments-rouge-css@0.1.0/github.css"
         integrity="sha256-+YP5+2/U/W/Ftf4q+/r0dlCXvZeQaY84PqgCyHsvyLg=" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/main.css">
     <title>{{.Doc.Title}}</title>
-    <style>
-        nav {
-            padding-left: var(--pico-spacing);
-            padding-right: var(--pico-spacing);
-        }
-    </style>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="/"><span>JT Archie</span></a></li>
-        </ul>
-        <ul>
-            <li><a href="/posts" class="pseudo button">Blog</a></li>
-            <li><a href="https://github.com/jtarchie" target="_blank" class="pseudo button">Github</a></li>
-        </ul>
-    </nav>
-    <main class="content">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/"><span>JT Archie</span></a></li>
+            </ul>
+            <ul>
+                <li><a href="/posts" class="pseudo button">Blog</a></li>
+                <li><a href="https://github.com/jtarchie" target="_blank" class="pseudo button">Github</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main class="container">
         {{.RenderedPage}}
     </main>
     <footer class="container">

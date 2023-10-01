@@ -1,0 +1,18 @@
+@media (min-width: 1024px) {
+  :is(h1, h2, h3, h4, h5, h6) > a.anchor {
+    padding-right: calc(var(--pico-spacing) * .5);
+  }
+}
+
+:is(h1, h2, h3, h4, h5, h6) > a.anchor {
+  font-weight: 400;
+  text-decoration: none;
+  transition: color var(--pico-transition) opacity var(--pico-transition);
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover > a.anchor:hover {
+  opacity: .5;
+}
+:is(h1, h2, h3, h4, h5, h6):hover > a.anchor {
+  opacity: .25;
+}
