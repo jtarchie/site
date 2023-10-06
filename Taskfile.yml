@@ -4,4 +4,10 @@ tasks:
   default:
     cmds:
     - deno fmt ./
-    - builder --source-path ./written --build-path docs/ --serve
+    - builder \
+      --source-path ./written \
+      --build-path docs/ \
+      --base-url https://jtarchie.com \
+      --serve
+
+      
