@@ -38,31 +38,24 @@ communication, and collaboration can be as important as technology.
 ### [Move, Inc.](https://www.move.com) Senior Staff Engineer Denver, CO Sep. 2021 - Apr. 2023
 
 - _Technologies_: Ruby on Rails, Typescript, NextJS, NestJS, Neptune, GraphQL,
-  React, MongoDB, ECS
-- Supervised a group of 8+ engineers in the creation and execution of user
-  journey enhancements throughout the Realtor suite of websites, employing
-  advanced NestJS, GraphQL, AWS Neptune Graph, and Typescript technologies to
-  enhance multi-site user experience.
-- Coordinated with stakeholders such as Front-End Development and Mobile (iOS &
-  Android) teams and the Director of Engineering for Personalization Enablement
-  to develop and implement quarterly project objectives, prioritize
-  functionalities, set technical standards, and guarantee seamless integration
-  across Realtor websites.
-- Pioneering a practical testing framework, I ensured the optimal utilization of
-  AWS Lambda at Edge, enabling faster developer feedback loops by allowing local
-  emulation.
-- Successfully leading the scaling of a critical application, I implemented
-  advanced load balancing strategies, resulting in its capability to handle over
-  150,000 requests per minute. This initiative reduced infrastructure expenses
-  by 10% and significantly decreased the failure rate by 45%.
-- Identified and achieved the strategic termination of outdated applications and
-  coordinated with internal teams, saving the company $600k annually on
-  infrastructure costs.
-- Comprehensively assessing and defining technical requirements, I strategically
-  analyzed the legacy user login experience application with a build versus buy
-  decision. Leveraging metrics such as cost and time to release, I effectively
-  presented the information in a consumable manner to leadership, enabling
-  informed decision-making to purchase externally.
+  React, MongoDB, ECSa
+- Lead team of 8+ engineers in the greenfield execution of user tracking across
+  the suite of Move, Inc. application. Using Fingerprinting technology (helped
+  procure contract) as universal identifier.
+- Coordinated stakeholders, Front-End Development and Mobile (iOS & Android)
+  teams, and the Director of Engineering to develop and implement quarterly
+  project objectives, prioritize functionalities, set technical standards, and
+  guarantee seamless integration across Realtor websites.
+- Pioneered an in-house testing framework, for optimal utilization of AWS Lambda
+  at Edge, enabling faster developer feedback loops.
+- Scaled critical authentication application resulting in its stable capability
+  to handle over 150,000 requests per minute. This initiative reduced
+  infrastructure expenses by 10% and significantly decreased the failure rate by
+  45%. Supporting over 100+ million users.
+- Scheduled the retirement of legacy application across the organization.
+  Resulting in $600k+ of saving infrastructure cost.
+- Planned and schedule migration from in-house authentication system to well
+  vetted Auth0. Emphasizing the need to build or buy, while presenting.
 - Proactively mentoring team members with one-on-one sessions, I facilitated
   their career progression, resulting in four individuals attaining
   well-deserved promotions within a year of our collaboration.
