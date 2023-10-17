@@ -1,31 +1,37 @@
-# Introduction
+# Personal Blog
 
-This is the personal website of me (JT). Like many websites, this has been a
-work in progress, I just never added the "Under Construction" gif (like JIF).
+Hello there! This is JT's digital corner. While this blog has been continuously
+evolving, I never hopped onto the "Under Construction" gif bandwagon. Every
+piece of content you see here is my own expression.
 
-The writing on this site our my own. Please visit https://jtarchie.com for the
-most up to date content. This `README.md` will be pretty sparse.
+🔗 **For the latest articles and updates, head over to
+[jtarchie.com](https://jtarchie.com).**
 
-## Usage
+## Getting Started
 
-This site uses my personal site tool called
+If you're curious about the tech behind the scenes, this site leverages a
+personal site tool I developed named
 [builder](https://github.com/jtarchie.builder).
 
-The following instructions were built for Mac OS.
+### Local Setup (Mac OS)
+
+To set things up locally or contribute:
 
 ```bash
-brew bundle
-# make changes in posts
-task # view at http://localhost:8080
+brew bundle            # Install required packages
+# Make your changes in posts
+task                    # Preview them at http://localhost:8080
 ```
 
-When I am satisfied with the changes:
+Once you're happy with the changes:
 
 ```bash
 git add -A
-git commit -m 'helpful message'
+git commit -m 'your helpful message here'
 git push
 ```
 
-The deployment of the pages is done via Github Actions, using Cloudflare Pages
-for the static site hosting.
+### Deployment
+
+The magic of deploying this site is orchestrated using Github Actions.
+Cloudflare Pages serves as our trusted platform for static site hosting.
