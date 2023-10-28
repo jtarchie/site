@@ -12,7 +12,11 @@ jobs:
     name: Publish to Cloudflare Pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      
+        # Fix timestamps
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
 
       - name: Install builder
         uses: jaxxstorm/action-install-gh-release@v1.10.0
