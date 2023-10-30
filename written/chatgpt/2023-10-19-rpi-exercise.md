@@ -6,18 +6,25 @@ source: https://chat.openai.com/c/a8fc4a42-0581-4b58-a85b-5697cc27c368
 # Java Code Writing
 
 #### You:
-Let's write a program in Java. I'm going to introduce code via psuedo-code tests, then please write the necessary, but minimal code to make those tests pass. Alright?
+
+Let's write a program in Java. I'm going to introduce code via psuedo-code
+tests, then please write the necessary, but minimal code to make those tests
+pass. Alright?
 
 #### ChatGPT:
-Absolutely! Please provide the pseudocode tests, and I'll help you write the Java code to make them pass.
 
+Absolutely! Please provide the pseudocode tests, and I'll help you write the
+Java code to make them pass.
 
 #### You:
-Set set = new Set();
-assert(set.isEmpty(), true)
+
+Set set = new Set(); assert(set.isEmpty(), true)
 
 #### ChatGPT:
-Alright, based on the pseudocode test you've provided, you want to create a `Set` class that has a method `isEmpty()` which returns `true` when the set is empty.
+
+Alright, based on the pseudocode test you've provided, you want to create a
+`Set` class that has a method `isEmpty()` which returns `true` when the set is
+empty.
 
 Here's the minimal Java code to make that test pass:
 
@@ -40,18 +47,20 @@ public class TestSet {
 }
 ```
 
-You can run the `TestSet` class to see if the test passes. If there's no assertion error, it means the test passed successfully.
-
+You can run the `TestSet` class to see if the test passes. If there's no
+assertion error, it means the test passed successfully.
 
 #### You:
+
 Great, next test.
 
-Set set = new Set();
-set.add(1);
-assert(set.isEmpty(), false)
+Set set = new Set(); set.add(1); assert(set.isEmpty(), false)
 
 #### ChatGPT:
-Alright, now you want to add an `add` method to the `Set` class that allows you to add an integer to the set. After adding an integer, the set should no longer be empty.
+
+Alright, now you want to add an `add` method to the `Set` class that allows you
+to add an integer to the set. After adding an integer, the set should no longer
+be empty.
 
 Here's the updated Java code to make that test pass:
 
@@ -87,14 +96,19 @@ public class TestSet {
 }
 ```
 
-Both tests are included in the `TestSet` class. Running it should pass both tests.
-
+Both tests are included in the `TestSet` class. Running it should pass both
+tests.
 
 #### You:
-That is incorrect. I said do the simplest things possible. So far we don't need to use any complex data structures like HashSet. What is a simpler way of making the tests pass so far?
+
+That is incorrect. I said do the simplest things possible. So far we don't need
+to use any complex data structures like HashSet. What is a simpler way of making
+the tests pass so far?
 
 #### ChatGPT:
-I apologize for the oversight. You're right; based on the tests provided so far, we can use a simpler approach.
+
+I apologize for the oversight. You're right; based on the tests provided so far,
+we can use a simpler approach.
 
 Here's a more minimalistic version:
 
@@ -128,17 +142,21 @@ public class TestSet {
 }
 ```
 
-This version uses a simple boolean flag to track if an element has been added to the set.
-
+This version uses a simple boolean flag to track if an element has been added to
+the set.
 
 #### You:
-That's great. Lets work on a new test for a new function. We are going see if we can find the length of the set. So reusing the tests from above.
 
-Set set = new Set();
-assert(set.length(), 0)
+That's great. Lets work on a new test for a new function. We are going see if we
+can find the length of the set. So reusing the tests from above.
+
+Set set = new Set(); assert(set.length(), 0)
 
 #### ChatGPT:
-Alright, you want to add a `length` method to the `Set` class that returns the number of elements in the set. Given the tests so far, we can use an integer to keep track of the count of elements.
+
+Alright, you want to add a `length` method to the `Set` class that returns the
+number of elements in the set. Given the tests so far, we can use an integer to
+keep track of the count of elements.
 
 Here's the updated Java code to make the new test pass:
 
@@ -186,14 +204,18 @@ public class TestSet {
 
 The `length` method now returns the count of elements in the set.
 
-
 #### You:
-What's another test we could write to ensure we are testing length for other conditions?
+
+What's another test we could write to ensure we are testing length for other
+conditions?
 
 #### ChatGPT:
-To ensure the `length` method works correctly for various conditions, we can test the following scenarios:
 
-1. **Adding multiple unique elements**: This will test if the length increases appropriately when new unique elements are added.
+To ensure the `length` method works correctly for various conditions, we can
+test the following scenarios:
+
+1. **Adding multiple unique elements**: This will test if the length increases
+   appropriately when new unique elements are added.
 
    ```java
    Set set = new Set();
@@ -202,7 +224,8 @@ To ensure the `length` method works correctly for various conditions, we can tes
    assert(set.length() == 2) : "Set should have a length of 2 after adding two unique elements";
    ```
 
-2. **Adding duplicate elements**: This will test if the length remains unchanged when a duplicate element is added.
+2. **Adding duplicate elements**: This will test if the length remains unchanged
+   when a duplicate element is added.
 
    ```java
    Set set = new Set();
@@ -211,7 +234,8 @@ To ensure the `length` method works correctly for various conditions, we can tes
    assert(set.length() == 1) : "Set should have a length of 1 after adding a duplicate element";
    ```
 
-3. **Removing an element**: If we introduce a `remove` method later, we can test if the length decreases appropriately.
+3. **Removing an element**: If we introduce a `remove` method later, we can test
+   if the length decreases appropriately.
 
    ```java
    Set set = new Set();
@@ -221,7 +245,8 @@ To ensure the `length` method works correctly for various conditions, we can tes
    assert(set.length() == 1) : "Set should have a length of 1 after removing an element";
    ```
 
-4. **Clearing the set**: If we introduce a `clear` method later, we can test if the length becomes zero after clearing the set.
+4. **Clearing the set**: If we introduce a `clear` method later, we can test if
+   the length becomes zero after clearing the set.
 
    ```java
    Set set = new Set();
@@ -231,14 +256,18 @@ To ensure the `length` method works correctly for various conditions, we can tes
    assert(set.length() == 0) : "Set should have a length of 0 after clearing";
    ```
 
-These tests will help ensure that the `length` method behaves correctly across various scenarios.
-
+These tests will help ensure that the `length` method behaves correctly across
+various scenarios.
 
 #### You:
+
 Alright using the first test, how can we implement in you Set class so far?
 
 #### ChatGPT:
-To implement the first test, we need to modify the `Set` class to handle multiple unique elements. We can use a simple list to store the elements and ensure that duplicates are not added.
+
+To implement the first test, we need to modify the `Set` class to handle
+multiple unique elements. We can use a simple list to store the elements and
+ensure that duplicates are not added.
 
 Here's the updated `Set` class and the test:
 
@@ -290,16 +319,20 @@ public class TestSet {
 }
 ```
 
-The `add` method now checks if the element is already in the set before adding it. The `length` method returns the size of the `elements` list.
-
+The `add` method now checks if the element is already in the set before adding
+it. The `length` method returns the size of the `elements` list.
 
 #### You:
-This is using a data structure ArrayList which we don't have available. What is the simplest thing we can do?
+
+This is using a data structure ArrayList which we don't have available. What is
+the simplest thing we can do?
 
 #### ChatGPT:
+
 I apologize for the oversight. Let's simplify further.
 
-Given the constraints, we can use an array to store the elements. We'll also need to manually check for duplicates and resize the array when necessary.
+Given the constraints, we can use an array to store the elements. We'll also
+need to manually check for duplicates and resize the array when necessary.
 
 Here's a simple implementation using an array:
 
@@ -368,14 +401,19 @@ public class TestSet {
 }
 ```
 
-This implementation uses a dynamic array approach. The `resize` method doubles the array size when it's full.
-
+This implementation uses a dynamic array approach. The `resize` method doubles
+the array size when it's full.
 
 #### You:
-We haven't written test coverage for a contains function yet. Can you just write an implementation that covers the two functions we have test coverage for at the moment, isEmpty and length?
+
+We haven't written test coverage for a contains function yet. Can you just write
+an implementation that covers the two functions we have test coverage for at the
+moment, isEmpty and length?
 
 #### ChatGPT:
-Certainly! I'll simplify the implementation to cover just the `isEmpty` and `length` functions based on the tests provided.
+
+Certainly! I'll simplify the implementation to cover just the `isEmpty` and
+`length` functions based on the tests provided.
 
 Here's a basic implementation using a simple array and a counter:
 
@@ -435,14 +473,19 @@ public class TestSet {
 }
 ```
 
-This implementation uses a simple array and a counter (`size`) to track the number of elements in the set. The `add` method checks for duplicates and only adds unique elements.
-
+This implementation uses a simple array and a counter (`size`) to track the
+number of elements in the set. The `add` method checks for duplicates and only
+adds unique elements.
 
 #### You:
+
 Do we need to keep track of elements yet? This could be simpler.
 
 #### ChatGPT:
-You're right. Based on the tests provided so far, we only need to track the number of elements added, not the actual elements themselves. Let's simplify further:
+
+You're right. Based on the tests provided so far, we only need to track the
+number of elements added, not the actual elements themselves. Let's simplify
+further:
 
 ```java
 public class Set {
@@ -488,21 +531,21 @@ public class TestSet {
 }
 ```
 
-This is the simplest implementation based on the tests provided. The `add` method just increments the size, and we don't track the actual elements.
-
+This is the simplest implementation based on the tests provided. The `add`
+method just increments the size, and we don't track the actual elements.
 
 #### You:
+
 That was a great refactor! Let's write our next test for contains,
 
-Set set = new Set()
-assert(set.contains("A"), false)
+Set set = new Set() assert(set.contains("A"), false)
 
-set.add("B")
-assert(set.contains("B"), true)
-assert(set.contains("A"), false)
+set.add("B") assert(set.contains("B"), true) assert(set.contains("A"), false)
 
 #### ChatGPT:
-Great! Now, we're introducing the `contains` method and changing the type of elements in the set to `String` instead of `int`.
+
+Great! Now, we're introducing the `contains` method and changing the type of
+elements in the set to `String` instead of `int`.
 
 Here's the updated `Set` class and the new test:
 
@@ -573,4 +616,6 @@ public class TestSet {
 }
 ```
 
-The `contains` method checks if a given string value is present in the set. The `add` method has been updated to handle strings and ensure no duplicates are added.
+The `contains` method checks if a given string value is present in the set. The
+`add` method has been updated to handle strings and ensure no duplicates are
+added.
