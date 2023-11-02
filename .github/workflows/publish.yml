@@ -30,7 +30,8 @@ jobs:
           builder \
             --source-path ./written/ \
             --build-path ./docs/ \
-            --base-url https://jtarchie.com
+            --base-url https://jtarchie.com \
+            --feed-glob 'posts/**/*.md'
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
