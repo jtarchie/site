@@ -34,7 +34,7 @@ As an exercise, I wanted to build my own document. It will be changing document.
   Tools help facilitate and complement a process that has been standardized. If
   you cannot do your process without your tool, it is not filling the need
   properly.
-  - When being remote, one-on-one's hands ogg keyboard. Let's talk to each
+  - When being remote, one-on-one's mean hands off keyboard. Let's talk to each
     other, not get distracted by slack.
 
 - Time management: Outline your methods for prioritizing tasks, staying
