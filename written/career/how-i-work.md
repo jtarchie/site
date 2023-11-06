@@ -54,7 +54,7 @@ As an exercise, I wanted to build my own document. It will be changing document.
 
 - Collaboration: Describe your approach to working with others, including your
   strengths and any challenges you have faced in the past.
-  - Prefer one-on-one over throwing over the wall. This doesn't not mean just
+  - Prefer one-on-one over throwing over the wall. This does not mean just
     engineer to engineer. Different disciplines can approach each other to
     collaborate. I've worked with product managers and designers in live
     collaboration
