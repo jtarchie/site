@@ -93,9 +93,6 @@ function reducer(state, action) {
 And here is the 'after' example where Tailwind's pseudo-classes are used:
 
 ```jsx
-import PropTypes from "prop-types";
-import React from "react";
-
 export const Button = ({ className, text, handler }) => {
   return (
     <button
@@ -229,8 +226,6 @@ rules:
 Here's how the refactored component would look after applying these rules:
 
 ```jsx
-import PropTypes from "prop-types";
-import React from "react";
 import { Property1IcListing } from "../../icons/Property1IcListing";
 
 export const ButtonIcon = ({
@@ -246,10 +241,6 @@ export const ButtonIcon = ({
       {icon}
     </div>
   );
-};
-
-ButtonIcon.propTypes = {
-  // Update or remove PropTypes as necessary since 'property1' state is no longer used.
 };
 ```
 
