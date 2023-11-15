@@ -163,6 +163,8 @@ public Internet.
 
 We did it! We've deployed our application.
 
+> Note: To clean it all up `copilot app delete`.
+
 ### Additional Resources
 
 - [Deploy Django App](https://www.endpointdev.com/blog/2022/06/how-to-deploy-django-app-with-aurora-serverless-and-copilot/):
