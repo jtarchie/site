@@ -51,7 +51,7 @@ copilot storage init \
   -w web \
   -l environment \
   --engine PostgreSQL \
-  --initial-db database
+  --initial-db railsapp
 ```
 
 When setting up the database, the credentials need to be passed to the the
@@ -161,6 +161,9 @@ config.force_ssl = false
 Deploying the application:
 
 ```bash
+# deploy the database
+copilot env deploy -n dev
+
 # deploy the application
 copilot deploy
 
