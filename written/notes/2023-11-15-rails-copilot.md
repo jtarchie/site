@@ -1,48 +1,53 @@
-# Deploying Rails with AWS Copilot
+# Deploying a Rails Application with AWS Copilot
 
-The following is what I captured to deploy a Rails application using AWS
-[`copilot`](https://aws.github.io/copilot-cli). It is AWS CLI to provide a
-_heroku_-like experience in the AWS ecosystem.
+This post outlines deploying a Rails application using AWS Copilot, a CLI tool
+designed to provide a Heroku-like experience within the AWS ecosystem. Before
+proceeding, it's recommended to familiarize yourself with the basics by
+following the
+["Deploy your first application"](https://aws.github.io/copilot-cli/docs/getting-started/first-app-tutorial/)
+guide in the Copilot documentation.
 
-The project I started with [Jumpstart Rails](https://jumpstartrails.com/) for
-the project. These commands and edits apply to the configuration and
-expectations of that project template, but could _probably_ be applied to other
-Rails applications.
+I used the [Jumpstart Rails](https://jumpstartrails.com/) project template for
+this deployment. The steps and configurations discussed here are specific to
+this template but might be adaptable to other Rails applications.
 
-> Note: Every `copilot` invocation is doing Cloudformation in the background. If
-> you ever need to debug looking at the Stacks in Cloudformation console can be
-> very helpful.
+**Important Notes:**
 
-> Note: Every `copilot` invocation can take awhile.
+- Each `copilot` command executes CloudFormation operations in the background.
+  Inspecting the CloudFormation Stacks in the AWS console can be insightful if
+  you encounter issues.
+- `copilot` commands can be time-consuming.
+
+### Setting Up the Application
+
+First, log into the AWS account and set up the application and environment using
+the following commands:
 
 ```bash
-# log into the account that will manage the deployment
-# for my deployment, I used SSO
+# Log into the AWS account (using SSO for this deployment)
 aws configure sso
 
-# lets initialized the repository to be an app
-# and have an environment
-# this creates artifacts in `copilot/web/`
+# Initialize the application repository
 copilot init \
   -a rails-app \
   -t "Load Balanced Web Service" \
   -n web \
   -d ./Dockerfile.production
 
-# create a test/dev environment
-# this create artifacts in `copilot/environments`
+# Create a test/development environment
 copilot env init \
   --name dev \
   --app rails-app \
   --default-config
 ```
 
-This does not deploy the application. It is just setting up configuration and
-pluming within the repository. It should all be under `copilot/` directory.
+This step does not deploy the application but sets up the necessary
+configuration within your repository's `copilot/` directory.
 
-We have to allocate the database as a
-[`storage`](https://aws.github.io/copilot-cli/docs/commands/storage-init/) unit.
-The following command was used:
+### Database Configuration
+
+Next, allocate the database as a
+[`storage`](https://aws.github.io/copilot-cli/docs/commands/storage-init/) unit:
 
 ```bash
 copilot storage init \
@@ -54,9 +59,8 @@ copilot storage init \
   --initial-db railsapp
 ```
 
-When setting up the database, the credentials need to be passed to the the
-application. The preferred method is to use the Copilot service for reading the
-credentials. We need to add the service `manifest.yml` the following:
+For the application to access database credentials, modify the `manifest.yml`
+file as follows:
 
 ```yaml
 network:
@@ -68,54 +72,37 @@ secrets:
     from_cfn: ${COPILOT_APPLICATION_NAME}-${COPILOT_ENVIRONMENT_NAME}-webdbAuroraSecret
 ```
 
-This value is `DATABASE_JSON`, not the common `DATABASE_URL` that Rails
-reference. As far as I can tell, AWS doesn't provide that URL format, so we have
-to handle this. In our `database.yml`, we have to read that environment
-variables:
+### Application Configuration
+
+AWS provides `DATABASE_JSON` instead of the typical `DATABASE_URL`. Adjust the
+`database.yml` to parse these credentials:
 
 ```yaml
 production:
   <<: *default
-  <% if ENV['DATABASE_JSON'] != nil %>
-  <%   begin %>
-  <%     require 'json' %>
-  <%     db_config = JSON.parse(ENV['DATABASE_JSON']) %>
-  <%     username = db_config['username'] %>
-  <%     password = db_config['password'] %>
-  <%     host = db_config['host'] %>
-  <%     port = db_config['port'] %>
-  <%     database = db_config['dbname'] %>
-  username: <%= username %>
-  password: <%= password %>
-  host: <%= host %>
-  port: <%= port %>
-  database: <%= database %>
-  <%   rescue JSON::ParserError %>
+  # Parse DATABASE_JSON if available
+  <% if ENV['DATABASE_JSON'] %>
+  <%   require 'json' %>
+  <%   db_config = JSON.parse(ENV['DATABASE_JSON']) %>
+  username: <%= db_config['username'] %>
+  password: <%= db_config['password'] %>
+  host: <%= db_config['host'] %>
+  port: <%= db_config['port'] %>
+  database: <%= db_config['dbname'] %>
+  <% else %>
   url: <%= ENV['DATABASE_URL'] %>
-  <%   end %>
   <% end %>
 ```
 
-We need to configure that, which `Dockerfile` to use:
-
-```yaml
-image:
-  build: Dockerfile.production
-  port: 3000
-```
-
-There are changes that need to be made to the `Dockerfile.production` so that it
-can run. These changes are related to precompile assets and starting the rails
-server:
+In your `Dockerfile.production`, include instructions for precompiling assets
+and starting the Rails server:
 
 ```docker
 RUN SECRET_KEY_BASE=dummy-staging-key bin/rails assets:precompile
-
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]
 ```
 
-We need to configure environment variables to the application to be able to
-initialized:
+Set environment variables for production in your `manifest.yml`:
 
 ```yaml
 variables:
@@ -123,23 +110,18 @@ variables:
   SECRET_KEY_BASE: <value from `rails secret`>
 ```
 
-We configuring our application as
-["Load Balanced Web Service"](https://aws.github.io/copilot-cli/docs/manifest/lb-web-service/),
-so that we can execute commands in the container. This allows us to load up
-rails console, migrate the database, etc. If we use another one of the services,
-we lose that ability, so this is the compromise.
+### Service Configuration
 
-> Note: Originally, the service "Request-Driven Web Service" was used, but it
-> didn't allow execution of commands.
-
-Please enable the execution option in the `manifest.yml`:
+Configure the application as a
+["Load Balanced Web Service"](https://aws.github.io/copilot-cli/docs/manifest/lb-web-service/)
+to enable command execution in the container, essential for tasks like database
+migration.
 
 ```yaml
 exec: true
 ```
 
-Let's setup our routing from the load balancer to the application. We can add a
-healthcheck, too. This is in the same `manifest.yml` referenced:
+Define routing and health check settings:
 
 ```yaml
 http:
@@ -147,43 +129,41 @@ http:
   healthcheck: '/up'
 ```
 
-Since we are using this service, it does not provide SSL support by default.
-That requires extra configuration. At the moment, these instructions just
-support the non-SSL deployment.
-
-Because of the above, we have to set SSL enforcement off in
+Since SSL support isn't provided by default, turn off SSL enforcement in
 `config/environments/production.rb`:
 
 ```ruby
 config.force_ssl = false
 ```
 
-Deploying the application:
+### Deploying the Application
+
+Deploy the application and database using the following commands:
 
 ```bash
-# deploy the database and the web app
 copilot deploy \
   --deploy-env \
   --env dev \
   --name web
 
-# run the database migrations for Rails after the deployment
+# Run database migrations post-deployment
 copilot svc exec --command "bin/rails db:migrate"
 
-# look at the logs of the running application
+# View application logs
 copilot svc logs
 
-# show information of the currently deployed application
+# Display deployment information
 copilot svc show
 ```
 
-Resources:
+You should have a URL in the `show` command that will expose your app to the
+public Internet.
 
-- [Deploy Django App](https://www.endpointdev.com/blog/2022/06/how-to-deploy-django-app-with-aurora-serverless-and-copilot/),
-  this had good resources of how to deploy a web app into the cloud. It helped
-  with the configuration of the database.
-- [SSL support](https://github.com/aws/copilot-cli/issues/2071), a GitHub issue
-  that has a discussion on setting up SSL. It requires having DNS being setup in
-  Route 53.
-- [Rails secret](https://til.hashrocket.com/posts/8b8b4d00a3-generate-a-rails-secret-key)
-  generation.
+We did it! We've deployed our application.
+
+### Additional Resources
+
+- [Deploy Django App](https://www.endpointdev.com/blog/2022/06/how-to-deploy-django-app-with-aurora-serverless-and-copilot/):
+  Offers insights into web app deployment in the cloud, including database
+  configuration.
+- [SSL Support Discussion](https://github.com/aws/copilot-cli/issues/207
