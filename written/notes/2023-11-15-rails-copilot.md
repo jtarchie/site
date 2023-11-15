@@ -59,9 +59,13 @@ application. The preferred method is to use the Copilot service for reading the
 credentials. We need to add the service `manifest.yml` the following:
 
 ```yaml
+network:
+  vpc:
+    security_groups:
+      - from_cfn: ${COPILOT_APPLICATION_NAME}-${COPILOT_ENVIRONMENT_NAME}-webdbSecurityGroup
 secrets:
-  DATABASE_JSON:
-    from_cfn: ${COPILOT_APPLICATION_NAME}-${COPILOT_ENVIRONMENT_NAME}-databaseAuroraSecret
+  DB_SECRET:
+    from_cfn: ${COPILOT_APPLICATION_NAME}-${COPILOT_ENVIRONMENT_NAME}-webdbAuroraSecret
 ```
 
 This value is `DATABASE_JSON`, not the common `DATABASE_URL` that Rails
