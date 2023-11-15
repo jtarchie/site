@@ -9,7 +9,11 @@ the project. These commands and edits apply to the configuration and
 expectations of that project template, but could _probably_ be applied to other
 Rails applications.
 
-> Note: The `copilot` CLI
+> Note: Every `copilot` invocation is doing Cloudformation in the background. If
+> you ever need to debug looking at the Stacks in Cloudformation console can be
+> very helpful.
+
+> Note: Every `copilot` invocation can take awhile.
 
 ```bash
 # log into the account that will manage the deployment
@@ -18,11 +22,19 @@ aws configure sso
 
 # lets initialized the repository to be an app
 # and have an environment
+# this creates artifacts in `copilot/web/`
 copilot init \
   -a rails-app \
   -t "Load Balanced Web Service" \
   -n web \
   -d ./Dockerfile.production
+
+# create a test/dev environment
+# this create artifacts in `copilot/environments`
+copilot env init \
+  --name dev \
+  --app rails-app \
+  --default-config
 ```
 
 This does not deploy the application. It is just setting up configuration and
@@ -128,8 +140,7 @@ healthcheck, too. This is in the same `manifest.yml` referenced:
 ```yaml
 http:
   path: '/'
-  healthcheck:
-    path: '/up'
+  healthcheck: '/up'
 ```
 
 Since we are using this service, it does not provide SSL support by default.
