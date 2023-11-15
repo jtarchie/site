@@ -18,7 +18,7 @@ this template but might be adaptable to other Rails applications.
   you encounter issues.
 - `copilot` commands can be time-consuming.
 
-### Setting Up the Application
+## Setting Up the Application
 
 First, log into the AWS account and set up the application and environment using
 the following commands:
@@ -171,5 +171,50 @@ We did it! We've deployed our application.
   Offers insights into web app deployment in the cloud, including database
   configuration.
 - [SSL Support Discussion](https://github.com/aws/copilot-cli/issues/207
-- [Chat](https://matrix.to/#/!QdxoBcgpJveoAoIPCc:gitter.im/$YqOcVQ2VqEqsXvDqEYeOsEOR-mp7HhDbLoBJCw67J8I?via=gitter.im&via=matrix.org&via=matrix.unope.ru)
-  with support from AWS Copilot.
+
+## Update
+
+I was later informed via a
+[chat thread](https://matrix.to/#/!QdxoBcgpJveoAoIPCc:gitter.im/$YqOcVQ2VqEqsXvDqEYeOsEOR-mp7HhDbLoBJCw67J8I?via=gitter.im&via=matrix.org&via=matrix.unope.ru)
+with the team, that I can get SSL using `Request-Driven Web Service`.
+
+```bash
+copilot init \
+  -a rails-app \
+  -t "Request-Driven Web Service" \
+  -n web \
+  -d ./Dockerfile.production
+```
+
+The issue that I was running into of not being able database migrations can be
+solved with
+[`copilot task run`](https://aws.github.io/copilot-cli/docs/commands/task-run/).
+
+```bash
+copilot task run \
+  --command "bin/rails db:migrate" \
+  --dockerfile Dockerfile.production \
+  --env dev \
+  --app rails-app \
+  --follow
+```
+
+However, I found a bug with `task run`. When it builds the docker image, it uses
+the host architecture, it is not building for the target architecture. I changed
+me command around to use teh latest image of the app that I just deployed, using
+`docker images`.
+
+```bash
+copilot task run \
+  --command "bin/rails db:migrate" \
+  --image <ecr host>/rails-app/web \
+  --env dev \
+  --app rails-app \
+  --follow
+```
+
+This did not work because the `task run` does not assume the environment
+variables and secrets from the services. This would include `RAILS_ENV` and the
+`DATABASE_JSON`.
+
+This does not appear to be a viable way for me.
