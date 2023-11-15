@@ -161,11 +161,11 @@ config.force_ssl = false
 Deploying the application:
 
 ```bash
-# deploy the database
-copilot env deploy -n dev
-
-# deploy the application
-copilot deploy
+# deploy the database and the web app
+copilot deploy \
+  --deploy-env \
+  --env dev \
+  --name web
 
 # run the database migrations for Rails after the deployment
 copilot svc exec --command "bin/rails db:migrate"
