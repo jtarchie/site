@@ -169,3 +169,5 @@ We did it! We've deployed our application.
   Offers insights into web app deployment in the cloud, including database
   configuration.
 - [SSL Support Discussion](https://github.com/aws/copilot-cli/issues/207
+- [Chat](https://matrix.to/#/!QdxoBcgpJveoAoIPCc:gitter.im/$YqOcVQ2VqEqsXvDqEYeOsEOR-mp7HhDbLoBJCw67J8I?via=gitter.im&via=matrix.org&via=matrix.unope.ru)
+  with support from AWS Copilot.
