@@ -68,7 +68,7 @@ network:
     security_groups:
       - from_cfn: ${COPILOT_APPLICATION_NAME}-${COPILOT_ENVIRONMENT_NAME}-webdbSecurityGroup
 secrets:
-  DB_SECRET:
+  DATABASE_JSON:
     from_cfn: ${COPILOT_APPLICATION_NAME}-${COPILOT_ENVIRONMENT_NAME}-webdbAuroraSecret
 ```
 
@@ -147,7 +147,9 @@ copilot deploy \
   --name web
 
 # Run database migrations post-deployment
-copilot svc exec --command "bin/rails db:migrate"
+copilot svc exec \
+  --command "bin/rails db:migrate" \
+  -n web
 
 # View application logs
 copilot svc logs
