@@ -5,7 +5,7 @@ purposes, but this a way to document them.
 
 <!-- deno-fmt-ignore-start -->
 
-{{range $doc := iterDocs "notes/" 0}}
+{{range $doc := iterDocs "chatgpt/" 0}}
 - [{{$doc.Title}}]({{$doc.Path}}) on {{$doc.Basename}}
 {{end}}
 
