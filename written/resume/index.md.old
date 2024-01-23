@@ -1,0 +1,105 @@
+---
+name: JT Archie
+header:
+  - text: <span class="iconify" data-icon="tabler:mail"></span> jtarchie@gmail.com
+    link: mailto:jtarchie@gmail.com
+  - text: <span class="iconify" data-icon="tabler:brand-github"></span> jtarchie
+    link: https://github.com/jtarchie
+  - text: <span class="iconify" data-icon="tabler:brand-linkedin"></span>jtarchie
+    link: https://www.linkedin.com/in/jtarchie/
+  - text: <span class="iconify" data-icon="charm:person"></span>jtarchie.com
+    link: https://jtarchie.com
+---
+
+### Objective
+
+I am a technical leader with a consistent track record of rescuing and delivering products. My diverse experience has established best practices for greenfield projects. I am eager to help build great teams, lead and mentor in technical directions, and build products for people.
+
+## Skills
+
+**Programming Languages:** <span class="iconify" data-icon="vscode-icons:file-type-ruby"></span> Go (15y), <span class="iconify" data-icon="vscode-icons:file-type-go"></span> Go (7y), <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript (10y) / <span class="iconify" data-icon="vscode-icons:file-type-typescript-official"></span> TypeScript (3y)
+
+**Frameworks:** <span class="iconify" data-icon="vscode-icons:file-type-rails"></span> Rails (15y), <span class="iconify" data-icon="vscode-icons:file-type-nestjs"></span> NestJS (2y), <span class="iconify" data-icon="vscode-icons:file-type-next"></span> Next (2y)
+
+**Databases:** <span class="iconify" data-icon="vscode-icons:file-type-pgsql"></span> Postgres (10y), <span class="iconify" data-icon="vscode-icons:file-type-sqlite"></span> SQLite (8y), <span class="iconify" data-icon="vscode-icons:file-type-mysql"></span> MySQL (5y)
+
+**Cloud & DevOps:** CI/CD, <span class="iconify" data-icon="vscode-icons:file-type-aws"></span> AWS (10y), <span class="iconify" data-icon="vscode-icons:file-type-gcloud"></span> GCP (5y)
+
+**Concepts:** Pair Programming, Test Driven Development
+
+## Experience
+
+**Fractional CTO**
+  ~ [Hachi](https://www.linkedin.com/company/gethachi/)
+  ~ 11/2023 - Present
+
+-  Led development to successful investor presentation and securing significant funding from [Steel Perlot](https://steelperlot.com/).
+- Strategic hiring of the CTO, driving the company's technical leadership.
+
+**Senior Staff Engineer**
+  ~ [Move, Inc](https://www.linkedin.com/company/move-inc/)
+  ~ 9/2021 - 3/2023
+
+- Led a team of 10 engineers in a reorg, including mentoring 2 engineers towards promotion, and transitioning 3 interns into productive members of critical applications.
+- Pioneered an in-house testing framework for optimal utilization of AWS Lambda at Edge, enabling faster developer feedback loops.
+- Stabilized a critical application, reducing infrastructure expenses by 20% and significantly decreasing the error rate by 45%.
+- Retired legacy applications, resulting in over $600k in infrastructure savings.
+- Coordinated 9 teams to align on authentication migration from a custom solution to Auth0.
+- Evaluated build vs. buy options for unique user tracking via fingerprinting technologies.
+
+**Senior Staff Engineer**
+  ~ [Shopify](https://www.linkedin.com/company/shopify/)
+  ~ 3/2021 - 7/2021
+
+- Joined Core Development team as Tech Lead
+- Decreased documentation site response time 17x using dynamic caching techniques.
+
+**Senior Member of Technical Staff**
+  ~ [VMware](https://www.linkedin.com/company/vmware/)
+  ~ 1/2020 - 1/2021
+
+- VMware acquired Pivotal
+- Automated security updates to have same day releases for 
+
+**Staff Software Engineer**
+  ~ [Pivotal, Inc](https://www.linkedin.com/company/pivotal-software-inc./)
+  ~ 12/2014 - 1/2020
+
+- Rescued three teams' software release cycles with automation strategies, accelerating delivery times from 1 month to 2 days for software patches and updates.
+- CChampioned CI/CD adoption, leading teams in transitioning from manual processes to automated pipelines with the mantra “Automate yourself out of a job.” Contributed to the development of the Concourse CI product.
+- Engineered platform tools that enabled customers to deploy the CloudFoundry platform securely and consistently. (See patents)
+
+**Software Engineer**
+  ~ Pivotal Labs
+  ~ 5/2010 - 2/2014
+
+- Worked on a dozen very diverse projects, adapting to varying tech stacks and business domains.
+
+- Championed Pivotal Labs’ ethos, emphasizing pair programming, test-driven development, and agile practices. Advocated for agile methodologies, cultivating a collaborative ethos and bolstering team cohesion and success.
+
+**Software Engineer**
+  ~ Context Optional
+  ~ 8/2008 - 1/2010
+
+**Software Engineer**
+  ~ [Chumby](https://chumby.com)
+  ~ 2/2007 - 8/2008
+
+**Software Engineer**
+  ~ Soapbox Mobile
+  ~ 2006 - 2007
+
+## Patents
+
+* [US20220222096A1](https://patents.google.com/patent/US20220222096A1/en) - Container certificate injection
+* [US11263297B2](https://patents.google.com/patent/US11263297B2/en) - Dynamic insertion of variablized secrets in a pipeline integration system
+* [US10235527B1](https://patents.google.com/patent/US10235527B1/en) - Vulnerability notification for live applications
+* [US10229251B1](https://patents.google.com/patent/US10229251B1/en) - Library scan for live applications
+
+## Education
+
+**University of Miami**
+  ~ Miami, FL
+
+BS and MS in Computer Engineering
+  ~ 08/2001 - 06/2006

@@ -70,6 +70,4 @@ $250USD per hour, billed to the hour above, will be required.
 
 ### Resume
 
-My resume is provided in different formats.
-
-[HTML](resume/index.html) / [PDF](resume/resume.pdf)
+[PDF](resume/resume.pdf)
