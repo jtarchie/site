@@ -5,6 +5,7 @@ tasks:
   default:
     cmds:
     - task: format
+    - npm run build
     - builder --source-path ./written --build-path docs/ --base-url https://jtarchie.com --serve
 
       
