@@ -2,13 +2,15 @@
 title: Bouncy Ball Simulation
 ---
 
-#### You:
+# Bouncy Ball Simulation
+
+## You:
 
 Let’s write a simulation using the Lua love framework. In this design I have a
 ball contained within a circle. It shows the ball bouncing using gravity via
 physics to bounce around.
 
-#### ChatGPT:
+## ChatGPT:
 
 To create a simulation of a ball bouncing within a circle using gravity, you
 would typically set up a physics world in LÖVE (Love2D). This involves creating
@@ -69,13 +71,13 @@ You would need to run this in a LÖVE (Love2D) environment to see the simulation
 in action. Additionally, collision callbacks and proper positioning need to be
 set to ensure the ball bounces within the circle correctly.
 
-#### You:
+## You:
 
 This almost worked. It drew the circle and the ball. The ball appears to have
 the correct gravity. However, the boundary of the circle didn't cause the ball
 to bounce. it does not contain the ball, it falls right through.
 
-#### ChatGPT:
+## ChatGPT:
 
 In the code I provided earlier, the circle boundary is just a static body with a
 circle shape and doesn't provide the containment behavior you're looking for. To
@@ -141,13 +143,13 @@ conditions and parameters like restitution, so you may need to tweak the
 `segments`, `radius`, or restitution values to get the exact behavior you're
 looking for.
 
-#### You:
+## You:
 
 That's great! Works perfectly. Please give the ball some random velocity in the
 direction (both x and y), you can even use a velocity vector for better math.
 This way the ball has some life to it.
 
-#### ChatGPT:
+## ChatGPT:
 
 I'm glad the boundary is working for you! To give the ball some initial
 velocity, we'll add a step in the `love.load` function where we set the ball's
@@ -221,7 +223,7 @@ In this code:
 Now, when you run the simulation, the ball will start moving immediately with a
 random velocity, giving it some "life" as it bounces around within the boundary.
 
-#### You:
+## You:
 
 I made a minor change to the code, adding `love.window.setMode(500, 500)` to set
 the initial width and height of the window.
@@ -230,7 +232,7 @@ Let's make a change to the code (including the above). Let's add some color. I'd
 love the ball to have a trail of where its been. Using a rainbow set of colors
 (ROYGBIV).
 
-#### ChatGPT:
+## ChatGPT:
 
 Creating a trail effect with a gradient of colors can be done by keeping track
 of the ball's previous positions and drawing segments in different colors for
@@ -340,7 +342,7 @@ Now, when you run the simulation, you should see a colorful trail following the
 ball. The colors will cycle through the rainbow as defined in the `colors`
 table.
 
-#### You:
+## You:
 
 This is lovely, great job! I really enjoyed that effect.
 
@@ -348,7 +350,7 @@ Can we please modify this to fit different dimensions? I want to present this in
 the dimensions 1920 pixels by 1080 pixels. Please do what you think is
 appropriate for that. Either scaling up all the values or transforms.
 
-#### ChatGPT:
+## ChatGPT:
 
 To adapt the simulation for a window size of 1920x1080 pixels, we need to adjust
 several values accordingly. The ball's size, the boundary's radius, and the
@@ -469,7 +471,7 @@ This code should give you a visually appealing simulation at the resolution of
 1920x1080. You can further tweak the `maxSpeed`, `ball.shape`, `radius`, and
 `segments` values to achieve the desired aesthetics and physics behavior.
 
-#### You:
+## You:
 
 This has all been really good work. Impressive what this has become.
 
@@ -574,7 +576,7 @@ function love.draw()
 end
 ```
 
-#### ChatGPT:
+## ChatGPT:
 
 To have the ball continue bouncing indefinitely without losing its initial
 velocity, you need to adjust both the restitution and the damping of the ball's
@@ -640,7 +642,7 @@ These changes should allow the ball to bounce indefinitely within the boundary,
 maintaining its initial kinetic energy without any loss due to damping or
 inelastic collisions.
 
-#### You:
+## You:
 
 Lets take the latest code that I have:
 
@@ -742,7 +744,7 @@ end
 
 I'd like to extend it to restart when the space bar is pressed.
 
-#### ChatGPT:
+## ChatGPT:
 
 To restart the simulation when the space bar is pressed, you need to implement
 the `love.keypressed` callback function, which is called whenever a key is
@@ -851,7 +853,7 @@ function love.draw()
       love.graphics.circle("fill", position[1], position[2], ball.shape:getRadius() * (1 - (i / #ball.trail
 ```
 
-#### You:
+## You:
 
 Here's the code I have so far:
 
@@ -966,7 +968,7 @@ end
 Let's add a feature that add a blank screen for 3 seconds when the space bar is
 pressed then does the full simulation.
 
-#### ChatGPT:
+## ChatGPT:
 
 To introduce a delay when the space bar is pressed before restarting the
 simulation, you can use a variable to keep track of the delay time and only
