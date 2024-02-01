@@ -1,9 +1,79 @@
 ---
-title: New chat
-source: https://chat.openai.com/c/66497efa-f44d-4463-a053-888b558ec9e2
+title: Bouncy Ball Simulation
 ---
 
-# New chat
+#### You:
+
+Let’s write a simulation using the Lua love framework. In this design I have a
+ball contained within a circle. It shows the ball bouncing using gravity via
+physics to bounce around.
+
+#### ChatGPT:
+
+To create a simulation of a ball bouncing within a circle using gravity, you
+would typically set up a physics world in LÖVE (Love2D). This involves creating
+the ball as a physical object with properties like mass, restitution, and
+friction, and the circle as a static boundary that the ball can collide with.
+
+Here is a basic outline of the Lua code using the LÖVE framework:
+
+```lua
+function love.load()
+    -- Load the physics module
+    love.physics.setMeter(64) -- defines the meter unit for the physics world
+    world = love.physics.newWorld(0, 9.81*64, true) -- create a physics world with gravity
+
+    -- Create the ball
+    ball = {}
+    ball.body = love.physics.newBody(world, 250, 250, "dynamic") -- position in the center
+    ball.shape = love.physics.newCircleShape(20) -- radius of the ball
+    ball.fixture = love.physics.newFixture(ball.body, ball.shape, 1) -- attach shape to body
+    ball.fixture:setRestitution(0.9) -- bouncy
+
+    -- Create the circle boundary
+    boundary = {}
+    boundary.body = love.physics.newBody(world, 250, 250, "static") -- center position, static body
+    boundary.shape = love.physics.newCircleShape(200) -- larger radius than the ball
+    boundary.fixture = love.physics.newFixture(boundary.body, boundary.shape)
+    boundary.fixture:setRestitution(0.5) -- slightly bouncy
+end
+
+function love.update(dt)
+    world:update(dt) -- updates the physics world
+end
+
+function love.draw()
+    -- Draw the boundary circle
+    love.graphics.circle("line", boundary.body:getX(), boundary.body:getY(), boundary.shape:getRadius())
+
+    -- Draw the ball
+    love.graphics.circle("fill", ball.body:getX(), ball.body:getY(), ball.shape:getRadius())
+end
+```
+
+In this basic example:
+
+- `love.physics.setMeter` defines the size of a meter in the physics world which
+  affects how the gravity scale is calculated.
+- `world` is our physics world with gravity set to Earth's gravity (9.81 m/s²).
+- `ball` is our dynamic physics body, which means it can move and interact with
+  gravity and collisions.
+- `boundary` is a static physics body that represents the circle boundary. It
+  does not move but will interact with the ball upon collision.
+- The `love.update(dt)` function updates the physics world with the time passed
+  (`dt`) each frame.
+- The `love.draw()` function is used to draw the ball and the boundary circle on
+  the screen.
+
+You would need to run this in a LÖVE (Love2D) environment to see the simulation
+in action. Additionally, collision callbacks and proper positioning need to be
+set to ensure the ball bounces within the circle correctly.
+
+#### You:
+
+This almost worked. It drew the circle and the ball. The ball appears to have
+the correct gravity. However, the boundary of the circle didn't cause the ball
+to bounce. it does not contain the ball, it falls right through.
 
 #### ChatGPT:
 
