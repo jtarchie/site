@@ -11,21 +11,17 @@ header:
     link: https://jtarchie.com/posts
 ---
 
-### Professional Summary
-
-I'm an experienced technical leader and polyglot leveraging over 15 years of software engineering and team leadership to drive innovative solutions and mentorship within forward-thinking tech organizations. Specializes in rescuing and delivering complex projects, establishing best practices in software development, and building cohesive, high-performing engineering teams.
-
 ## Skills
 
-**Programming Languages:** Ruby (15y), Go (7y), JavaScript (10y) / TypeScript (3y)
+**Programming Languages:** Ruby (15y), Go (7y), JavaScript (10y), TypeScript (3y)
 
-**Frameworks:** Rails (15y), NestJS (2y), Next (2y)
+**Frameworks and Libraries:** Rails (15y), NestJS (2y), Next.js (2y)
 
-**Databases:** Postgres (10y), SQLite (8y), MySQL (5y)
+**Databases:** PostgreSQL (10y), SQLite (8y), MySQL (5y)
 
-**Cloud & DevOps:** CI/CD, AWS (10y), GCP (5y)
+**Cloud Services & DevOps:** AWS (10y), GCP (5y), CI/CD Practices
 
-**Concepts:** Pair Programming, Test-Driven Development
+**Development Practices:** Test-Driven Development, Pair Programming
 
 ## Experience
 
@@ -33,60 +29,57 @@ I'm an experienced technical leader and polyglot leveraging over 15 years of sof
   ~ [Hachi](https://www.linkedin.com/company/gethachi/)
   ~ 11/2023 - Present
 
-- Within just one month of development, led product development to a successful investor presentation, securing significant funding from [Steel Perlot](https://steelperlot.com/), demonstrating rapid execution and strategic vision.
-- Strategically hired a CTO, drove the company's technical leadership, and collaborated to launch the application in under a month.
+- Spearheaded product development, leading to a successful investor presentation and securing significant funding from [Steel Perlot](https://steelperlot.com/) within just one month of development.
+- Orchestrated the strategic hire of a CTO and collaborated on the application's launch, demonstrating rapid execution and technical leadership.
 
 **Senior Staff Engineer**
   ~ [Move, Inc](https://www.linkedin.com/company/move-inc/)
   ~ 9/2021 - 3/2023
 
-- Successfully led and reorganized a team of 10 engineers, mentoring 2 towards promotion and integrating 3 interns as productive team members, directly enhancing team efficiency and project delivery timelines.
-- Pioneered an in-house testing framework for optimal utilization of AWS Lambda at Edge, enabling testing within seconds instead of days.
-- Successfully stabilized a critical application, achieving a 20% reduction in infrastructure expenses and a 45% decrease in error rates, enhancing system reliability and user satisfaction.
-- Efficiently retired multiple legacy applications, realizing over $600k in annual infrastructure savings while streamlining operational efficiency.
-- Coordinated 9 teams to align on authentication migration from a custom solution to Auth0, impacting over 100 million active users.
+- Directed and reorganized a team of 10 engineers, mentoring 2 to promotion and integrating 3 interns as full-time contributors, enhancing team efficiency and accelerating project delivery.
+- Developed an in-house testing framework for AWS Lambda at Edge, reducing testing time from days to seconds.
+- Optimized a critical application, achieving a 20% reduction in costs and a 45% decrease in error rates, thereby enhancing system reliability and user satisfaction.
+- Streamlined operations by retiring multiple legacy applications, saving over $600k annually in infrastructure costs.
+- Coordinated 9 teams for a seamless authentication migration to Auth0, benefiting over 100 million active users.
 
 **Senior Staff Engineer**
   ~ [Shopify](https://www.linkedin.com/company/shopify/)
   ~ 3/2021 - 7/2021
 
-- Joined the Core Development team as Tech Lead.
-- Dramatically optimized the documentation site's performance, decreasing response times by 17x through advanced dynamic caching techniques, significantly improving user experience.
+- Enhanced the Core Development team's documentation site performance, implementing dynamic caching techniques that decreased response times by 17x.
 
 **Senior Member of Technical Staff**
   ~ [VMware](https://www.linkedin.com/company/vmware/)
   ~ 1/2020 - 1/2021
 
-- Maintained the same role, product, and duties following VMware's acquisition of Pivotal.
-- Automated security updates for same-day releases for customers, ensuring platforms were always secure from CVEs.
-- Created tooling that ran the code in our documentation through CI/CD, ensuring a good user experience when referenced.
+- Continued role, product, and duties post-acquisition by VMware, focusing on automating security updates for same-day release, ensuring platform security against CVEs.
+- Implemented CI/CD for documentation code, maintaining high user experience standards.
 
 **Staff Software Engineer**
   ~ [Pivotal, Inc](https://www.linkedin.com/company/pivotal-software-inc./)
   ~ 12/2014 - 1/2020
 
-- Revolutionized the software release process for three teams by implementing automation strategies, cutting delivery times from 1 month to just 2 days, and enhancing responsiveness to vulnerabilities.
-- Created advanced CI/CD patterns, enabling comprehensive application testing across Azure, AWS, GCP, OpenStack, and VMware infrastructures in under 1 hour, significantly reducing deployment risks and enhancing product reliability.
-- Engineered platform tools that enabled customers to deploy the CloudFoundry platform securely and consistently. (See 4 patents)
+- Revolutionized the software release process by implementing automation strategies, reducing delivery times from 1 month to 2 days.
+- Created CI/CD patterns for comprehensive application testing, significantly reducing deployment risks.
+- Engineered platform tools for secure and consistent deployment of the CloudFoundry platform. (See 4 patents)
 
 **Software Engineer**
   ~ Pivotal Labs
   ~ 5/2010 - 2/2014
 
-- Worked on a dozen diverse projects, adapting to varying tech stacks and business domains.
-- Championed Pivotal Labs' ethos, emphasizing pair programming, test-driven development, and agile practices. Advocated for agile methodologies, cultivating a collaborative ethos and bolstering team cohesion and success.
+- Adapted to diverse projects, promoting the Pivotal Labs ethos of pair programming, test-driven development, and agile methodologies.
 
 **Software Engineer**
   ~ Context Optional
   ~ 8/2008 - 1/2010
 
-- Sole developer on the top 10 Facebook platform application (Bumpersticker) with 8 million monthly active users.
+- Led development for the top 10 Facebook platform application (Bumpersticker), achieving 8 million monthly active users.
 
 **Software Engineer**
   ~ [Chumby](https://chumby.com)
   ~ 2/2007 - 8/2008
 
-- Developed an early Rails application that managed content on embedded devices—an early adopter of AWS S3.
+- Developed an early Rails application for content management on embedded devices, utilizing AWS S3.
 
 **Software Engineer**
   ~ Soapbox Mobile
@@ -95,7 +88,7 @@ I'm an experienced technical leader and polyglot leveraging over 15 years of sof
 ## Patents
 
 * [US20220222096A1](https://patents.google.com/patent/US20220222096A1/en) - Container certificate injection
-* [US11263297B2](https://patents.google.com/patent/US11263297B2/en) - Dynamic insertion of variablized secrets in a pipeline integration system
+* [US11263297B2](https://patents.google.com/patent/US11263297B2/en) - Dynamic insertion of variablized secrets in pipeline systems
 * [US10235527B1](https://patents.google.com/patent/US10235527B1/en) - Vulnerability notification for live applications
 * [US10229251B1](https://patents.google.com/patent/US10229251B1/en) - Library scan for live applications
 
@@ -105,4 +98,3 @@ I'm an experienced technical leader and polyglot leveraging over 15 years of sof
   ~ Miami, FL
 
 BS and MS in Computer Engineering
-  ~ 08/2001 - 06/2006
