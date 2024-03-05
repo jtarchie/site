@@ -9,6 +9,7 @@
 
 ## Behavioral Questions
 
+- How have you worked with product and design
 - You took someone's engineering vision and brought it to life?
 - Have you ever had to navigate a situation where you disagreed with a colleague
   or team member on a technical decision or project direction? How did you
