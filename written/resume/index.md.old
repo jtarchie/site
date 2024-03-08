@@ -12,6 +12,69 @@ header:
     link: https://jtarchie.com/posts
 ---
 
+## Experience
+
+**Consulting CTO**
+  ~ [Hachi](https://www.linkedin.com/company/gethachi/)
+  ~ 11/2023 - Present
+
+- **Product Description:** We pulled information on content creators from all social networks to show a customized AI-created profile that highlights achievements.
+- Spearheaded product development, leading to a successful investor presentation and securing significant funding from [Steel Perlot](https://steelperlot.com/) within just one month of development.
+- Orchestrated the strategic hire of a CTO and collaborated on the application's launch, demonstrating rapid execution and technical leadership.
+
+**Senior Staff Engineer / Tech Lead**
+  ~ [Move, Inc](https://www.linkedin.com/company/move-inc/)
+  ~ 9/2021 - 3/2023
+
+- Directed and reorganized a team of 10 engineers, mentoring 2 to promotion and integrating three interns as full-time contributors, enhancing team efficiency and accelerating project delivery.
+- Developed an in-house testing framework for AWS Lambda at Edge, reducing testing time from days to seconds.
+- Optimized a critical application, achieving a 20% reduction in costs and a 45% decrease in error rates, thereby enhancing system reliability and user satisfaction.
+- Streamlined operations by retiring multiple legacy applications, saving over $600k annually in infrastructure costs.
+- Coordinated nine teams for a seamless authentication migration to Auth0, benefiting over 100 million active users.
+
+**Senior Staff Engineer**
+  ~ [Shopify](https://www.linkedin.com/company/shopify/)
+  ~ 3/2021 - 7/2021
+
+- Enhanced the Core Development team's documentation site performance, implementing dynamic caching techniques that decreased response times by 17x.
+
+**Tech Lead**
+  ~ [VMware](https://www.linkedin.com/company/vmware/)
+  ~ 1/2020 - 1/2021
+
+- Continued role, product, and duties post-acquisition by VMware, focusing on automating security updates for same-day release and ensuring platform security against CVEs.
+- Implemented CI/CD for documentation, ensuring users could copy-paste code without errors, reducing support tickets by 20%.
+
+**Staff Software Engineer**
+  ~ [Pivotal, Inc](https://www.linkedin.com/company/pivotal-software-inc./)
+  ~ 12/2014 - 1/2020
+
+- Owned the software release process by implementing automation strategies, reducing delivery times from 1 month to 2 days -- "A surprising turnaround," said leadership.
+- Created CI/CD pipelines that tested the platform against all IaaSes (AWS, GCP, Azure, OpenStack, and vSphere), which decreased the feedback cycle from 1 week to 45 minutes.
+- Engineered platform tools for secure and consistent deployment of the CloudFoundry platform. Including security scanning for application CVEs and credential management within a shared cloud environment. (4 [patents](#patents))
+
+**Software Engineer**
+  ~ Pivotal Labs
+  ~ 5/2010 - 2/2014
+
+- Adapted to diverse projects, promoting the Pivotal Labs ethos of pair programming, test-driven development, and agile methodologies.
+
+**Software Engineer**
+  ~ Context Optional
+  ~ 8/2008 - 1/2010
+
+Led development for the top-ten Facebook platform application (Bumpersticker), which achieved 8 million monthly active users.
+
+**Software Engineer**
+  ~ [Chumby](https://chumby.com)
+  ~ 2/2007 - 8/2008
+
+- Developed an early Rails application for content management on embedded devices, utilizing AWS S3.
+
+**Software Engineer**
+  ~ Soapbox Mobile
+  ~ 2006 - 2007
+
 ## Skills
 
 **Programming Languages:** Ruby, Go, JavaScript, TypeScript, Elixir
@@ -24,72 +87,10 @@ header:
 
 **Development Practices:** Test-Driven Development, Pair Programming
 
-## Experience
-
-**Fractional CTO**
-  ~ [Hachi](https://www.linkedin.com/company/gethachi/)
-  ~ 11/2023 - Present
-
-- Spearheaded product development, leading to a successful investor presentation and securing significant funding from [Steel Perlot](https://steelperlot.com/) within just one month of development.
-- Orchestrated the strategic hire of a CTO and collaborated on the application's launch, demonstrating rapid execution and technical leadership.
-
-**Senior Staff Engineer**
-  ~ [Move, Inc](https://www.linkedin.com/company/move-inc/)
-  ~ 9/2021 - 3/2023
-
-- Directed and reorganized a team of 10 engineers, mentoring 2 to promotion and integrating 3 interns as full-time contributors, enhancing team efficiency and accelerating project delivery.
-- Developed an in-house testing framework for AWS Lambda at Edge, reducing testing time from days to seconds.
-- Optimized a critical application, achieving a 20% reduction in costs and a 45% decrease in error rates, thereby enhancing system reliability and user satisfaction.
-- Streamlined operations by retiring multiple legacy applications, saving over $600k annually in infrastructure costs.
-- Coordinated 9 teams for a seamless authentication migration to Auth0, benefiting over 100 million active users.
-
-**Senior Staff Engineer**
-  ~ [Shopify](https://www.linkedin.com/company/shopify/)
-  ~ 3/2021 - 7/2021
-
-- Enhanced the Core Development team's documentation site performance, implementing dynamic caching techniques that decreased response times by 17x.
-
-**Senior Member of Technical Staff**
-  ~ [VMware](https://www.linkedin.com/company/vmware/)
-  ~ 1/2020 - 1/2021
-
-- Continued role, product, and duties post-acquisition by VMware, focusing on automating security updates for same-day release, ensuring platform security against CVEs.
-- Implemented CI/CD for documentation code, maintaining high user experience standards.
-
-**Staff Software Engineer**
-  ~ [Pivotal, Inc](https://www.linkedin.com/company/pivotal-software-inc./)
-  ~ 12/2014 - 1/2020
-
-- Revolutionized the software release process by implementing automation strategies, reducing delivery times from 1 month to 2 days.
-- Created CI/CD patterns for comprehensive application testing, significantly reducing deployment risks.
-- Engineered platform tools for secure and consistent deployment of the CloudFoundry platform. (See 4 patents)
-
-**Software Engineer**
-  ~ Pivotal Labs
-  ~ 5/2010 - 2/2014
-
-- Adapted to diverse projects, promoting the Pivotal Labs ethos of pair programming, test-driven development, and agile methodologies.
-
-**Software Engineer**
-  ~ Context Optional
-  ~ 8/2008 - 1/2010
-
-- Led development for the top 10 Facebook platform application (Bumpersticker), achieving 8 million monthly active users.
-
-**Software Engineer**
-  ~ [Chumby](https://chumby.com)
-  ~ 2/2007 - 8/2008
-
-- Developed an early Rails application for content management on embedded devices, utilizing AWS S3.
-
-**Software Engineer**
-  ~ Soapbox Mobile
-  ~ 2006 - 2007
-
 ## Patents
 
-* [US20220222096A1](https://patents.google.com/patent/US20220222096A1/en) - Container certificate injection
-* [US11263297B2](https://patents.google.com/patent/US11263297B2/en) - Dynamic insertion of variablized secrets in pipeline systems
+* [US20220222096A1](https://patents.google.com/patent/US20220222096A1/en) - Container certificate injection: Allowed containers to receive dynamically created certificates for secure communication.
+* [US11263297B2](https://patents.google.com/patent/US11263297B2/en) - Dynamic insertion of variablized secrets in pipeline systems: Securing containers with credentials based on a pre-defined manifest.
 * [US10235527B1](https://patents.google.com/patent/US10235527B1/en) - Vulnerability notification for live applications
 * [US10229251B1](https://patents.google.com/patent/US10229251B1/en) - Library scan for live applications
 
