@@ -63,7 +63,7 @@ header:
   ~ Context Optional
   ~ 8/2008 - 1/2010
 
-Led development for the top-ten Facebook platform application (Bumpersticker), which achieved 8 million monthly active users.
+- Led development for the top-ten Facebook platform application (Bumpersticker), which achieved 8 million monthly active users.
 
 **Software Engineer**
   ~ [Chumby](https://chumby.com)
@@ -77,13 +77,10 @@ Led development for the top-ten Facebook platform application (Bumpersticker), w
 
 ## Skills
 
-**Programming Languages:** Ruby, Go, JavaScript, TypeScript, Elixir
-
-**Frameworks and Libraries:** Rails, React, NestJS, Next.js, Vite
-
-**Databases:** PostgreSQL, SQLite, MySQL
-
-**Cloud Services & DevOps:** AWS, GCP, CI/CD Practices
+- **Programming Languages:** Ruby, Go, JavaScript, TypeScript, Elixir
+- **Frameworks and Libraries:** Rails, React, NestJS, Next.js, Vite
+- **Databases:** PostgreSQL, SQLite, MySQL
+- **Cloud Services & DevOps:** AWS, GCP, CI/CD Practices
 
 **Development Practices:** Test-Driven Development, Pair Programming
 
