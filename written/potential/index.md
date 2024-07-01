@@ -2,7 +2,7 @@
 
 <!-- deno-fmt-ignore-start -->
 
-{{range $doc := iterDocs "posts/" 0}}
+{{range $doc := iterDocs "potential/" 0}}
 - [{{$doc.Title}}]({{$doc.SlugPath}}) on {{$doc.Basename}}
 {{end}}
 
