@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="{{if .Doc.Description}}{{.Doc.Description}}{{else}}The personal website of JT Archie. Includes a blog, work ethic, and projects they have worked on.{{end}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <title>{{.Doc.Title}}</title>
+    <link rel="alternate" type="application/rss+xml" href="https://jtarchie.com/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" href="https://jtarchie.com/atom.xml" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+        href="https://jtarchie.com/assets/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="https://jtarchie.com/assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="https://jtarchie.com/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="https://jtarchie.com/assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="https://jtarchie.com/assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://jtarchie.comfavicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="https://jtarchie.com/assets/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="https://jtarchie.com/assets/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="https://jtarchie.com/assets/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="https://jtarchie.com/assets/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="https://jtarchie.com/assets/favicons/mstile-310x310.png" />
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Drawer for navigation -->
+    <div class="drawer drawer-mobile">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle">
+        <div class="drawer-content">
+            <!-- Navbar -->
+            <div class="navbar bg-base-100">
+                <div class="flex-none">
+                    <label for="my-drawer" class="btn btn-square btn-ghost drawer-button lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            class="inline-block w-6 h-6 stroke-current">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+                <div class="flex-1 px-2 mx-2">
+                    <a href="/" class="btn btn-ghost normal-case text-xl">JT Archie</a>
+                </div>
+                <div class="flex-none hidden lg:block">
+                    <ul class="menu menu-horizontal p-0">
+                        <!-- Sidebar content -->
+                        <li><a href="/posts">Blog</a></li>
+                        <li><a href="https://github.com/jtarchie" target="_blank">Github</a></li>
+                        <li><a href="https://github.com/jtarchie/site/blob/main/written{{.Doc.RelativePath}}">&#x270E;</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <main class="container mx-auto p-4">
+                {{.RenderedPage}}
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+                <aside>
+                    <p>&copy; {{ now | date "2006" }} - JT Archie - Built using <a href="https://github.com/jtarchie/builder">Builder</a></p>
+                </aside>
+            </footer>
+        </div>
+
+        <!-- Drawer sidebar -->
+        <div class="drawer-side">
+            <label for="my-drawer" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200">
+                <!-- Sidebar content -->
+                <li><a href="/posts">Blog</a></li>
+                <li><a href="https://github.com/jtarchie" target="_blank">Github</a></li>
+                <li><a href="https://github.com/jtarchie/site/blob/main/written{{.Doc.RelativePath}}">&#x270E;</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="/assets/main.js"></script>
+</body>
+
+</html>
