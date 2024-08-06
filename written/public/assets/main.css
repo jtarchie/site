@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -3140,6 +3140,48 @@ html:has(.drawer-toggle:checked) {
 }
 
 main {
+  blockquote {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
+  @media (prefers-color-scheme: dark) {
+    blockquote {
+      --tw-text-opacity: 1;
+      color: rgb(156 163 175 / var(--tw-text-opacity));
+    }
+  }
+  blockquote {
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      border-inline-start-width: 4px;
+    }
+    p {
+      --tw-border-opacity: 1;
+      border-color: rgb(209 213 219 / var(--tw-border-opacity));
+    }
+    p {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+    }
+    p {
+      padding: 1rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      p {
+        --tw-border-opacity: 1;
+        border-color: rgb(107 114 128 / var(--tw-border-opacity));
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      p {
+        --tw-bg-opacity: 1;
+        background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+      }
+    }
+  }
   h1 {
     margin-top: 2rem;
   }
