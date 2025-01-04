@@ -167,7 +167,6 @@ const validBoard = (board, states, classes) => {
     "rgb(0, 114, 178)", // Blue
     "rgb(213, 94, 0)", // Vermillion
     "rgb(204, 121, 167)", // Reddish Purple
-    "rgb(0, 0, 0)", // Black
     "rgb(128, 128, 128)", // Gray
     "rgb(255, 255, 255)", // White
     "rgb(255, 182, 193)", // Light Pink
