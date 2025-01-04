@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Queens</title>
+    <style>
+      .row {
+        display: flex;
+      }
+
+      .cell {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #app:has(.row > *:nth-child(1):is(.cell.queen))
+        .row
+        > *:nth-child(1):after,
+      #app:has(.row > *:nth-child(2):is(.cell.queen))
+        .row
+        > *:nth-child(2):after,
+      #app:has(.row > *:nth-child(3):is(.cell.queen))
+        .row
+        > *:nth-child(3):after,
+      #app:has(.row > *:nth-child(4):is(.cell.queen))
+        .row
+        > *:nth-child(4):after,
+      #app:has(.row > *:nth-child(5):is(.cell.queen))
+        .row
+        > *:nth-child(5):after,
+      #app:has(.row > *:nth-child(6):is(.cell.queen))
+        .row
+        > *:nth-child(6):after,
+      #app:has(.row > *:nth-child(7):is(.cell.queen))
+        .row
+        > *:nth-child(7):after,
+      #app:has(.row > *:nth-child(8):is(.cell.queen))
+        .row
+        > *:nth-child(8):after,
+      #app:has(.row > *:nth-child(9):is(.cell.queen))
+        .row
+        > *:nth-child(9):after,
+      #app:has(.row > *:nth-child(10):is(.cell.queen))
+        .row
+        > *:nth-child(10):after,
+      .row:has(.cell.queen) .cell:after {
+        content: "❌";
+      }
+
+      .cell.cross::after {
+        content: "❎" !important;
+      }
+
+      .cell.queen::after {
+        content: "♛" !important;
+      }
+
+      .cell:not(:last-child) {
+        border-right: none;
+      }
+
+      .row:not(:last-child) .cell {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script src="./queens.js"></script>
+</html>

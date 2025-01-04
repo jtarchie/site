@@ -1,11 +1,9 @@
-version: '3'
+version: "3"
 
 tasks:
   format: deno fmt ./
   default:
     cmds:
-    - task: format
-    - npm run build
-    - builder --source-path ./written --build-path docs/ --base-url https://jtarchie.com --serve
-
-      
+      - task: format
+      - npm run build
+      - builder --source-path ./written --build-path docs/ --base-url https://jtarchie.com --serve
