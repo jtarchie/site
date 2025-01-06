@@ -193,9 +193,9 @@ const validBoard = (board, states, classes) => {
       cell.onclick = (event) => {
         const cell = event.target;
 
-        cell.classList.remove(classes[states[i][j] % states.length]);
+        cell.classList.remove(classes[states[i][j] % classes.length]);
         states[i][j]++;
-        cell.classList.add(classes[states[i][j] % states.length]);
+        cell.classList.add(classes[states[i][j] % classes.length]);
 
         if (validBoard(board, states, classes)) {
           alert("You won!");
