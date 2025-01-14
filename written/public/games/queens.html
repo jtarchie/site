@@ -20,14 +20,19 @@
 
       // Generate diagonal rules
       const directions = [
-        [-1, -1], [-1, 1], [1, -1], [1, 1]
+        [-1, -1],
+        [-1, 1],
+        [1, -1],
+        [1, 1],
       ];
 
       for (let i = 1; i <= 10; i++) {
         for (let j = 1; j <= 10; j++) {
           directions.forEach(([di, dj]) => {
             cssRules += `
-          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${i + di}) > *:nth-child(${j + dj}):after {
+          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
+              i + di
+            }) > *:nth-child(${j + dj}):after {
           content: "❌";
             }
         `;
