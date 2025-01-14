@@ -1,6 +1,49 @@
 <html>
   <head>
     <title>Queens</title>
+    <script>
+      // Generate the column rules
+      const style = document.createElement("style");
+      let cssRules = "";
+
+      for (let i = 1; i <= 10; i++) {
+        cssRules += `
+      #app:has(.row > *:nth-child(${i}):is(.cell.queen))
+        .row
+        > *:nth-child(${i}):after,
+        `;
+      }
+
+      // Add the final rule for rows
+      cssRules += `
+        .row:has(.cell.queen) .cell:after {
+      content: "❌";
+        }`;
+
+      // Generate diagonal rules
+      for (let i = 1; i <= 10; i++) {
+        for (let j = 1; j <= 10; j++) {
+          cssRules += `
+          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
+            i - 1
+          }) > *:nth-child(${j - 1}):after,
+          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
+            i - 1
+          }) > *:nth-child(${j + 1}):after,
+          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
+            i + 1
+          }) > *:nth-child(${j - 1}):after,
+          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
+            i + 1
+          }) > *:nth-child(${j + 1}):after {
+          content: "❌";
+            }`;
+        }
+      }
+
+      style.textContent = cssRules;
+      document.head.appendChild(style);
+    </script>
     <style>
       .row {
         display: flex;
@@ -14,40 +57,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-
-      #app:has(.row > *:nth-child(1):is(.cell.queen))
-        .row
-        > *:nth-child(1):after,
-      #app:has(.row > *:nth-child(2):is(.cell.queen))
-        .row
-        > *:nth-child(2):after,
-      #app:has(.row > *:nth-child(3):is(.cell.queen))
-        .row
-        > *:nth-child(3):after,
-      #app:has(.row > *:nth-child(4):is(.cell.queen))
-        .row
-        > *:nth-child(4):after,
-      #app:has(.row > *:nth-child(5):is(.cell.queen))
-        .row
-        > *:nth-child(5):after,
-      #app:has(.row > *:nth-child(6):is(.cell.queen))
-        .row
-        > *:nth-child(6):after,
-      #app:has(.row > *:nth-child(7):is(.cell.queen))
-        .row
-        > *:nth-child(7):after,
-      #app:has(.row > *:nth-child(8):is(.cell.queen))
-        .row
-        > *:nth-child(8):after,
-      #app:has(.row > *:nth-child(9):is(.cell.queen))
-        .row
-        > *:nth-child(9):after,
-      #app:has(.row > *:nth-child(10):is(.cell.queen))
-        .row
-        > *:nth-child(10):after,
-      .row:has(.cell.queen) .cell:after {
-        content: "❌";
       }
 
       .cell.cross::after {
