@@ -8,9 +8,7 @@
 
       for (let i = 1; i <= 10; i++) {
         cssRules += `
-      #app:has(.row > *:nth-child(${i}):is(.cell.queen))
-        .row
-        > *:nth-child(${i}):after,
+      #app:has(.row > *:nth-child(${i}):is(.cell.queen)) .row > *:nth-child(${i}):after,
         `;
       }
 
@@ -21,23 +19,19 @@
         }`;
 
       // Generate diagonal rules
+      const directions = [
+        [-1, -1], [-1, 1], [1, -1], [1, 1]
+      ];
+
       for (let i = 1; i <= 10; i++) {
         for (let j = 1; j <= 10; j++) {
-          cssRules += `
-          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
-            i - 1
-          }) > *:nth-child(${j - 1}):after,
-          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
-            i - 1
-          }) > *:nth-child(${j + 1}):after,
-          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
-            i + 1
-          }) > *:nth-child(${j - 1}):after,
-          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
-            i + 1
-          }) > *:nth-child(${j + 1}):after {
+          directions.forEach(([di, dj]) => {
+            cssRules += `
+          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${i + di}) > *:nth-child(${j + dj}):after {
           content: "❌";
-            }`;
+            }
+        `;
+          });
         }
       }
 
