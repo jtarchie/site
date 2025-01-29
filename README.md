@@ -11,7 +11,7 @@ piece of content you see here is my own expression.
 
 If you're curious about the tech behind the scenes, this site leverages a
 personal site tool I developed named
-[builder](https://github.com/jtarchie.builder).
+[builder](https://github.com/jtarchie/builder).
 
 ### Local Setup (Mac OS)
 
