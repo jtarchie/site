@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 main {
+  .mermaid {
+    @apply bg-slate-100;
+  }
+
   blockquote {
     @apply text-gray-500 dark:text-gray-400;
     p {

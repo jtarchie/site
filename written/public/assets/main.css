@@ -3140,6 +3140,10 @@ html:has(.drawer-toggle:checked) {
 }
 
 main {
+  .mermaid {
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  }
   blockquote {
     --tw-text-opacity: 1;
     color: rgb(107 114 128 / var(--tw-text-opacity));
