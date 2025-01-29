@@ -1,6 +1,6 @@
-## Using LLMs to Convert Natural Language Queries into Structured Queries
+# Using LLMs to Convert Natural Language Queries into Structured Queries
 
-### Context
+## Context
 
 Over the past year, I have been working on building an application platform that
 supports searching through OpenStreetMap data via an API endpoint and an
@@ -27,7 +27,7 @@ it difficult to present the data in a human-readable and usable way. There can
 be tens of thousands, if not hundreds of thousands, of tags with multiple values
 for each.
 
-### Initial Approach
+## Initial Approach
 
 I wanted to take a different approach: Could I have something that converted a
 user's query, such as "grocery store," and mapped it to predefined tags?
@@ -48,7 +48,7 @@ to exclude mainstream coffee shops to find local businesses? This would require
 maintaining a list of coffee shops to exclude or providing an exclusion
 mechanism for users—making the interface complex.
 
-### Experimenting with LLMs
+## Experimenting with LLMs
 
 Given these limitations, I explored the possibility of using a Large Language
 Model (LLM) to process natural language queries and convert them into structured
@@ -80,7 +80,7 @@ Example query:
 
 [Placeholder for an example with ChatGPT’s result.]
 
-### Integrating LLMs into My Application
+## Integrating LLMs into My Application
 
 With structured JSON working, I incorporated it into my application—a text box
 where users could describe their desired neighborhood, and it would return
@@ -106,7 +106,7 @@ I then asked ChatGPT to refine my prompt:
 
 [Placeholder for shortened example of refined prompt.]
 
-### Enhancing Query Accuracy
+## Enhancing Query Accuracy
 
 To improve accuracy, I identified meaningful OpenStreetMap tags by researching
 community discussions and manually curating a list of about 50 high-value tags
@@ -127,7 +127,7 @@ Testing showed that responses were now more specific. For example:
 
 [Placeholder for resulting query JSON.]
 
-### Handling Geographic Areas
+## Handling Geographic Areas
 
 To improve area selection, I extended the JSON output schema to include multiple
 areas. Instead of requiring users to select one state, I allowed descriptions
@@ -135,7 +135,7 @@ like "Southwestern states" to infer multiple areas.
 
 [Placeholder for a query that includes southwestern states.]
 
-### Optimizing Performance
+## Optimizing Performance
 
 While my implementation worked, optimizations were necessary:
 
@@ -161,7 +161,7 @@ While my implementation worked, optimizations were necessary:
      characters.
    - This prevented excessive API costs and safeguarded against abuse.
 
-### Conclusion
+## Conclusion
 
 By integrating OpenStreetMap data with LLMs, I enabled users to query geospatial
 data using natural language. The system supports filtering, distance
