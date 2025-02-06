@@ -153,7 +153,7 @@ export const ButtonIcon = ({
   property1,
   className,
   icon = (
-    <Property1IcListing className="!absolute !w-[24px] !h-[24px] !top-[8px] !left-[8px]" />
+    <Property1IcListing className="absolute! w-[24px]! h-[24px]! top-[8px]! left-[8px]!" />
   ),
 }) => {
   const [state, dispatch] = useReducer(reducer, {
@@ -231,7 +231,7 @@ import { Property1IcListing } from "../../icons/Property1IcListing";
 export const ButtonIcon = ({
   className,
   icon = (
-    <Property1IcListing className="!absolute !w-[24px] !h-[24px] !top-[8px] !left-[8px]" />
+    <Property1IcListing className="absolute! w-[24px]! h-[24px]! top-[8px]! left-[8px]!" />
   ),
 }) => {
   return (
