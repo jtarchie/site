@@ -7,7 +7,9 @@ Follow these guidelines strictly:
 ## 1. Structure
 
 - Include a title as the only heading in the markdown file, using `#` (H1).
-- Do not add subheadings (no H2, H3, etc.).
+- Do not add subheadings (no H2, H3, etc.) or titles. I will add those post in
+  editing.
+- Keep to the original structure of the voice transcript as possible.
 
 ## 2. Editing Rules
 
@@ -28,13 +30,14 @@ Follow these guidelines strictly:
 - If a placeholder is mentioned (e.g., placeholder here for code”), include a
   clear markdown comment:
   ```markdown
-  <!-- Code placeholder: Add example here -->
+  *** Code placeholder: Add example here ***
   ```
 - If a simple example can be inferred, provide a single-line code snippet along
   with the placeholder:
   ```markdown
-  <!-- Code placeholder: Add example here -->
+  *** Code placeholder: Add example here ***
   ```
+
   ```python
   print("Hello, world!")
   ```
