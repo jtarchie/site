@@ -1,174 +1,176 @@
-# Using LLMs to Convert Natural Language Queries into Structured Queries
+# Using LLMs to Convert Natural Language into Structured Queries
 
-## Context
+Over the past year, I have been building an application platform that enables
+searching through OpenStreetMap (OSM) data via an API endpoint and an embedded
+JavaScript runtime. The idea behind this interface is to minimize data transfer
+and round trips between the client and the server. This allows client-side
+JavaScript to be executed on the server for a specific use case: querying and
+collating
+[geospatial points of interest from OpenStreetMap](/posts/2024-07-02-optimizing-large-scale-openstreetmap-data-with-sqlite).
 
-Over the past year, I have been working on building an application platform that
-supports searching through OpenStreetMap data via an API endpoint and an
-embedded JavaScript runtime into Golang.
+Even though I have
+[documentation for the custom query language](https://knowhere.live/docs/query/),
+but I found that it requires significant domain knowledge about how OSM tags are
+used to identify places. For example, a gas station in OSM could be tagged as
+`store=convenience`, `amenity=gas`, or something else entirely. The
+inconsistency in tagging made it difficult to surface relevant search results.
 
-The idea behind that interface is to minimize the amount of data and round trips
-that need to be done from a client interface. Client-side JavaScript can be
-passed to server-side JavaScript for a very subset use case, which is querying
-and collating geospatial points of interest from OpenStreetMap.
+Initially, I considered creating an endpoint that returns all possible tags, but
+I found that the sheer number of tags—potentially hundreds of thousands—made it
+difficult to present in a human-readable way. This led me to explore a different
+approach: converting user queries, such as "grocery store," into predefined OSM
+tags.
 
-[Placeholder for a link to that blog post.]
+To achieve this, I categorized common amenities for real estate searches—such as
+police stations, gas stations, schools, and hospitals—and built an interface
+that
+[allowed users to input an address](https://knowhere.live/beta/nearby/search).
 
-I have documentation for my query language, but what I found was that it
-required a lot of domain knowledge related to how OpenStreetMap tags may be used
-to identify a place.
+For example, the manifest for Arts and Entertainment captured the following
+tags:
 
-For example, an OpenStreetMap gas station could be marked as `store=convenience`
-or `amenity=gas` or might have neither or only one of them. Discovering those
-tags to help search led me to try to expose that information in different ways.
+```js
+{
+  // ... many more tags ...
+"arts_and_entertainment": {
+    queries: [
+      "[amenity=arts_centre][name]",
+      "[leisure=theatre][name]",
+      "[tourism=gallery][name]",
+    ],
+    markerSymbol: "art-gallery",
+    label: "Arts and Entertainment",
+  }
+}
+```
 
-Initially, I thought about creating an endpoint that returns information about
-all the tags. However, I found that there was a lot of noise in the tags, making
-it difficult to present the data in a human-readable and usable way. There can
-be tens of thousands, if not hundreds of thousands, of tags with multiple values
-for each.
+However, this approach had limitations. The predefined categories restricted
+what users could search for. For example, if someone wanted to exclude
+mainstream coffee shops to discover locally owned businesses, I would need to
+maintain an exclusion list, which was impossible.
 
-## Initial Approach
+### Experimenting with LLMs
 
-I wanted to take a different approach: Could I have something that converted a
-user's query, such as "grocery store," and mapped it to predefined tags?
+Given the rise of large language models (LLMs), I wanted to see if they could
+help translate user queries into structured OSM tags. My initial approach was to
+experiment with ChatGPT by manually testing prompts.
 
-I built an interface where I predetermined a categorization of tags, covering
-common amenities for real estate searches such as police stations, gas stations,
-schools, and hospitals.
+The prompt:
 
-[Placeholder for a link to that interface.]
+> You will be given a user query in natural language, and you will return
+> structured JSON representing the OpenStreetMap tags that correspond to the
+> query.
 
-This allowed users to input an address, which would use an element from the
-Mapbox SDK to return latitude and longitude. I could then use predefined
-categorizations to find nearby points of interest.
+The query:
 
-However, this approach was limited. It only allowed predefined categories to be
-shown, restricting the scope of discovery. For example, what if someone wanted
-to exclude mainstream coffee shops to find local businesses? This would require
-maintaining a list of coffee shops to exclude or providing an exclusion
-mechanism for users—making the interface complex.
+> Find me coffee shops in my neighborhood
 
-## Experimenting with LLMs
+The results:
 
-Given these limitations, I explored the possibility of using a Large Language
-Model (LLM) to process natural language queries and convert them into structured
-queries.
+```json
+{
+  "amenity": "cafe"
+}
+```
 
-I started by experimenting with ChatGPT, manually testing prompts. My initial
-prompt was:
+On a first try, this is a really promising result. Open Street Map documents the
+[`amenity` tag](https://wiki.openstreetmap.org/wiki/Tag:amenity=cafe) and also
+has [`shop=coffee`](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcoffee).
 
-> "You will be given a user query in natural language and return structured JSON
-> representing the OpenStreetMap tags that correspond to the query."
+However, on subsequent runs, sometimes an explanation of JSON structure was
+provided by the LLM, and a different model would never return JSON at all.
 
-Example query:
+To improve accuracy, I refined my prompt to specify an expected JSON schema:
 
-> "Find me coffee shops in my neighborhood."
+The prompt:
 
-[Placeholder for what ChatGPT initially returned.]
+> You will be given a user query in natural language, and you will return
+> structured JSON representing the OpenStreetMap tags that correspond to the
+> query. Please format in the follow JSON format to allow multiple queries.
 
-The results were promising but lacked structure. So, I defined a schema for the
-expected JSON output and refined my prompt:
+```json
+[
+  { "amenity": "cafe" },
+  { "amenity": "fuel" }
+]
+```
 
-> "Given a user's query in natural language, return OpenStreetMap tags in a JSON
-> format. Here is an example of the expected output."
+The query:
 
-Example query:
+Find coffee shops and high schools.
 
-> "What coffee shops are in my neighborhood?"
+The results:
 
-[Placeholder for expected JSON output.]
+```json
+[
+  { "amenity": "cafe" },
+  { "amenity": "school", "school:level": "high" }
+]
+```
 
-[Placeholder for an example with ChatGPT’s result.]
+This is perfect! It is the exact JSON shape that I wanted. However, it should be
+noted that `school:level` is not a valid tag documented in Open Street Map wiki.
 
-## Integrating LLMs into My Application
+After iterating with various user queries and responses, I integrated this into
+my application. The interface allowed users to describe a neighborhood, and the
+system returned relevant points of interest on a map.
 
-With structured JSON working, I incorporated it into my application—a text box
-where users could describe their desired neighborhood, and it would return
-points of interest on a map.
+### Teaching an LLM a Custom Query Language
 
-However, I encountered new challenges:
+I had already developed a custom query language, similar to OQL, that allows
+structured searches through OSM tags. This language supports substring matching,
+range filters, and directives for scoping searches to specific areas. Teaching
+an LLM to generate queries in this format was another challenge.
 
-- **Scoping queries:** My database was structured by states and Canadian
-  provinces. Users had to specify these areas, which broke the natural language
-  flow.
-- **Teaching an LLM my custom query language:** My query language allowed
-  substring matching, range limits, and directives to scope searches.
+To address this, I provided ChatGPT with documentation on the query language,
+including syntax and examples.
 
-To address these issues, I documented my query language, detailing syntax and
-examples.
+*** Placeholder for a link to the query language documentation ***
 
-[Placeholder for link to query syntax documentation.]
+Using OpenAI’s best practices, I asked ChatGPT to generate an optimized prompt
+based on my documentation. The refined prompt improved the results, but when I
+used it via the OpenAI API, the responses were inconsistent, with around 70%
+being correctly structured while others included hallucinated data.
 
-I then asked ChatGPT to refine my prompt:
+### Improving Accuracy with Fine-Tuning
 
-> "Here’s documentation on my query language. Help me write a prompt that
-> ensures you understand it."
+To improve accuracy, I took two additional steps:
 
-[Placeholder for shortened example of refined prompt.]
+1. **Providing a list of high-value OSM tags** – I manually curated a list of 50
+   essential tags, then asked ChatGPT to extend it. The model generated 120
+   tags, of which 15 were invalid, but I was able to refine the list further.
+2. **Enhancing area knowledge** – I expanded my prompt to include a predefined
+   list of U.S. states and Canadian provinces, ensuring that area-based queries
+   returned structured JSON with multiple valid regions.
 
-## Enhancing Query Accuracy
+*** Code placeholder: Example query including areas ***
 
-To improve accuracy, I identified meaningful OpenStreetMap tags by researching
-community discussions and manually curating a list of about 50 high-value tags
-(e.g., shops, amenities, roads, schools, parks). I then asked ChatGPT:
+### Optimizing with Fine-Tuning
 
-> "Here's a list of 50 OpenStreetMap tags for describing a neighborhood. Can you
-> extend it for better specificity?"
+Since my prompt was becoming lengthy and complex, I explored fine-tuning an
+OpenAI model. Fine-tuning allows a model to learn from a dataset of expected
+inputs and outputs. I extracted structured examples from my original prompt and
+created a training dataset.
 
-It suggested 120 tags, of which 15 were incorrect. After review, I refined the
-list and incorporated it into the LLM prompt:
+I then asked ChatGPT Pro to generate additional examples to supplement my
+dataset. After verifying these examples, I trained a fine-tuned model based on
+GPT-4-turbo, which significantly improved query accuracy and response speed.
 
-> "If looking for OpenStreetMap tags, use these as a guide, but feel free to use
-> others."
+*** Placeholder for fine-tuned model comparison results ***
 
-Testing showed that responses were now more specific. For example:
+Fine-tuning also enabled me to adapt the model based on real-world feedback. For
+example, when users reported that skate parks were missing, I researched
+relevant OSM tags and added them to the training set. By continuously
+fine-tuning based on user feedback, I was able to improve the model’s ability to
+infer correct tags without endlessly expanding my predefined tag list.
 
-> "Find coffee shops that are not mainstream."
+### Next Steps
 
-[Placeholder for resulting query JSON.]
+The current implementation enables users to enter a natural language description
+of a neighborhood and receive structured OSM query results. While it works well,
+there are further optimizations to explore, such as reducing token usage in
+prompts, refining fine-tuning datasets, and improving response latency.
 
-## Handling Geographic Areas
+*** Placeholder for a link to the live implementation ***
 
-To improve area selection, I extended the JSON output schema to include multiple
-areas. Instead of requiring users to select one state, I allowed descriptions
-like "Southwestern states" to infer multiple areas.
-
-[Placeholder for a query that includes southwestern states.]
-
-## Optimizing Performance
-
-While my implementation worked, optimizations were necessary:
-
-1. **Fine-Tuning the Model**
-   - I converted example prompts and expected outputs into fine-tuning data.
-   - I asked ChatGPT to generate additional examples, reviewed them, and removed
-     incorrect ones.
-   - I fine-tuned a GPT-4 model with 30+ examples to improve performance.
-   - Results: A slight performance boost and more accurate outputs.
-
-2. **Providing Output Prediction**
-   - OpenAI's API allows defining an expected output structure.
-   - I used this feature to ensure JSON output consistency.
-
-[Placeholder for OpenAI API link about this feature.]
-
-3. **Leveraging Prompt Caching**
-   - OpenAI caches prompts for faster response times, reducing costs.
-   - This ensured my long prompt wasn't reprocessed on every request.
-
-4. **Limiting Token Usage**
-   - I capped JSON output to 300 tokens and limited user input to 300
-     characters.
-   - This prevented excessive API costs and safeguarded against abuse.
-
-## Conclusion
-
-By integrating OpenStreetMap data with LLMs, I enabled users to query geospatial
-data using natural language. The system supports filtering, distance
-constraints, and negations, making searches more intuitive.
-
-[Placeholder for a link to the neighborhood search demo.]
-
-This approach remains **best effort**—not perfect, but continually improving. I
-plan to refine results through fine-tuning and ongoing user feedback to enhance
-accuracy and usability.
+That's it. Let me know if you have any questions. Thanks for reading.
