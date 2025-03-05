@@ -6,9 +6,9 @@
   "author": "JT Archie <jtarchie@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.4",
-    "daisyui": "^5.0.0-beta.6",
-    "tailwindcss": "^4.0.4"
+    "@tailwindcss/cli": "^4.0.9",
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^4.0.9"
   },
   "scripts": {
     "build": "npx @tailwindcss/cli -i ./written/input.css -o ./written/public/assets/main.css"
