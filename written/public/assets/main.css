@@ -2,9 +2,11 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    --font-sans:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    --font-mono:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-blue-100: oklch(0.932 0.032 255.585);
     --color-blue-600: oklch(0.546 0.245 262.881);
@@ -59,9 +61,18 @@
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
-    font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" );
+    font-family: var(
+      --default-font-family,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji"
+    );
     font-feature-settings: var(--default-font-feature-settings, normal);
-    font-variation-settings: var( --default-font-variation-settings, normal );
+    font-variation-settings: var(--default-font-variation-settings, normal);
     -webkit-tap-highlight-color: transparent;
   }
   body {
@@ -89,9 +100,22 @@
     font-weight: bolder;
   }
   code, kbd, samp, pre {
-    font-family: var( --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace );
-    font-feature-settings: var( --default-mono-font-feature-settings, normal );
-    font-variation-settings: var( --default-mono-font-variation-settings, normal );
+    font-family: var(
+      --default-mono-font-family,
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      "Liberation Mono",
+      "Courier New",
+      monospace
+    );
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(
+      --default-mono-font-variation-settings,
+      normal
+    );
     font-size: 1em;
   }
   small {
@@ -173,13 +197,23 @@
   ::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
   }
-  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+  ::-webkit-datetime-edit,
+  ::-webkit-datetime-edit-year-field,
+  ::-webkit-datetime-edit-month-field,
+  ::-webkit-datetime-edit-day-field,
+  ::-webkit-datetime-edit-hour-field,
+  ::-webkit-datetime-edit-minute-field,
+  ::-webkit-datetime-edit-second-field,
+  ::-webkit-datetime-edit-millisecond-field,
+  ::-webkit-datetime-edit-meridiem-field {
     padding-block: 0;
   }
   :-moz-ui-invalid {
     box-shadow: none;
   }
-  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+  button,
+  input:where([type="button"], [type="reset"], [type="submit"]),
+  ::file-selector-button {
     appearance: button;
   }
   ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
@@ -208,7 +242,9 @@
     overflow-y: hidden;
     overscroll-behavior: contain;
     opacity: 0%;
-    transition: opacity 0.2s ease-out 0.1s allow-discrete, visibility 0.3s ease-out 0.1s allow-discrete;
+    transition:
+      opacity 0.2s ease-out 0.1s allow-discrete,
+      visibility 0.3s ease-out 0.1s allow-discrete;
     height: 100vh;
     height: 100dvh;
     > .drawer-overlay {
@@ -300,13 +336,21 @@
         opacity: 0%;
       }
     }
-    &:checked, &:is(label:has(:checked)), &:is(.tab-active, [aria-selected="true"]) {
+    &:checked,
+    &:is(label:has(:checked)),
+    &:is(.tab-active, [aria-selected="true"]) {
       & + .tab-content {
         display: block;
         height: 100%;
       }
     }
-    &:not(:checked, label:has(:checked), :hover, .tab-active, [aria-selected="true"]) {
+    &:not(
+      :checked,
+      label:has(:checked),
+      :hover,
+      .tab-active,
+      [aria-selected="true"]
+    ) {
       color: color-mix(in oklab, var(--color-base-content) 50%, transparent);
     }
     &:not(input):empty {
@@ -357,7 +401,8 @@
     :where(li > .menu-dropdown:not(.menu-dropdown-show)) {
       display: none;
     }
-    :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)), :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+    :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)),
+    :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
       display: grid;
       grid-auto-flow: column;
       align-content: flex-start;
@@ -400,14 +445,22 @@
         pointer-events: none;
       }
     }
-    :where(li > details[open] > summary):after, :where(li > .menu-dropdown-toggle.menu-dropdown-show):after {
+    :where(li > details[open] > summary):after,
+    :where(li > .menu-dropdown-toggle.menu-dropdown-show):after {
       rotate: 45deg;
       translate: 0 1px;
     }
-    :where( li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title), li:not(.menu-title, .disabled) > details > summary:not(.menu-title) ):not(.menu-active, :active, .btn) {
+    :where(
+      li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title),
+      li:not(.menu-title, .disabled) > details > summary:not(.menu-title)
+    ):not(.menu-active, :active, .btn) {
       &.menu-focus, &:focus-visible {
         cursor: pointer;
-        background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+        background-color: color-mix(
+          in oklab,
+          var(--color-base-content) 10%,
+          transparent
+        );
         color: var(--color-base-content);
         outline-style: none;
         @media (forced-colors: active) {
@@ -416,15 +469,31 @@
         }
       }
     }
-    :where( li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title):not(.menu-active, :active, .btn):hover, li:not(.menu-title, .disabled) > details > summary:not(.menu-title):not(.menu-active, :active, .btn):hover ) {
+    :where(
+      li:not(.menu-title, .disabled)
+        > *:not(ul, details, .menu-title):not(
+          .menu-active,
+          :active,
+          .btn
+        ):hover,
+      li:not(.menu-title, .disabled)
+        > details
+        > summary:not(.menu-title):not(.menu-active, :active, .btn):hover
+    ) {
       cursor: pointer;
-      background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+      background-color: color-mix(
+        in oklab,
+        var(--color-base-content) 10%,
+        transparent
+      );
       outline-style: none;
       @media (forced-colors: active) {
         outline: 2px solid transparent;
         outline-offset: 2px;
       }
-      box-shadow: 0 1px oklch(0% 0 0 / 0.01) inset, 0 -1px oklch(100% 0 0 / 0.01) inset;
+      box-shadow:
+        0 1px oklch(0% 0 0 / 0.01) inset,
+        0 -1px oklch(100% 0 0 / 0.01) inset;
     }
     :where(li:empty) {
       background-color: var(--color-base-content);
@@ -442,7 +511,9 @@
       .badge {
         justify-self: flex-end;
       }
-      & > *:not(ul, .menu-title, details, .btn):active, & > *:not(ul, .menu-title, details, .btn).menu-active, & > details > summary:active {
+      & > *:not(ul, .menu-title, details, .btn):active,
+      & > *:not(ul, .menu-title, details, .btn).menu-active,
+      & > details > summary:active {
         outline-style: none;
         @media (forced-colors: active) {
           outline: 2px solid transparent;
@@ -503,7 +574,8 @@
     :where(li > .menu-dropdown:not(.menu-dropdown-show)) {
       display: none !important;
     }
-    :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)), :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+    :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)),
+    :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
       display: grid !important;
       grid-auto-flow: column !important;
       align-content: flex-start !important;
@@ -546,14 +618,22 @@
         pointer-events: none !important;
       }
     }
-    :where(li > details[open] > summary):after, :where(li > .menu-dropdown-toggle.menu-dropdown-show):after {
+    :where(li > details[open] > summary):after,
+    :where(li > .menu-dropdown-toggle.menu-dropdown-show):after {
       rotate: 45deg !important;
       translate: 0 1px !important;
     }
-    :where( li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title), li:not(.menu-title, .disabled) > details > summary:not(.menu-title) ):not(.menu-active, :active, .btn) {
+    :where(
+      li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title),
+      li:not(.menu-title, .disabled) > details > summary:not(.menu-title)
+    ):not(.menu-active, :active, .btn) {
       &.menu-focus, &:focus-visible {
         cursor: pointer !important;
-        background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent) !important;
+        background-color: color-mix(
+          in oklab,
+          var(--color-base-content) 10%,
+          transparent
+        ) !important;
         color: var(--color-base-content) !important;
         outline-style: none !important;
         @media (forced-colors: active) {
@@ -562,15 +642,31 @@
         }
       }
     }
-    :where( li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title):not(.menu-active, :active, .btn):hover, li:not(.menu-title, .disabled) > details > summary:not(.menu-title):not(.menu-active, :active, .btn):hover ) {
+    :where(
+      li:not(.menu-title, .disabled)
+        > *:not(ul, details, .menu-title):not(
+          .menu-active,
+          :active,
+          .btn
+        ):hover,
+      li:not(.menu-title, .disabled)
+        > details
+        > summary:not(.menu-title):not(.menu-active, :active, .btn):hover
+    ) {
       cursor: pointer !important;
-      background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent) !important;
+      background-color: color-mix(
+        in oklab,
+        var(--color-base-content) 10%,
+        transparent
+      ) !important;
       outline-style: none !important;
       @media (forced-colors: active) {
         outline: 2px solid transparent !important;
         outline-offset: 2px !important;
       }
-      box-shadow: 0 1px oklch(0% 0 0 / 0.01) inset, 0 -1px oklch(100% 0 0 / 0.01) inset !important;
+      box-shadow:
+        0 1px oklch(0% 0 0 / 0.01) inset,
+        0 -1px oklch(100% 0 0 / 0.01) inset !important;
     }
     :where(li:empty) {
       background-color: var(--color-base-content) !important;
@@ -588,7 +684,9 @@
       .badge {
         justify-self: flex-end !important;
       }
-      & > *:not(ul, .menu-title, details, .btn):active, & > *:not(ul, .menu-title, details, .btn).menu-active, & > details > summary:active {
+      & > *:not(ul, .menu-title, details, .btn):active,
+      & > *:not(ul, .menu-title, details, .btn).menu-active,
+      & > details > summary:active {
         outline-style: none !important;
         @media (forced-colors: active) {
           outline: 2px solid transparent !important;
@@ -599,12 +697,14 @@
         background-size: auto, calc(var(--noise) * 100%) !important;
         background-image: none, var(--fx-noise) !important;
         &:not(&:active) {
-          box-shadow: 0 2px calc(var(--depth) * 3px) -2px var(--menu-active-bg) !important;
+          box-shadow: 0 2px calc(var(--depth) * 3px) -2px var(--menu-active-bg)
+            !important;
         }
       }
       &.menu-disabled {
         pointer-events: none !important;
-        color: color-mix(in oklab, var(--color-base-content) 20%, transparent) !important;
+        color: color-mix(in oklab, var(--color-base-content) 20%, transparent)
+          !important;
       }
     }
     .dropdown:focus-within {
@@ -655,22 +755,44 @@
     border-style: solid;
     border-color: var(--btn-border);
     text-shadow: 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 0.15));
-    box-shadow: 0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset, var(--btn-shadow);
+    box-shadow:
+      0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset,
+      var(--btn-shadow);
     --size: calc(var(--size-field, 0.25rem) * 10);
     --btn-bg: var(--btn-color, var(--color-base-200));
     --btn-fg: var(--color-base-content);
     --btn-p: 1rem;
-    --btn-border: color-mix(in oklab, var(--btn-bg), #000 calc(var(--depth) * 5%));
-    --btn-shadow: 0 3px 2px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000),
-    0 4px 3px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000);
+    --btn-border: color-mix(
+      in oklab,
+      var(--btn-bg),
+      #000 calc(var(--depth) * 5%)
+    );
+    --btn-shadow:
+      0 3px 2px -2px color-mix(
+      in oklab,
+      var(--btn-bg) calc(var(--depth) * 30%),
+      #0000
+    ), 0 4px 3px -2px color-mix(
+      in oklab,
+      var(--btn-bg) calc(var(--depth) * 30%),
+      #0000
+    );
     --btn-noise: var(--fx-noise);
     @media (hover: hover) {
       &:hover {
-        --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+        --btn-bg: color-mix(
+          in oklab,
+          var(--btn-color, var(--color-base-200)),
+          #000 7%
+        );
       }
     }
     &.btn-active {
-      --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+      --btn-bg: color-mix(
+        in oklab,
+        var(--btn-color, var(--color-base-200)),
+        #000 7%
+      );
       --btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
       isolation: isolate;
     }
@@ -680,13 +802,25 @@
     }
     &:active:not(.btn-active) {
       translate: 0 0.5px;
-      --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 5%);
-      --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+      --btn-bg: color-mix(
+        in oklab,
+        var(--btn-color, var(--color-base-200)),
+        #000 5%
+      );
+      --btn-border: color-mix(
+        in oklab,
+        var(--btn-color, var(--color-base-200)),
+        #000 7%
+      );
       --btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
     }
     &:is(:disabled, [disabled], .btn-disabled) {
       &:not(.btn-link, .btn-ghost) {
-        background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+        background-color: color-mix(
+          in oklab,
+          var(--color-base-content) 10%,
+          transparent
+        );
         box-shadow: none;
       }
       pointer-events: none;
@@ -696,7 +830,11 @@
       @media (hover: hover) {
         &:hover {
           pointer-events: none;
-          background-color: color-mix(in oklab, var(--color-neutral) 20%, transparent);
+          background-color: color-mix(
+            in oklab,
+            var(--color-neutral) 20%,
+            transparent
+          );
           --btn-border: #0000;
           --btn-fg: color-mix(in oklch, var(--color-base-content) 20%, #0000);
         }
@@ -710,7 +848,11 @@
       &:checked {
         outline-width: 2px;
         outline-style: solid;
-        --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+        --btn-bg: color-mix(
+          in oklab,
+          var(--btn-color, var(--color-base-200)),
+          #000 7%
+        );
         --btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
         isolation: isolate;
       }
@@ -755,11 +897,12 @@
         --list-grid-cols: minmax(0, auto) minmax(0, auto) minmax(0, auto) 1fr;
       }
       &:has(.list-col-grow:nth-child(5)) {
-        --list-grid-cols: minmax(0, auto) minmax(0, auto) minmax(0, auto) minmax(0, auto) 1fr;
+        --list-grid-cols: minmax(0, auto) minmax(0, auto) minmax(0, auto)
+          minmax(0, auto) 1fr;
       }
       &:has(.list-col-grow:nth-child(6)) {
-        --list-grid-cols: minmax(0, auto) minmax(0, auto) minmax(0, auto) minmax(0, auto)
-        minmax(0, auto) 1fr;
+        --list-grid-cols: minmax(0, auto) minmax(0, auto) minmax(0, auto)
+          minmax(0, auto) minmax(0, auto) 1fr;
       }
       :not(.list-col-wrap) {
         grid-row-start: 1;
@@ -773,7 +916,11 @@
           inset-inline: var(--radius-box);
           position: absolute;
           bottom: calc(0.25rem * 0);
-          border-color: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+          border-color: color-mix(
+            in oklab,
+            var(--color-base-content) 5%,
+            transparent
+          );
         }
       }
     }
@@ -801,8 +948,8 @@
       --toast-x: 0;
     }
     &:where(.toast-center) {
-      inset-inline-start: calc(1/2 * 100%);
-      inset-inline-end: calc(1/2 * 100%);
+      inset-inline-start: calc(1 / 2 * 100%);
+      inset-inline-end: calc(1 / 2 * 100%);
       --toast-x: -50%;
     }
     &:where(.toast-end) {
@@ -816,7 +963,7 @@
       --toast-y: 0;
     }
     &:where(.toast-middle) {
-      top: calc(1/2 * 100%);
+      top: calc(1 / 2 * 100%);
       bottom: auto;
       --toast-y: -50%;
     }
@@ -847,7 +994,11 @@
     border-end-start-radius: var(--join-es, var(--radius-field));
     border-end-end-radius: var(--join-ee, var(--radius-field));
     border-color: var(--input-color);
-    box-shadow: 0 1px color-mix(in oklab, var(--input-color) calc(var(--depth) * 10%), #0000) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
+    box-shadow:
+      0 1px
+      color-mix(in oklab, var(--input-color) calc(var(--depth) * 10%), #0000)
+      inset,
+      0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
     --size: calc(var(--size-field, 0.25rem) * 10);
     --input-color: color-mix(in oklab, var(--color-base-content) 20%, #0000);
     &:where(input) {
@@ -870,7 +1021,8 @@
     }
     &:focus, &:focus-within {
       --input-color: var(--color-base-content);
-      box-shadow: 0 1px color-mix(in oklab, var(--input-color) calc(var(--depth) * 10%), #0000);
+      box-shadow: 0 1px
+        color-mix(in oklab, var(--input-color) calc(var(--depth) * 10%), #0000);
       outline: 2px solid var(--input-color);
       outline-offset: 2px;
       isolation: isolate;
@@ -932,7 +1084,8 @@
       font-weight: 600;
     }
     :where(tfoot) {
-      border-top: var(--border) solid color-mix(in oklch, var(--color-base-content) 5%, #0000);
+      border-top: var(--border) solid
+        color-mix(in oklch, var(--color-base-content) 5%, #0000);
     }
     :where(.table-pin-rows thead tr) {
       position: sticky;
@@ -953,7 +1106,8 @@
       background-color: var(--color-base-100);
     }
     :where(thead tr, tbody tr:not(:last-child)) {
-      border-bottom: var(--border) solid color-mix(in oklch, var(--color-base-content) 5%, #0000);
+      border-bottom: var(--border) solid
+        color-mix(in oklch, var(--color-base-content) 5%, #0000);
     }
   }
   .steps {
@@ -1075,9 +1229,11 @@
     vertical-align: middle;
     width: clamp(3rem, 20rem, 100%);
     --radius-selector-max: calc(
-    var(--radius-selector) + var(--radius-selector) + var(--radius-selector)
-  );
-    border-radius: calc(var(--radius-selector) + min(var(--range-p), var(--radius-selector-max)));
+      var(--radius-selector) + var(--radius-selector) + var(--radius-selector)
+    );
+    border-radius: calc(
+      var(--radius-selector) + min(var(--range-p), var(--radius-selector-max))
+    );
     border: none;
     height: var(--range-thumb-size);
     [dir="rtl"] & {
@@ -1102,7 +1258,9 @@
     &::-webkit-slider-thumb {
       position: relative;
       box-sizing: border-box;
-      border-radius: calc(var(--radius-selector) + min(var(--range-p), var(--radius-selector-max)));
+      border-radius: calc(
+        var(--radius-selector) + min(var(--range-p), var(--radius-selector-max))
+      );
       background-color: currentColor;
       height: var(--range-thumb-size);
       width: var(--range-thumb-size);
@@ -1112,7 +1270,15 @@
       top: 50%;
       color: var(--range-progress);
       transform: translateY(-50%);
-      box-shadow: 0 -1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset, 0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset, 0 1px color-mix(in oklab, currentColor calc(var(--depth) * 10%), #0000), 0 0 0 2rem var(--range-thumb) inset, calc((var(--range-dir, 1) * -100rem) - (var(--range-dir, 1) * var(--range-thumb-size) / 2)) 0 0 calc(100rem * var(--range-fill));
+      box-shadow:
+        0 -1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 1px color-mix(in oklab, currentColor calc(var(--depth) * 10%), #0000),
+        0 0 0 2rem var(--range-thumb) inset,
+        calc(
+        var(--range-dir, 1) * -100rem
+          - var(--range-dir, 1) * var(--range-thumb-size) / 2
+      ) 0 0 calc(100rem * var(--range-fill));
     }
     &::-moz-range-track {
       width: 100%;
@@ -1126,14 +1292,24 @@
     &::-moz-range-thumb {
       position: relative;
       box-sizing: border-box;
-      border-radius: calc(var(--radius-selector) + min(var(--range-p), var(--radius-selector-max)));
+      border-radius: calc(
+        var(--radius-selector) + min(var(--range-p), var(--radius-selector-max))
+      );
       background-color: currentColor;
       height: var(--range-thumb-size);
       width: var(--range-thumb-size);
       border: var(--range-p) solid;
       top: 50%;
       color: var(--range-progress);
-      box-shadow: 0 -1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset, 0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset, 0 1px color-mix(in oklab, currentColor calc(var(--depth) * 10%), #0000), 0 0 0 2rem var(--range-thumb) inset, calc((var(--range-dir, 1) * -100rem) - (var(--range-dir, 1) * var(--range-thumb-size) / 2)) 0 0 calc(100rem * var(--range-fill));
+      box-shadow:
+        0 -1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 1px color-mix(in oklab, currentColor calc(var(--depth) * 10%), #0000),
+        0 0 0 2rem var(--range-thumb) inset,
+        calc(
+        var(--range-dir, 1) * -100rem
+          - var(--range-dir, 1) * var(--range-thumb-size) / 2
+      ) 0 0 calc(100rem * var(--range-fill));
     }
     &:disabled {
       cursor: not-allowed;
@@ -1148,13 +1324,21 @@
       display: grid;
       flex-shrink: 0;
       align-items: center;
-      grid-template-rows: var(--timeline-row-start, minmax(0, 1fr)) auto var( --timeline-row-end, minmax(0, 1fr) );
-      grid-template-columns: var(--timeline-col-start, minmax(0, 1fr)) auto var( --timeline-col-end, minmax(0, 1fr) );
+      grid-template-rows:
+        var(--timeline-row-start, minmax(0, 1fr)) auto var(
+        --timeline-row-end,
+        minmax(0, 1fr)
+      );
+      grid-template-columns:
+        var(--timeline-col-start, minmax(0, 1fr)) auto var(
+        --timeline-col-end,
+        minmax(0, 1fr)
+      );
       > hr {
         border: none;
         width: 100%;
         @media print {
-          border: .1px solid var(--color-base-300);
+          border: 0.1px solid var(--color-base-300);
         }
         &:first-child {
           grid-column-start: 1;
@@ -1250,11 +1434,17 @@
     :where(& > li:not(.menu-title) > details > ul) {
       border-radius: var(--radius-box);
       background-color: var(--color-base-100);
-      box-shadow: 0 1px 3px 0 oklch(0% 0 0/0.1), 0 1px 2px -1px oklch(0% 0 0/0.1);
+      box-shadow:
+        0 1px 3px 0 oklch(0% 0 0/0.1),
+        0 1px 2px -1px oklch(0% 0 0/0.1);
     }
   }
   .checkbox {
-    border: var(--border) solid var(--input-color, color-mix(in oklab, var(--color-base-content) 20%, #0000));
+    border: var(--border) solid
+      var(
+        --input-color,
+        color-mix(in oklab, var(--color-base-content) 20%, #0000)
+      );
     position: relative;
     flex-shrink: 0;
     cursor: pointer;
@@ -1263,7 +1453,10 @@
     padding: calc(0.25rem * 1);
     vertical-align: middle;
     color: var(--color-base-content);
-    box-shadow: 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset, 0 0 #0000 inset, 0 0 #0000;
+    box-shadow:
+      0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset,
+      0 0 #0000 inset,
+      0 0 #0000;
     transition: background-color 0.2s, box-shadow 0.2s;
     --size: calc(var(--size-selector, 0.25rem) * 6);
     width: var(--size);
@@ -1281,8 +1474,16 @@
       opacity: 0%;
       transition: clip-path 0.3s, opacity 0.1s, rotate 0.3s, translate 0.3s;
       transition-delay: 0.1s;
-      clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 70% 80%, 70% 100%);
-      box-shadow: 0px 3px 0 0px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
+      clip-path: polygon(
+        20% 100%,
+        20% 80%,
+        50% 80%,
+        50% 80%,
+        70% 80%,
+        70% 100%
+      );
+      box-shadow: 0px 3px 0 0px oklch(100% 0 0 / calc(var(--depth) * 0.1))
+        inset;
       font-size: 1rem;
       line-height: 0.75;
     }
@@ -1292,9 +1493,19 @@
     }
     &:checked, &[aria-checked="true"] {
       background-color: var(--input-color, #0000);
-      box-shadow: 0 0 #0000 inset, 0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset, 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1));
+      box-shadow:
+        0 0 #0000 inset,
+        0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1));
       &:before {
-        clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 0%, 70% 0%, 70% 100%);
+        clip-path: polygon(
+          20% 100%,
+          20% 80%,
+          50% 80%,
+          50% 0%,
+          70% 0%,
+          70% 100%
+        );
         opacity: 100%;
         @media print {
           rotate: 0deg;
@@ -1321,7 +1532,14 @@
         rotate: 0deg;
         opacity: 100%;
         translate: 0 -35%;
-        clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 80% 80%, 80% 100%);
+        clip-path: polygon(
+          20% 100%,
+          20% 80%,
+          50% 80%,
+          50% 80%,
+          80% 80%,
+          80% 100%
+        );
       }
     }
     &:disabled {
@@ -1352,14 +1570,26 @@
     background-color: color-mix(in oklab, currentColor 20%, transparent);
     color: var(--color-base-content);
     &:indeterminate {
-      background-image: repeating-linear-gradient( 90deg, currentColor -1%, currentColor 10%, #0000 10%, #0000 90% );
+      background-image: repeating-linear-gradient(
+        90deg,
+        currentColor -1%,
+        currentColor 10%,
+        #0000 10%,
+        #0000 90%
+      );
       background-size: 200%;
       background-position-x: 15%;
       animation: progress 5s ease-in-out infinite;
       @supports (-moz-appearance: none) {
         &::-moz-progress-bar {
           background-color: transparent;
-          background-image: repeating-linear-gradient( 90deg, currentColor -1%, currentColor 10%, #0000 10%, #0000 90% );
+          background-image: repeating-linear-gradient(
+            90deg,
+            currentColor -1%,
+            currentColor 10%,
+            #0000 10%,
+            #0000 90%
+          );
           background-size: 200%;
           background-position-x: 15%;
           animation: progress 5s ease-in-out infinite;
@@ -1491,12 +1721,14 @@
       &:first-child {
         margin-inline-start: calc(0.25rem * -3);
         margin-inline-end: calc(0.25rem * 3);
-        border-inline-end: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+        border-inline-end: var(--border) solid
+          color-mix(in oklab, currentColor 10%, #0000);
       }
       &:last-child {
         margin-inline-start: calc(0.25rem * 3);
         margin-inline-end: calc(0.25rem * -3);
-        border-inline-start: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+        border-inline-start: var(--border) solid
+          color-mix(in oklab, currentColor 10%, #0000);
       }
     }
   }
@@ -1509,13 +1741,22 @@
     width: calc(0.25rem * 2);
     height: calc(0.25rem * 2);
     border-radius: var(--radius-selector);
-    background-color: color-mix(in oklab, var(--color-base-content) 20%, transparent);
+    background-color: color-mix(
+      in oklab,
+      var(--color-base-content) 20%,
+      transparent
+    );
     background-position: center;
     background-repeat: no-repeat;
     vertical-align: middle;
     color: color-mix(in oklab, var(--color-black) 30%, transparent);
-    background-image: radial-gradient( circle at 35% 30%, oklch(1 0 0 / calc(var(--depth) * 0.5)), #0000 );
-    box-shadow: 0 2px 3px -1px color-mix(in oklab, currentColor calc(var(--depth) * 100%), #0000);
+    background-image: radial-gradient(
+      circle at 35% 30%,
+      oklch(1 0 0 / calc(var(--depth) * 0.5)),
+      #0000
+    );
+    box-shadow: 0 2px 3px -1px
+      color-mix(in oklab, currentColor calc(var(--depth) * 100%), #0000);
   }
   .navbar {
     display: flex;
@@ -1566,7 +1807,19 @@
     line-height: 1.25rem;
     background-size: auto, calc(var(--noise) * 100%);
     background-image: none, var(--fx-noise);
-    box-shadow: 0 3px 0 -2px oklch(100% 0 0 / calc(var(--depth) * 0.08)) inset, 0 1px color-mix( in oklab, color-mix(in oklab, #000 20%, var(--alert-color, var(--color-base-200))) calc(var(--depth) * 20%), #0000 ), 0 4px 3px -2px oklch(0% 0 0 / calc(var(--depth) * 0.08));
+    box-shadow:
+      0 3px 0 -2px oklch(100% 0 0 / calc(var(--depth) * 0.08)) inset,
+      0 1px
+      color-mix(
+        in oklab,
+        color-mix(
+          in oklab,
+          #000 20%,
+          var(--alert-color, var(--color-base-200))
+        ) calc(var(--depth) * 20%),
+        #0000
+      ),
+      0 4px 3px -2px oklch(0% 0 0 / calc(var(--depth) * 0.08));
     &.alert-outline {
       background-color: transparent;
       color: var(--alert-color);
@@ -1582,8 +1835,16 @@
     }
     &.alert-soft {
       color: var(--alert-color, var(--color-base-content));
-      background: color-mix( in oklab, var(--alert-color, var(--color-base-content)) 8%, var(--color-base-100) );
-      border-color: color-mix( in oklab, var(--alert-color, var(--color-base-content)) 10%, var(--color-base-100) );
+      background: color-mix(
+        in oklab,
+        var(--alert-color, var(--color-base-content)) 8%,
+        var(--color-base-100)
+      );
+      border-color: color-mix(
+        in oklab,
+        var(--alert-color, var(--color-base-content)) 10%,
+        var(--color-base-100)
+      );
       box-shadow: none;
       background-image: none;
     }
@@ -1707,7 +1968,8 @@
     flex-grow: 1;
   }
   .transform {
-    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z)
+      var(--tw-skew-x) var(--tw-skew-y);
   }
   .link {
     cursor: pointer;
@@ -1762,7 +2024,7 @@
     border-color: transparent;
   }
   .\!bg-\[rgba\(255\,255\,255\,1\.0\)\] {
-    background-color: rgba(255,255,255,1.0) !important;
+    background-color: rgba(255, 255, 255, 1.0) !important;
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
@@ -1842,7 +2104,12 @@
   }
   .shadow-none {
     --tw-shadow: 0 0 #0000;
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    box-shadow:
+      var(--tw-inset-shadow),
+      var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow),
+      var(--tw-shadow);
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -1861,30 +2128,80 @@
     }
   }
   .filter {
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(
+      --tw-grayscale,
+    ) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(
+      --tw-sepia,
+    ) var(--tw-drop-shadow,);
   }
   .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-property:
+      color,
+      background-color,
+      border-color,
+      outline-color,
+      text-decoration-color,
+      fill,
+      stroke,
+      --tw-gradient-from,
+      --tw-gradient-via,
+      --tw-gradient-to,
+      opacity,
+      box-shadow,
+      transform,
+      translate,
+      scale,
+      rotate,
+      filter,
+      -webkit-backdrop-filter,
+      backdrop-filter;
+    transition-timing-function: var(
+      --tw-ease,
+      var(--default-transition-timing-function)
+    );
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .\[background\:linear-gradient\(180deg\,rgb\(53\,84\,209\)_0\%\,rgb\(21\.8\,96\.45\,209\.31\)_100\%\)\] {
-    background: linear-gradient(180deg,rgb(53,84,209) 0%,rgb(21.8,96.45,209.31) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(53, 84, 209) 0%,
+      rgb(21.8, 96.45, 209.31) 100%
+    );
   }
   .\[background\:linear-gradient\(180deg\,rgb\(53\,84\,209\)_0\%\,rgb\(43\,127\,254\)_100\%\)\] {
-    background: linear-gradient(180deg,rgb(53,84,209) 0%,rgb(43,127,254) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(53, 84, 209) 0%,
+      rgb(43, 127, 254) 100%
+    );
   }
   .\[background\:linear-gradient\(180deg\,rgb\(71\.72\,103\.07\,229\.5\)_0\%\,rgb\(43\,127\,254\)_100\%\)\] {
-    background: linear-gradient(180deg,rgb(71.72,103.07,229.5) 0%,rgb(43,127,254) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(71.72, 103.07, 229.5) 0%,
+      rgb(43, 127, 254) 100%
+    );
   }
   .\[background\:linear-gradient\(180deg\,rgb\(228\.44\,239\.01\,255\)_0\%\,rgb\(255\,255\,255\)_100\%\)\] {
-    background: linear-gradient(180deg,rgb(228.44,239.01,255) 0%,rgb(255,255,255) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(228.44, 239.01, 255) 0%,
+      rgb(255, 255, 255) 100%
+    );
   }
   .\[background\:linear-gradient\(180deg\,rgb\(238\,241\.38\,255\)_0\%\,rgb\(217\.65\,229\.56\,247\.56\)_100\%\)\] {
-    background: linear-gradient(180deg,rgb(238,241.38,255) 0%,rgb(217.65,229.56,247.56) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(238, 241.38, 255) 0%,
+      rgb(217.65, 229.56, 247.56) 100%
+    );
   }
   .\[border-image\:linear-gradient\(to_bottom\,rgb\(53\,84\,209\)\,rgb\(43\,127\,254\)\)_1\] {
-    border-image: linear-gradient(to bottom,rgb(53,84,209),rgb(43,127,254)) 1;
+    border-image: linear-gradient(
+      to bottom,
+      rgb(53, 84, 209),
+      rgb(43, 127, 254)
+    ) 1;
   }
   .\[out\:json\] {
     out: json;
@@ -1900,21 +2217,34 @@
     &:hover {
       @media (hover: hover) {
         --tw-shadow: 0 0 #0000;
-        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        box-shadow:
+          var(--tw-inset-shadow),
+          var(--tw-inset-ring-shadow),
+          var(--tw-ring-offset-shadow),
+          var(--tw-ring-shadow),
+          var(--tw-shadow);
       }
     }
   }
   .hover\:\[background\:linear-gradient\(180deg\,rgb\(71\.72\,103\.07\,229\.5\)_0\%\,rgb\(43\,127\,254\)_100\%\)\] {
     &:hover {
       @media (hover: hover) {
-        background: linear-gradient(180deg,rgb(71.72,103.07,229.5) 0%,rgb(43,127,254) 100%);
+        background: linear-gradient(
+          180deg,
+          rgb(71.72, 103.07, 229.5) 0%,
+          rgb(43, 127, 254) 100%
+        );
       }
     }
   }
   .hover\:\[background\:linear-gradient\(180deg\,rgb\(228\.44\,239\.01\,255\)_0\%\,rgb\(255\,255\,255\)_100\%\)\] {
     &:hover {
       @media (hover: hover) {
-        background: linear-gradient(180deg,rgb(228.44,239.01,255) 0%,rgb(255,255,255) 100%);
+        background: linear-gradient(
+          180deg,
+          rgb(228.44, 239.01, 255) 0%,
+          rgb(255, 255, 255) 100%
+        );
       }
     }
   }
@@ -2465,7 +2795,9 @@ main {
   }
 }
 @layer base {
-  :where(:root),:root:has(input.theme-controller[value=light]:checked),[data-theme=light] {
+  :where(:root),
+  :root:has(input.theme-controller[value="light"]:checked),
+  [data-theme="light"] {
     color-scheme: light;
     --color-base-100: oklch(100% 0 0);
     --color-base-200: oklch(98% 0 0);
@@ -2533,7 +2865,8 @@ main {
   }
 }
 @layer base {
-  :root:has(input.theme-controller[value=light]:checked),[data-theme=light] {
+  :root:has(input.theme-controller[value="light"]:checked),
+  [data-theme="light"] {
     color-scheme: light;
     --color-base-100: oklch(100% 0 0);
     --color-base-200: oklch(98% 0 0);
@@ -2566,7 +2899,7 @@ main {
   }
 }
 @layer base {
-  :root:has(input.theme-controller[value=dark]:checked),[data-theme=dark] {
+  :root:has(input.theme-controller[value="dark"]:checked), [data-theme="dark"] {
     color-scheme: dark;
     --color-base-100: oklch(25.33% 0.016 252.42);
     --color-base-200: oklch(23.26% 0.014 253.1);
@@ -2608,23 +2941,25 @@ main {
 }
 @layer base {
   :root,
-[data-theme] {
+  [data-theme] {
     background-color: var(--root-bg, var(--color-base-100));
     color: var(--color-base-content);
   }
 }
 @layer base {
   :where(
-  :root:has(
-      .modal-open,
-      .modal[open],
-      .modal:target,
-      .modal-toggle:checked,
-      .drawer:not(.drawer-open) > .drawer-toggle:checked
+    :root:has(
+      .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not(
+        .drawer-open
+      )
+        > .drawer-toggle:checked
     )
-) {
+  ) {
     scrollbar-gutter: stable;
-    background-image: linear-gradient(var(--color-base-100), var(--color-base-100));
+    background-image: linear-gradient(
+      var(--color-base-100),
+      var(--color-base-100)
+    );
     --root-bg: color-mix(in srgb, var(--color-base-100), oklch(0% 0 0) 40%);
   }
 }
@@ -2636,7 +2971,12 @@ main {
   }
 }
 @layer base {
-  :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not([class*="drawer-open"]) > .drawer-toggle:checked ) {
+  :root:has(
+    .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not(
+      [class*="drawer-open"]
+    )
+      > .drawer-toggle:checked
+  ) {
     overflow: hidden;
   }
 }
