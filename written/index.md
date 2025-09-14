@@ -67,4 +67,4 @@ $250USD per hour, billed to the hour above, will be required.
 
 ### Resume
 
-[PDF](resume/resume.pdf)
+Available upon [request](mailto:hello2025@jtarchie.com?subject=Resume+Request)
