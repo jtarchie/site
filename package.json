@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:jtarchie/site",
-  "author": "JT Archie <jtarchie@gmail.com>",
+  "author": "JT Archie <hello2025@jtarchie.com>",
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.9",
