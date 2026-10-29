@@ -15,6 +15,9 @@ personal site tool I developed named
 
 ### Local Setup (Mac OS)
 
+Styles are one hand-written file, `written/public/assets/main.css`. No CSS build
+step.
+
 To set things up locally or contribute:
 
 ```bash

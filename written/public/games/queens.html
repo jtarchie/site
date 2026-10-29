@@ -2,78 +2,78 @@
   <head>
     <title>Queens</title>
     <script>
-      const maxBoardSize = 10;
-      // Generate the column rules
-      const style = document.createElement("style");
-      let cssRules = "";
+    const maxBoardSize = 10;
+    // Generate the column rules
+    const style = document.createElement("style");
+    let cssRules = "";
 
-      for (let i = 1; i <= maxBoardSize; i++) {
-        cssRules += `
-      #app:has(.row > *:nth-child(${i}):is(.cell.queen)) .row > *:nth-child(${i}):after,
-        `;
-      }
-
-      // Add the final rule for rows
+    for (let i = 1; i <= maxBoardSize; i++) {
       cssRules += `
-        .row:has(.cell.queen) .cell:after {
-      content: "❌";
-        }`;
+    #app:has(.row > *:nth-child(${i}):is(.cell.queen)) .row > *:nth-child(${i}):after,
+      `;
+    }
 
-      // Generate diagonal rules
-      const directions = [
-        [-1, -1],
-        [-1, 1],
-        [1, -1],
-        [1, 1],
-      ];
+    // Add the final rule for rows
+    cssRules += `
+      .row:has(.cell.queen) .cell:after {
+    content: "❌";
+      }`;
 
-      for (let i = 1; i <= maxBoardSize; i++) {
-        for (let j = 1; j <= maxBoardSize; j++) {
-          directions.forEach(([di, dj]) => {
-            cssRules += `
-          #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
-              i + di
-            }) > *:nth-child(${j + dj}):after {
-          content: "❌";
-            }
-        `;
-          });
-        }
+    // Generate diagonal rules
+    const directions = [
+      [-1, -1],
+      [-1, 1],
+      [1, -1],
+      [1, 1],
+    ];
+
+    for (let i = 1; i <= maxBoardSize; i++) {
+      for (let j = 1; j <= maxBoardSize; j++) {
+        directions.forEach(([di, dj]) => {
+          cssRules += `
+        #app:has(.row:nth-child(${i}) > *:nth-child(${j}):is(.cell.queen)) .row:nth-child(${
+            i + di
+          }) > *:nth-child(${j + dj}):after {
+        content: "❌";
+          }
+      `;
+        });
       }
+    }
 
-      style.textContent = cssRules;
-      document.head.appendChild(style);
+    style.textContent = cssRules;
+    document.head.appendChild(style);
     </script>
     <style>
-      .row {
-        display: flex;
-      }
+    .row {
+      display: flex;
+    }
 
-      .cell {
-        width: 50px;
-        height: 50px;
-        border: 1px solid black;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    .cell {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .cell.cross::after {
-        content: "❎" !important;
-      }
+    .cell.cross::after {
+      content: "❎" !important;
+    }
 
-      .cell.queen::after {
-        content: "♛" !important;
-      }
+    .cell.queen::after {
+      content: "♛" !important;
+    }
 
-      .cell:not(:last-child) {
-        border-right: none;
-      }
+    .cell:not(:last-child) {
+      border-right: none;
+    }
 
-      .row:not(:last-child) .cell {
-        border-bottom: none;
-      }
+    .row:not(:last-child) .cell {
+      border-bottom: none;
+    }
     </style>
   </head>
   <body>

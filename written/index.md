@@ -12,19 +12,19 @@ and [beer reviewer](https://www.youtube.com/yetanotherbeershow) :beer:.
 As a programmer, I've learned to tinker, reverse engineer, team building, and
 product design. I want to capture what I've learned, so it can be shared.
 
-## Blog
+## Writing
 
 Sometimes I write things. These are the latest posts from blog.
 
 <!-- deno-fmt-ignore-start -->
 
-{{range $doc := iterDocs "posts/" 6}}
-- [{{$doc.Title}}]({{$doc.SlugPath}}) on {{$doc.Basename}}
-{{end}}
+<ul class="index">
+{{range $doc := iterDocs "posts/" 6}}<li><time datetime="{{regexFind "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}" $doc.Basename}}">{{regexFind "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}" $doc.Basename}}</time> <a href="{{$doc.SlugPath}}">{{$doc.Title}}</a></li>
+{{end}}</ul>
 
 <!-- deno-fmt-ignore-end -->
 
-Read [all the entries](/posts).
+[All writing →](/posts)
 
 ## Work
 
@@ -56,7 +56,7 @@ Learn about the following:
   experiment in making short form content for Youtube. It consist of tips and
   tricks for programming languages and frameworks.
 
-### Contact
+## Contact
 
 I always appreciate face-to-face speaking, but video chat is a comfortable
 compromise. If you're interested in working with me, let's
@@ -68,3 +68,7 @@ $250USD per hour, billed to the hour above, will be required.
 ### Resume
 
 Available upon [request](mailto:hello2025@jtarchie.com?subject=Resume+Request)
+
+## Elsewhere
+
+[Notes](/notes) · [ChatGPT prompts](/chatgpt) · [Shorts scripts](/scripts)

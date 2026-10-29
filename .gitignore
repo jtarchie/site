@@ -223,3 +223,5 @@ build-iPhoneSimulator/
 .vscode
 Brewfile.lock.json
 docs/
+# design flow artifacts
+.design/

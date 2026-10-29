@@ -8,7 +8,7 @@
     >
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1"
     >
 
     <link rel="stylesheet" href="/assets/main.css">
@@ -91,7 +91,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="https://jtarchie.comfavicon-128.png"
+      href="https://jtarchie.com/assets/favicons/favicon-128.png"
       sizes="128x128"
     />
     <meta name="application-name" content="&nbsp;" />
@@ -123,88 +123,41 @@
     ></script>
   </head>
 
-  <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-    <!-- Drawer for navigation -->
-    <div class="drawer drawer-mobile">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle">
-      <div class="drawer-content">
-        <!-- Navbar -->
-        <div class="navbar bg-base-100">
-          <div class="flex-none">
-            <label
-              for="my-drawer"
-              class="btn btn-square btn-ghost drawer-button lg:hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="inline-block w-6 h-6 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                >
-                </path>
-              </svg>
-            </label>
-          </div>
-          <div class="flex-1 px-2 mx-2">
-            <a href="/" class="btn btn-ghost normal-case text-xl">JT Archie</a>
-          </div>
-          <div class="flex-none hidden lg:block">
-            <ul class="menu menu-horizontal p-0">
-              <!-- Sidebar content -->
-              <li><a href="/posts">Blog</a></li>
-              <li>
-                <a href="https://github.com/jtarchie" target="_blank">Github</a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/jtarchie/site/blob/main/written{{.Doc.RelativePath}}"
-                >&#x270E;</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
 
-        <!-- Main content -->
-        <main class="container mx-auto p-4">
-          {{.RenderedPage}}
-        </main>
+    <header class="site">
+      <a class="site-name" href="/">JT Archie</a>
+      <nav aria-label="Primary">
+        <a href="/posts">Writing</a>
+        <a href="https://github.com/jtarchie">GitHub</a>
+        <a
+          href="https://github.com/jtarchie/site/blob/main/written{{.Doc.RelativePath}}"
+        >Edit</a>
+      </nav>
+    </header>
 
-        <!-- Footer -->
-        <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-          <aside>
-            <p>
-              &copy; {{ now | date "2006" }} - JT Archie - Built using <a
-                href="https://github.com/jtarchie/builder"
-              >Builder</a>
-            </p>
-          </aside>
-        </footer>
-      </div>
+    <main id="content" tabindex="-1">
+      <!-- No template trim markers (dash inside braces): deno fmt rewrites them into broken templates. -->
+      {{ $isPost := and (hasPrefix "/posts/" .Doc.RelativePath) (ne .Doc.Basename "index") }}
+      {{ if $isPost }}
+      <p class="kicker">
+        <a href="/posts">Writing</a> &middot;
+        <time datetime="{{substr 0 10 .Doc.Basename}}">{{substr 0 10 .Doc.Basename}}</time>
+      </p>
+      {{ end }}
+      {{.RenderedPage}}
+      {{ if $isPost }}
+      <p class="back"><a href="/posts">&larr; All writing</a></p>
+      {{ end }}
+    </main>
 
-      <!-- Drawer sidebar -->
-      <div class="drawer-side">
-        <label for="my-drawer" class="drawer-overlay"></label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200">
-          <!-- Sidebar content -->
-          <li><a href="/posts">Blog</a></li>
-          <li>
-            <a href="https://github.com/jtarchie" target="_blank">Github</a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/jtarchie/site/blob/main/written{{.Doc.RelativePath}}"
-            >&#x270E;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <script src="/assets/main.js"></script>
+    <footer class="site">
+      <p>
+        &copy; {{ now | date "2006" }} JT Archie &middot; Built with
+        <a href="https://github.com/jtarchie/builder">Builder</a> &middot;
+        <a href="/rss.xml">RSS</a>
+      </p>
+    </footer>
   </body>
 </html>
